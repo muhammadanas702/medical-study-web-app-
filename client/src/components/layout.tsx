@@ -79,15 +79,15 @@ function AppSidebar() {
           </div>
         </Link>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="gap-0 overflow-y-auto">
         {NAV.map((g) => (
-          <SidebarGroup key={g.label} className="py-1">
-            <SidebarGroupLabel>{g.label}</SidebarGroupLabel>
+          <SidebarGroup key={g.label} className="py-0.5">
+            <SidebarGroupLabel className="h-7">{g.label}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {g.items.map((it) => (
                   <SidebarMenuItem key={it.href}>
-                    <SidebarMenuButton asChild isActive={isActive(loc, it.href)}>
+                    <SidebarMenuButton asChild size="sm" className="h-[30px] text-[13.5px]" isActive={isActive(loc, it.href)}>
                       <Link href={it.href} data-testid={`link-nav-${it.href.replace(/\//g, "") || "dashboard"}`} onClick={() => isMobile && setOpenMobile(false)}>
                         <it.icon className="h-4 w-4" />
                         <span>{it.label}</span>
@@ -99,10 +99,10 @@ function AppSidebar() {
             </SidebarGroupContent>
           </SidebarGroup>
         ))}
+        <p className="mx-2 mt-3 mb-3 border-t px-2 pt-3 text-[11px] leading-snug text-muted-foreground" data-testid="text-disclaimer">
+          For education only. Not a substitute for clinical judgment or current prescribing information.
+        </p>
       </SidebarContent>
-      <SidebarFooter className="px-3 pb-3 text-[11px] leading-snug text-muted-foreground">
-        For education only. Not a substitute for clinical judgment or current prescribing information.
-      </SidebarFooter>
     </Sidebar>
   );
 }

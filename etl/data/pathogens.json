@@ -1,0 +1,1707 @@
+[
+ {
+  "id": "sars-cov-2",
+  "name": "SARS-CoV-2",
+  "kind": "Virus",
+  "group": "Enveloped (+)ssRNA virus",
+  "family": "Coronaviridae (Betacoronavirus)",
+  "wiki": "SARS-CoV-2",
+  "mesh": "SARS-CoV-2",
+  "structure": "Enveloped, roughly spherical virion of about 60-140 nm with club-shaped spike (S) glycoprotein trimers, plus membrane (M) and envelope (E) proteins; the helical nucleocapsid (N protein) packages the genome.",
+  "genome": "Linear, non-segmented, positive-sense single-stranded RNA of about 30 kb, one of the largest RNA virus genomes; encodes its own proofreading exonuclease (nsp14).",
+  "transmission": "Respiratory droplets and aerosols; less commonly fomites. Spread can occur before symptoms begin.",
+  "diseases": [
+   "COVID-19: from asymptomatic infection to pneumonia and acute respiratory distress syndrome (ARDS)",
+   "Hypercoagulability with venous and arterial thrombosis",
+   "Multisystem inflammatory syndrome in children (MIS-C)",
+   "Post-COVID condition (long COVID)"
+  ],
+  "virulence": [
+   "Spike receptor-binding domain binds ACE2 on type II pneumocytes and other cells",
+   "Host protease TMPRSS2 (and cathepsins) cleave spike to allow membrane fusion",
+   "Accessory proteins blunt the type I interferon response"
+  ],
+  "diagnosis": "RT-PCR of a nasopharyngeal swab (most sensitive); rapid antigen tests are specific but less sensitive. Imaging may show bilateral peripheral ground-glass opacities.",
+  "treatment": "Supportive care and oxygen. Nirmatrelvir (3CL protease inhibitor, boosted with ritonavir) or remdesivir (RNA polymerase inhibitor) in high-risk patients early; dexamethasone for patients needing oxygen. Watch ritonavir CYP3A4 interactions.",
+  "prevention": "mRNA and protein-subunit vaccines encoding spike; masking, ventilation and isolation.",
+  "pearls": [
+   "ACE2 receptor, TMPRSS2 priming",
+   "Loss of smell and taste is characteristic",
+   "Dexamethasone lowers mortality only in patients requiring oxygen"
+  ],
+  "nih3d": [
+   "3DPX-013323"
+  ],
+  "pdb": [
+   [
+    "6VXX",
+    "Spike glycoprotein trimer (closed state)"
+   ],
+   [
+    "6M0J",
+    "Spike receptor-binding domain bound to ACE2"
+   ]
+  ]
+ },
+ {
+  "id": "influenza-a",
+  "name": "Influenza A virus",
+  "kind": "Virus",
+  "group": "Enveloped segmented (-)ssRNA virus",
+  "family": "Orthomyxoviridae",
+  "wiki": "Influenza A virus",
+  "mesh": "Influenza A virus",
+  "structure": "Enveloped, pleomorphic (roughly spherical, about 100 nm) virion studded with hemagglutinin (HA) and neuraminidase (NA) spikes; the M2 proton channel spans the envelope and M1 matrix protein lines it.",
+  "genome": "Negative-sense ssRNA in 8 segments, each packaged as a helical ribonucleoprotein with its own polymerase; segmentation allows reassortment.",
+  "transmission": "Respiratory droplets, aerosols and fomites; seasonal epidemics in winter.",
+  "diseases": [
+   "Influenza: abrupt fever, myalgia, headache, dry cough",
+   "Primary viral pneumonia",
+   "Secondary bacterial pneumonia (S. aureus, S. pneumoniae, H. influenzae)",
+   "Reye syndrome in children given aspirin"
+  ],
+  "virulence": [
+   "Hemagglutinin binds sialic acid receptors and mediates membrane fusion",
+   "Neuraminidase cleaves sialic acid to release new virions",
+   "Antigenic drift (point mutations) causes yearly epidemics; antigenic shift (segment reassortment) causes pandemics"
+  ],
+  "diagnosis": "Rapid molecular (NAAT/RT-PCR) testing of a nasopharyngeal swab; rapid antigen tests are less sensitive.",
+  "treatment": "Neuraminidase inhibitors (oseltamivir, zanamivir, peramivir) or the cap-dependent endonuclease inhibitor baloxavir, ideally within 48 hours of symptom onset. Adamantanes (M2 blockers) are no longer recommended because of widespread resistance.",
+  "prevention": "Annual inactivated (intramuscular) or live attenuated (intranasal) vaccine, updated for circulating strains.",
+  "pearls": [
+   "Shift = reassortment = pandemic; drift = mutation = epidemic",
+   "Post-influenza S. aureus pneumonia",
+   "Avoid aspirin in children (Reye syndrome)"
+  ],
+  "nih3d": [
+   "3DPX-000030"
+  ],
+  "pdb": [
+   [
+    "1RU7",
+    "H1 hemagglutinin of influenza A/Puerto Rico/8/1934 (H1N1)"
+   ],
+   [
+    "2HU4",
+    "N1 neuraminidase bound to oseltamivir"
+   ]
+  ]
+ },
+ {
+  "id": "hiv-1",
+  "name": "Human immunodeficiency virus 1 (HIV-1)",
+  "kind": "Virus",
+  "group": "Enveloped (+)ssRNA retrovirus",
+  "family": "Retroviridae (Lentivirus)",
+  "wiki": "HIV",
+  "mesh": "HIV-1",
+  "structure": "Enveloped virion of about 100-120 nm with gp120/gp41 envelope trimers; a cone-shaped capsid built from p24 protein contains two copies of the genome with reverse transcriptase and integrase.",
+  "genome": "Diploid, positive-sense ssRNA (about 9.7 kb) with gag (capsid, matrix), pol (reverse transcriptase, integrase, protease) and env (gp120, gp41) plus regulatory genes (tat, rev, nef, vif, vpr, vpu).",
+  "transmission": "Sexual contact, parenteral (shared needles, transfusion), and vertical (in utero, at delivery, breastfeeding).",
+  "diseases": [
+   "Acute retroviral syndrome (mononucleosis-like illness)",
+   "Chronic infection with progressive CD4+ T-cell loss",
+   "AIDS: CD4 count below 200/mm3 or an AIDS-defining illness (e.g., Pneumocystis pneumonia, Kaposi sarcoma, toxoplasmosis, cryptococcal meningitis, MAC)"
+  ],
+  "virulence": [
+   "gp120 binds CD4 and a co-receptor (CCR5 early, CXCR4 later); gp41 mediates fusion",
+   "Reverse transcriptase is error-prone, driving rapid drug resistance",
+   "Integrase inserts proviral DNA into the host genome (latent reservoir)"
+  ],
+  "diagnosis": "Fourth-generation HIV-1/2 antigen/antibody combination immunoassay (detects p24 antigen), confirmed with an HIV-1/HIV-2 differentiation assay; HIV RNA viral load for acute infection and monitoring; CD4 count for staging.",
+  "treatment": "Lifelong antiretroviral therapy, typically an integrase inhibitor (e.g., dolutegravir or bictegravir) plus two nucleoside reverse transcriptase inhibitors. Prophylaxis against opportunistic infections according to CD4 count.",
+  "prevention": "Pre-exposure prophylaxis (tenofovir-based or long-acting cabotegravir), post-exposure prophylaxis, condoms, treatment as prevention (undetectable = untransmittable), and maternal ART to prevent vertical transmission.",
+  "pearls": [
+   "CCR5-delta32 homozygotes are resistant to R5 strains; maraviroc blocks CCR5",
+   "Pneumocystis prophylaxis (TMP-SMX) when CD4 < 200",
+   "Abacavir: screen HLA-B*57:01 before starting"
+  ],
+  "nih3d": [
+   "3DPX-015438",
+   "3DPX-015448",
+   "3DPX-003150",
+   "3DPX-003873",
+   "3DPX-000006"
+  ],
+  "pdb": [
+   [
+    "1HVR",
+    "HIV-1 protease bound to a cyclic urea inhibitor"
+   ],
+   [
+    "4NCO",
+    "Envelope glycoprotein trimer (BG505 SOSIP)"
+   ],
+   [
+    "1RTD",
+    "Reverse transcriptase with DNA and incoming nucleotide"
+   ]
+  ]
+ },
+ {
+  "id": "hepatitis-b",
+  "name": "Hepatitis B virus",
+  "kind": "Virus",
+  "group": "Enveloped partially double-stranded DNA virus",
+  "family": "Hepadnaviridae",
+  "wiki": "Hepatitis B virus",
+  "mesh": "Hepatitis B virus",
+  "structure": "Enveloped 42 nm Dane particle; envelope carries HBsAg, the icosahedral core is built from HBcAg; infected cells also secrete non-infectious HBsAg spheres and filaments.",
+  "genome": "Small (about 3.2 kb) circular, partially double-stranded DNA that is replicated through an RNA intermediate by a viral reverse transcriptase; forms persistent cccDNA in hepatocyte nuclei.",
+  "transmission": "Parenteral, sexual and perinatal; very efficiently transmitted by blood.",
+  "diseases": [
+   "Acute hepatitis (often subclinical; fulminant in a minority)",
+   "Chronic hepatitis (about 90% after perinatal infection, under 5% after adult infection)",
+   "Cirrhosis and hepatocellular carcinoma",
+   "Extrahepatic: polyarteritis nodosa, membranous nephropathy"
+  ],
+  "virulence": [
+   "Liver damage is mainly immune mediated (cytotoxic T cells)",
+   "cccDNA and integrated DNA allow persistence",
+   "HBx protein contributes to oncogenesis"
+  ],
+  "diagnosis": "Serology: HBsAg (infection), anti-HBs (immunity), IgM anti-HBc (acute infection, positive in the window period), HBeAg and HBV DNA (replication and infectivity).",
+  "treatment": "Chronic infection: tenofovir or entecavir (nucleos(t)ide analogs) or pegylated interferon-alpha; treat according to ALT, HBV DNA and fibrosis.",
+  "prevention": "Recombinant HBsAg vaccine (birth dose in infancy); HBIG plus vaccine for exposed newborns and after needle-stick in non-immune people.",
+  "pearls": [
+   "Only anti-HBs positive after vaccination",
+   "Window period: IgM anti-HBc is the only positive marker",
+   "Hepatitis D needs HBsAg to replicate"
+  ],
+  "nih3d": [
+   "3DPX-003515"
+  ],
+  "pdb": [
+   [
+    "1QGT",
+    "Hepatitis B core (capsid) protein assembly"
+   ]
+  ]
+ },
+ {
+  "id": "hepatitis-c",
+  "name": "Hepatitis C virus",
+  "kind": "Virus",
+  "group": "Enveloped (+)ssRNA virus",
+  "family": "Flaviviridae (Hepacivirus)",
+  "wiki": "Hepatitis C virus",
+  "mesh": "Hepacivirus",
+  "structure": "Small (about 50 nm) enveloped virion with E1/E2 glycoproteins that circulates bound to lipoproteins.",
+  "genome": "Positive-sense ssRNA (about 9.6 kb) translated as one polyprotein; the RNA polymerase (NS5B) lacks proofreading, so hypervariable E2 regions evade antibodies.",
+  "transmission": "Mainly parenteral (injection drug use, historical transfusion, unsafe medical injections); sexual and perinatal transmission are less efficient.",
+  "diseases": [
+   "Acute infection (usually asymptomatic)",
+   "Chronic hepatitis in about 70-85%, leading to cirrhosis and hepatocellular carcinoma",
+   "Extrahepatic: mixed cryoglobulinemia, membranoproliferative glomerulonephritis, porphyria cutanea tarda, lichen planus"
+  ],
+  "virulence": [
+   "Lack of proofreading creates quasispecies that escape immunity",
+   "No effective vaccine because of antigenic variation"
+  ],
+  "diagnosis": "Anti-HCV antibody screening, confirmed by HCV RNA (viral load); genotype as needed.",
+  "treatment": "Direct-acting antivirals for 8-12 weeks (e.g., sofosbuvir/velpatasvir or glecaprevir/pibrentasvir) cure over 95%. NS5B polymerase inhibitors end in -buvir, NS5A inhibitors in -asvir, NS3/4A protease inhibitors in -previr.",
+  "prevention": "No vaccine; harm reduction, blood screening and infection control.",
+  "pearls": [
+   "Most common cause of chronic hepatitis needing transplant in many countries before DAAs",
+   "Cryoglobulinemia: palpable purpura, arthralgia, low C4"
+  ],
+  "nih3d": [],
+  "pdb": [
+   [
+    "1CSJ",
+    "NS5B RNA-dependent RNA polymerase"
+   ]
+  ]
+ },
+ {
+  "id": "ebola",
+  "name": "Ebola virus",
+  "kind": "Virus",
+  "group": "Enveloped (-)ssRNA virus",
+  "family": "Filoviridae",
+  "wiki": "Ebola virus",
+  "mesh": "Ebolavirus",
+  "structure": "Long filamentous enveloped virion (about 80 nm wide, up to 1,000 nm or more long), often U- or 6-shaped, with a single glycoprotein (GP) spike.",
+  "genome": "Non-segmented negative-sense ssRNA of about 19 kb encoding 7 genes.",
+  "transmission": "Direct contact with blood or body fluids of infected people or animals (fruit bats are the presumed reservoir); nosocomial and funeral exposures are important.",
+  "diseases": [
+   "Ebola virus disease: fever, vomiting, diarrhea, then hemorrhage, shock and multiorgan failure; case fatality often 25-90%"
+  ],
+  "virulence": [
+   "GP mediates entry via the endosomal receptor NPC1",
+   "VP35 and VP24 block interferon signaling",
+   "Infects macrophages and dendritic cells, causing cytokine storm and DIC"
+  ],
+  "diagnosis": "RT-PCR of blood in a high-containment laboratory.",
+  "treatment": "Aggressive supportive care; monoclonal antibodies against GP (atoltivimab/maftivimab/odesivimab or ansuvimab) for Zaire ebolavirus.",
+  "prevention": "rVSV-ZEBOV (Ervebo) live recombinant vaccine for ring vaccination; strict infection control with PPE.",
+  "pearls": [
+   "Filamentous shape on electron microscopy",
+   "Biosafety level 4 pathogen"
+  ],
+  "nih3d": [
+   "3DPX-012849"
+  ],
+  "pdb": [
+   [
+    "5JQ3",
+    "Ebola virus glycoprotein (GP) trimer"
+   ]
+  ]
+ },
+ {
+  "id": "measles",
+  "name": "Measles virus",
+  "kind": "Virus",
+  "group": "Enveloped (-)ssRNA virus",
+  "family": "Paramyxoviridae (Morbillivirus)",
+  "wiki": "Measles morbillivirus",
+  "mesh": "Measles virus",
+  "structure": "Pleomorphic enveloped virion (100-300 nm) with hemagglutinin (H) and fusion (F) glycoproteins around a helical nucleocapsid.",
+  "genome": "Non-segmented negative-sense ssRNA (about 16 kb).",
+  "transmission": "Airborne; one of the most contagious human infections (R0 about 12-18).",
+  "diseases": [
+   "Measles: cough, coryza, conjunctivitis, Koplik spots, then a maculopapular rash spreading head to toe",
+   "Pneumonia (most common cause of measles death) and acute encephalitis",
+   "Subacute sclerosing panencephalitis years later",
+   "Immune amnesia increases later infections"
+  ],
+  "virulence": [
+   "H binds SLAM (CD150) on immune cells and nectin-4 on epithelium",
+   "F protein causes cell fusion, producing multinucleated Warthin-Finkeldey giant cells"
+  ],
+  "diagnosis": "Clinical picture with measles IgM serology or RT-PCR of throat swab or urine.",
+  "treatment": "Supportive care; vitamin A reduces morbidity and mortality, especially in malnourished children.",
+  "prevention": "Live attenuated MMR vaccine (two doses); post-exposure vaccine within 72 hours or immune globulin within 6 days.",
+  "pearls": [
+   "Koplik spots: white spots on buccal mucosa before the rash",
+   "Vitamin A for all children with measles"
+  ],
+  "nih3d": [
+   "3DPX-014632",
+   "3DPX-011089"
+  ],
+  "pdb": [
+   [
+    "2ZB6",
+    "Measles virus hemagglutinin (H) head domain"
+   ]
+  ]
+ },
+ {
+  "id": "poliovirus",
+  "name": "Poliovirus",
+  "kind": "Virus",
+  "group": "Naked (+)ssRNA virus",
+  "family": "Picornaviridae (Enterovirus)",
+  "wiki": "Poliovirus",
+  "mesh": "Poliovirus",
+  "structure": "Small (about 30 nm), non-enveloped icosahedral capsid made of 60 copies each of VP1-VP4.",
+  "genome": "Positive-sense ssRNA (about 7.5 kb) with a 5' VPg protein; translated as one polyprotein using an IRES.",
+  "transmission": "Fecal-oral; replicates in the oropharynx and gut lymphoid tissue (Peyer patches).",
+  "diseases": [
+   "Most infections are asymptomatic or minor illness",
+   "Aseptic meningitis",
+   "Paralytic poliomyelitis: asymmetric flaccid paralysis from destruction of anterior horn motor neurons",
+   "Post-polio syndrome decades later"
+  ],
+  "virulence": [
+   "Binds CD155 (poliovirus receptor)",
+   "Viremia leads to CNS invasion and lower motor neuron destruction"
+  ],
+  "diagnosis": "RT-PCR or culture of stool, throat swab or CSF; CSF shows lymphocytic pleocytosis.",
+  "treatment": "Supportive; ventilatory support for bulbar involvement.",
+  "prevention": "Inactivated polio vaccine (IPV, Salk) by injection; oral live attenuated vaccine (OPV, Sabin) gives gut immunity but can rarely revert (vaccine-derived poliovirus).",
+  "pearls": [
+   "Lower motor neuron signs: flaccid paralysis, hyporeflexia, fasciculations, no sensory loss",
+   "OPV gives mucosal IgA"
+  ],
+  "nih3d": [
+   "3DPX-001519"
+  ],
+  "pdb": [
+   [
+    "1HXS",
+    "Poliovirus type 1 (Mahoney) capsid protomer"
+   ]
+  ]
+ },
+ {
+  "id": "rotavirus",
+  "name": "Rotavirus",
+  "kind": "Virus",
+  "group": "Naked segmented dsRNA virus",
+  "family": "Sedoreoviridae (Reoviridae)",
+  "wiki": "Rotavirus",
+  "mesh": "Rotavirus",
+  "structure": "Non-enveloped, triple-layered icosahedral capsid (about 75 nm) that looks like a wheel on electron microscopy; outer VP7 and spike VP4.",
+  "genome": "11 segments of double-stranded RNA.",
+  "transmission": "Fecal-oral; very stable in the environment; outbreaks in day care.",
+  "diseases": [
+   "Severe watery diarrhea and vomiting in infants and young children, with dehydration"
+  ],
+  "virulence": [
+   "NSP4 acts as an enterotoxin and raises intracellular calcium",
+   "Villous blunting in the small intestine reduces absorption"
+  ],
+  "diagnosis": "Stool antigen test or multiplex PCR.",
+  "treatment": "Oral rehydration solution; IV fluids for severe dehydration.",
+  "prevention": "Live oral vaccines (RotaTeq, Rotarix) in infancy; small risk of intussusception.",
+  "pearls": [
+   "Most common cause of severe childhood diarrhea worldwide",
+   "Rota = wheel shape"
+  ],
+  "nih3d": [
+   "3DPX-001515"
+  ],
+  "pdb": [
+   [
+    "4V7Q",
+    "Atomic model of an infectious rotavirus particle"
+   ]
+  ]
+ },
+ {
+  "id": "norovirus",
+  "name": "Norovirus",
+  "kind": "Virus",
+  "group": "Naked (+)ssRNA virus",
+  "family": "Caliciviridae",
+  "wiki": "Norovirus",
+  "mesh": "Norovirus",
+  "structure": "Small non-enveloped icosahedral capsid (about 30-40 nm) built from 180 copies of VP1, with cup-shaped surface depressions.",
+  "genome": "Positive-sense ssRNA (about 7.5 kb).",
+  "transmission": "Fecal-oral, vomit aerosols, contaminated food and surfaces; very low infectious dose; outbreaks on cruise ships, nursing homes and schools.",
+  "diseases": [
+   "Acute gastroenteritis with prominent vomiting and watery diarrhea, lasting 1-3 days"
+  ],
+  "virulence": [
+   "Binds histo-blood group antigens on gut epithelium",
+   "Resistant to alcohol hand rubs and many disinfectants"
+  ],
+  "diagnosis": "Clinical; stool RT-PCR in outbreaks.",
+  "treatment": "Oral rehydration and supportive care.",
+  "prevention": "Hand washing with soap and water, bleach-based cleaning, exclusion of ill food handlers.",
+  "pearls": [
+   "Most common cause of viral gastroenteritis in adults",
+   "Alcohol hand rubs are less effective than soap"
+  ],
+  "nih3d": [
+   "3DPX-010783"
+  ],
+  "pdb": [
+   [
+    "1IHM",
+    "Norwalk virus capsid"
+   ]
+  ]
+ },
+ {
+  "id": "hpv",
+  "name": "Human papillomavirus",
+  "kind": "Virus",
+  "group": "Naked dsDNA virus",
+  "family": "Papillomaviridae",
+  "wiki": "Human papillomavirus infection",
+  "mesh": "Papillomaviridae",
+  "structure": "Non-enveloped icosahedral capsid (about 55 nm) made of 72 pentamers of L1 protein with minor protein L2.",
+  "genome": "Circular double-stranded DNA (about 8 kb).",
+  "transmission": "Skin-to-skin and sexual contact; perinatal transmission can cause respiratory papillomatosis.",
+  "diseases": [
+   "Common, plantar and flat warts (types 1, 2, 3, 4)",
+   "Anogenital warts (condylomata acuminata, types 6 and 11)",
+   "Cervical, anal, penile and oropharyngeal cancers (high-risk types 16 and 18, plus others)",
+   "Recurrent respiratory papillomatosis (types 6 and 11)"
+  ],
+  "virulence": [
+   "E6 protein promotes degradation of p53",
+   "E7 protein inactivates Rb, releasing E2F and driving cell-cycle progression",
+   "Integration of viral DNA occurs in many cancers"
+  ],
+  "diagnosis": "Cervical cytology (koilocytes) and high-risk HPV DNA testing; biopsy of suspicious lesions.",
+  "treatment": "Warts: cryotherapy, imiquimod, podophyllotoxin, excision. Precancerous lesions: excision such as LEEP.",
+  "prevention": "Recombinant L1 virus-like particle vaccine (9-valent), ideally before sexual debut; cervical screening.",
+  "pearls": [
+   "E6 inhibits p53, E7 inhibits Rb",
+   "Types 6 and 11 cause warts; 16 and 18 cause cancer"
+  ],
+  "nih3d": [
+   "3DPX-016170"
+  ],
+  "pdb": [
+   [
+    "1DZL",
+    "HPV16 L1 capsid protein pentamer"
+   ]
+  ]
+ },
+ {
+  "id": "hsv",
+  "name": "Herpes simplex virus 1 and 2",
+  "kind": "Virus",
+  "group": "Enveloped dsDNA virus",
+  "family": "Herpesviridae (Alphaherpesvirinae)",
+  "wiki": "Herpes simplex virus",
+  "mesh": "Simplexvirus",
+  "structure": "Enveloped virion (about 150-200 nm): icosahedral capsid surrounded by a protein tegument and an envelope derived from the nuclear membrane.",
+  "genome": "Linear double-stranded DNA (about 152 kb).",
+  "transmission": "Direct contact with lesions or secretions, including asymptomatic shedding; HSV-2 is mainly sexual; vertical transmission at delivery.",
+  "diseases": [
+   "Gingivostomatitis and herpes labialis (mostly HSV-1)",
+   "Genital herpes (mostly HSV-2, increasingly HSV-1)",
+   "Herpes simplex encephalitis (HSV-1; temporal lobe)",
+   "Keratitis, herpetic whitlow, neonatal herpes, eczema herpeticum"
+  ],
+  "virulence": [
+   "Latency in sensory ganglia (trigeminal for HSV-1, sacral for HSV-2) with reactivation",
+   "Cell-to-cell spread forms multinucleated giant cells"
+  ],
+  "diagnosis": "PCR of lesion swab or CSF (encephalitis); Tzanck smear shows multinucleated giant cells (not specific).",
+  "treatment": "Acyclovir, valacyclovir or famciclovir (need viral thymidine kinase); IV acyclovir for encephalitis and neonatal disease; foscarnet for acyclovir-resistant strains.",
+  "prevention": "Suppressive antivirals reduce transmission; cesarean delivery when genital lesions are present at labor.",
+  "pearls": [
+   "Temporal lobe encephalitis: start IV acyclovir immediately",
+   "Acyclovir resistance via thymidine kinase mutation: use foscarnet"
+  ],
+  "nih3d": [
+   "3DPX-008414"
+  ],
+  "pdb": []
+ },
+ {
+  "id": "vzv",
+  "name": "Varicella-zoster virus",
+  "kind": "Virus",
+  "group": "Enveloped dsDNA virus",
+  "family": "Herpesviridae (Alphaherpesvirinae)",
+  "wiki": "Varicella zoster virus",
+  "mesh": "Herpesvirus 3, Human",
+  "structure": "Enveloped herpesvirus with icosahedral capsid and tegument.",
+  "genome": "Linear double-stranded DNA (about 125 kb), the smallest human herpesvirus genome.",
+  "transmission": "Airborne and contact with vesicle fluid; highly contagious.",
+  "diseases": [
+   "Varicella (chickenpox): crops of pruritic vesicles at different stages, centripetal distribution",
+   "Herpes zoster (shingles): painful dermatomal vesicular rash from reactivation",
+   "Postherpetic neuralgia, herpes zoster ophthalmicus, Ramsay Hunt syndrome",
+   "Varicella pneumonia in adults and pregnancy; congenital varicella syndrome"
+  ],
+  "virulence": [
+   "Latency in dorsal root and cranial nerve ganglia"
+  ],
+  "diagnosis": "Clinical; PCR of vesicle fluid when needed.",
+  "treatment": "Acyclovir or valacyclovir (zoster within 72 hours; varicella in adults and high-risk children).",
+  "prevention": "Live attenuated varicella vaccine; recombinant adjuvanted zoster vaccine (Shingrix) for adults 50 and older; VariZIG for exposed high-risk people.",
+  "pearls": [
+   "Lesions in different stages at the same time (unlike smallpox)",
+   "Zoster ophthalmicus: tip-of-nose lesion (Hutchinson sign)"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "ebv",
+  "name": "Epstein-Barr virus",
+  "kind": "Virus",
+  "group": "Enveloped dsDNA virus",
+  "family": "Herpesviridae (Gammaherpesvirinae)",
+  "wiki": "Epstein-Barr virus",
+  "mesh": "Herpesvirus 4, Human",
+  "structure": "Enveloped herpesvirus; glycoprotein gp350 binds CD21 on B cells.",
+  "genome": "Linear double-stranded DNA (about 172 kb) that persists as an episome in latently infected B cells.",
+  "transmission": "Saliva (kissing disease); less often transfusion and transplantation.",
+  "diseases": [
+   "Infectious mononucleosis: fever, exudative pharyngitis, posterior cervical lymphadenopathy, splenomegaly",
+   "Burkitt lymphoma (endemic African), Hodgkin lymphoma, nasopharyngeal carcinoma",
+   "Post-transplant lymphoproliferative disorder, primary CNS lymphoma in HIV",
+   "Oral hairy leukoplakia in HIV"
+  ],
+  "virulence": [
+   "Infects B cells via CD21 (complement receptor 2)",
+   "Latent proteins (EBNA, LMP-1) immortalize B cells"
+  ],
+  "diagnosis": "Heterophile antibody (Monospot) test; EBV-specific antibodies (VCA IgM) when Monospot is negative; atypical lymphocytes (reactive CD8+ T cells) on smear.",
+  "treatment": "Supportive; avoid contact sports for at least 3-4 weeks (splenic rupture risk).",
+  "prevention": "No vaccine.",
+  "pearls": [
+   "Amoxicillin in mononucleosis causes a maculopapular rash",
+   "CD21 receptor; atypical cells are CD8+ T cells"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "cmv",
+  "name": "Cytomegalovirus",
+  "kind": "Virus",
+  "group": "Enveloped dsDNA virus",
+  "family": "Herpesviridae (Betaherpesvirinae)",
+  "wiki": "Cytomegalovirus",
+  "mesh": "Cytomegalovirus",
+  "structure": "Enveloped herpesvirus; infected cells enlarge with intranuclear 'owl's eye' inclusions.",
+  "genome": "Linear double-stranded DNA (about 235 kb), the largest human herpesvirus genome.",
+  "transmission": "Saliva, urine, sexual contact, transplacental, breast milk, transfusion and organ transplantation.",
+  "diseases": [
+   "Mononucleosis-like illness (heterophile negative)",
+   "Congenital CMV: most common congenital infection; sensorineural hearing loss, periventricular calcifications, microcephaly",
+   "In immunocompromised: retinitis (CD4 < 50), colitis, esophagitis, pneumonitis (transplant)"
+  ],
+  "virulence": [
+   "Latency in monocytes and other myeloid cells"
+  ],
+  "diagnosis": "PCR (blood, urine, saliva in newborns); histology shows owl's eye inclusions.",
+  "treatment": "Ganciclovir or valganciclovir (phosphorylated by viral UL97 kinase); foscarnet or cidofovir for resistance; letermovir for prophylaxis in transplant recipients.",
+  "prevention": "CMV-negative or leukoreduced blood for at-risk recipients; prophylaxis or pre-emptive therapy after transplant.",
+  "pearls": [
+   "Periventricular calcifications (toxoplasmosis: diffuse)",
+   "Ganciclovir causes myelosuppression; foscarnet causes nephrotoxicity and electrolyte loss"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "dengue",
+  "name": "Dengue virus",
+  "kind": "Virus",
+  "group": "Enveloped (+)ssRNA virus",
+  "family": "Flaviviridae (Flavivirus)",
+  "wiki": "Dengue virus",
+  "mesh": "Dengue Virus",
+  "structure": "Enveloped virion (about 50 nm) with icosahedral arrangement of envelope (E) protein dimers lying flat on the surface.",
+  "genome": "Positive-sense ssRNA (about 11 kb); four serotypes (DENV-1 to DENV-4).",
+  "transmission": "Bite of Aedes aegypti (and Aedes albopictus) mosquitoes.",
+  "diseases": [
+   "Dengue fever: high fever, retro-orbital headache, severe myalgia and arthralgia (breakbone fever), rash",
+   "Severe dengue with plasma leakage, bleeding and shock, especially with a second, different serotype"
+  ],
+  "virulence": [
+   "Antibody-dependent enhancement: non-neutralizing antibodies from a prior serotype increase infection of Fc receptor-bearing cells"
+  ],
+  "diagnosis": "NS1 antigen or RT-PCR in the first week; IgM serology afterwards. Positive tourniquet test, thrombocytopenia and rising hematocrit are warning signs.",
+  "treatment": "Supportive with careful fluid management; acetaminophen for fever. Avoid aspirin and NSAIDs (bleeding risk).",
+  "prevention": "Mosquito control; vaccines (e.g., TAK-003, or CYD-TDV only for people with prior infection).",
+  "pearls": [
+   "Second infection with a different serotype has the highest risk of severe dengue",
+   "Avoid NSAIDs"
+  ],
+  "nih3d": [],
+  "pdb": [
+   [
+    "1OAN",
+    "Dengue virus envelope (E) glycoprotein"
+   ]
+  ]
+ },
+ {
+  "id": "zika",
+  "name": "Zika virus",
+  "kind": "Virus",
+  "group": "Enveloped (+)ssRNA virus",
+  "family": "Flaviviridae (Flavivirus)",
+  "wiki": "Zika virus",
+  "mesh": "Zika Virus",
+  "structure": "Enveloped icosahedral flavivirus (about 50 nm) with E and M proteins on the surface.",
+  "genome": "Positive-sense ssRNA (about 10.8 kb).",
+  "transmission": "Aedes mosquito bite; also sexual, transplacental and transfusion.",
+  "diseases": [
+   "Usually mild: rash, fever, conjunctivitis, arthralgia",
+   "Congenital Zika syndrome: microcephaly, ocular defects, contractures",
+   "Guillain-Barre syndrome"
+  ],
+  "virulence": [
+   "Infects neural progenitor cells in the developing brain"
+  ],
+  "diagnosis": "RT-PCR of serum or urine; IgM serology (cross-reacts with dengue).",
+  "treatment": "Supportive.",
+  "prevention": "Mosquito avoidance; pregnant people avoid travel to active areas; condoms.",
+  "pearls": [
+   "Congenital microcephaly",
+   "Serologic cross-reactivity with dengue"
+  ],
+  "nih3d": [
+   "3DPX-009584"
+  ],
+  "pdb": [
+   [
+    "5IRE",
+    "Cryo-EM structure of mature Zika virus"
+   ]
+  ]
+ },
+ {
+  "id": "rabies",
+  "name": "Rabies virus",
+  "kind": "Virus",
+  "group": "Enveloped (-)ssRNA virus",
+  "family": "Rhabdoviridae (Lyssavirus)",
+  "wiki": "Rabies virus",
+  "mesh": "Rabies virus",
+  "structure": "Bullet-shaped enveloped virion (about 75 x 180 nm) with glycoprotein G spikes and a helical nucleocapsid.",
+  "genome": "Non-segmented negative-sense ssRNA (about 12 kb).",
+  "transmission": "Bite or scratch of an infected animal (dogs worldwide; bats, raccoons, skunks, foxes in the Americas).",
+  "diseases": [
+   "Rabies encephalitis: prodrome with paresthesia at the bite site, then furious (agitation, hydrophobia, hypersalivation) or paralytic form; almost always fatal once symptomatic"
+  ],
+  "virulence": [
+   "G protein binds the nicotinic acetylcholine receptor at the neuromuscular junction",
+   "Travels by retrograde axonal transport (dynein) to the CNS",
+   "Negri bodies: cytoplasmic inclusions in Purkinje cells and hippocampal neurons"
+  ],
+  "diagnosis": "Antemortem: RT-PCR of saliva, skin biopsy from the nape of the neck (antigen), and serum/CSF antibodies.",
+  "treatment": "No effective treatment after symptoms appear; prevention is essential.",
+  "prevention": "Post-exposure prophylaxis: wound washing, human rabies immune globulin infiltrated at the wound, and inactivated vaccine (days 0, 3, 7, 14); pre-exposure vaccine for high-risk groups.",
+  "pearls": [
+   "Long incubation allows post-exposure prophylaxis to work",
+   "Bites closer to the CNS have shorter incubation"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "adenovirus",
+  "name": "Human adenovirus",
+  "kind": "Virus",
+  "group": "Naked dsDNA virus",
+  "family": "Adenoviridae",
+  "wiki": "Adenoviridae",
+  "mesh": "Adenoviridae",
+  "structure": "Non-enveloped icosahedral capsid (about 90 nm) built from hexons and pentons, with a fiber protruding from each of the 12 vertices.",
+  "genome": "Linear double-stranded DNA (about 26-45 kb).",
+  "transmission": "Respiratory droplets, fecal-oral, direct eye contact (swimming pools, contaminated instruments).",
+  "diseases": [
+   "Pharyngitis and pharyngoconjunctival fever",
+   "Epidemic keratoconjunctivitis",
+   "Acute hemorrhagic cystitis",
+   "Gastroenteritis in children (types 40 and 41); pneumonia in military recruits and immunocompromised hosts"
+  ],
+  "virulence": [
+   "Fiber protein binds the coxsackie-adenovirus receptor (CAR)",
+   "Non-enveloped, so resistant to drying and many disinfectants"
+  ],
+  "diagnosis": "PCR or antigen testing of the relevant sample.",
+  "treatment": "Supportive; cidofovir for severe disease in immunocompromised patients.",
+  "prevention": "Oral live vaccine (types 4 and 7) for military recruits; hand hygiene and instrument disinfection.",
+  "pearls": [
+   "Hemorrhagic cystitis after hematopoietic stem cell transplant (also BK virus)",
+   "Conjunctivitis plus pharyngitis plus fever"
+  ],
+  "nih3d": [],
+  "pdb": [
+   [
+    "1P30",
+    "Adenovirus hexon protein"
+   ]
+  ]
+ },
+ {
+  "id": "rsv",
+  "name": "Respiratory syncytial virus",
+  "kind": "Virus",
+  "group": "Enveloped (-)ssRNA virus",
+  "family": "Pneumoviridae",
+  "wiki": "Human orthopneumovirus",
+  "mesh": "Respiratory Syncytial Virus, Human",
+  "structure": "Enveloped, pleomorphic or filamentous virion with attachment (G) and fusion (F) glycoproteins; no hemagglutinin or neuraminidase.",
+  "genome": "Non-segmented negative-sense ssRNA (about 15 kb).",
+  "transmission": "Respiratory droplets and contaminated hands and surfaces; winter epidemics.",
+  "diseases": [
+   "Bronchiolitis in infants (wheeze, crackles, hypoxia)",
+   "Pneumonia in infants and older adults"
+  ],
+  "virulence": [
+   "F protein fuses infected cells into syncytia",
+   "Infection of small airway epithelium causes mucus plugging and air trapping"
+  ],
+  "diagnosis": "Clinical in infants; rapid antigen or PCR of nasopharyngeal swab.",
+  "treatment": "Supportive: oxygen, suction, hydration. Ribavirin only in selected severely immunocompromised patients.",
+  "prevention": "Nirsevimab or palivizumab (monoclonal antibodies against F) for infants; maternal RSV vaccine; vaccines for older adults.",
+  "pearls": [
+   "Most common cause of bronchiolitis and infant pneumonia",
+   "Monoclonal antibodies target the F protein"
+  ],
+  "nih3d": [],
+  "pdb": [
+   [
+    "4JHW",
+    "Prefusion F glycoprotein bound to an antibody"
+   ]
+  ]
+ },
+ {
+  "id": "bacteriophage-t4",
+  "name": "Bacteriophage T4",
+  "kind": "Virus",
+  "group": "Tailed dsDNA bacteriophage",
+  "family": "Straboviridae (Caudoviricetes)",
+  "wiki": "Escherichia virus T4",
+  "mesh": "Bacteriophage T4",
+  "structure": "Elongated icosahedral head (about 85 x 115 nm), a contractile tail sheath and six long tail fibers that attach to E. coli.",
+  "genome": "Linear double-stranded DNA (about 169 kb).",
+  "transmission": "Infects Escherichia coli; does not infect humans.",
+  "diseases": [
+   "Not a human pathogen; model organism for molecular biology"
+  ],
+  "virulence": [
+   "Tail contraction injects DNA through the bacterial envelope",
+   "Relevance to medicine: phage therapy and transduction, the mechanism by which phages transfer bacterial genes such as toxin genes (e.g., diphtheria, cholera, Shiga, botulinum toxins are phage encoded or lysogenic conversion)"
+  ],
+  "diagnosis": "Not applicable.",
+  "treatment": "Not applicable.",
+  "prevention": "Not applicable.",
+  "pearls": [
+   "Lysogenic conversion genes (ABCDE): shigA-like toxin, botulinum toxin, cholera toxin, diphtheria toxin, erythrogenic toxin of S. pyogenes"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "staphylococcus-aureus",
+  "name": "Staphylococcus aureus",
+  "kind": "Bacterium",
+  "group": "Gram-positive cocci in clusters",
+  "family": "Staphylococcaceae",
+  "wiki": "Staphylococcus aureus",
+  "mesh": "Staphylococcus aureus",
+  "structure": "Gram-positive cocci in grape-like clusters; catalase positive, coagulase positive, beta-hemolytic, forms golden colonies; ferments mannitol.",
+  "genome": "Circular chromosome (about 2.8 Mb) plus plasmids and mobile elements (SCCmec carries mecA in MRSA).",
+  "transmission": "Colonizes anterior nares and skin; spreads by hands, contact and fomites.",
+  "diseases": [
+   "Skin and soft tissue: impetigo, folliculitis, abscess, cellulitis",
+   "Invasive: bacteremia, acute endocarditis (tricuspid valve in injection drug use), osteomyelitis, septic arthritis, post-influenza pneumonia",
+   "Toxin-mediated: toxic shock syndrome (TSST-1), scalded skin syndrome (exfoliative toxin), food poisoning (preformed enterotoxin, onset 2-6 hours)"
+  ],
+  "virulence": [
+   "Protein A binds the Fc region of IgG, preventing opsonization",
+   "Coagulase forms a fibrin coat",
+   "TSST-1 is a superantigen that cross-links MHC II and the T-cell receptor",
+   "Panton-Valentine leukocidin in community MRSA; altered PBP2a (mecA) gives methicillin resistance"
+  ],
+  "diagnosis": "Gram stain and culture; catalase and coagulase tests; PCR for mecA.",
+  "treatment": "MSSA: nafcillin, oxacillin or cefazolin. MRSA: vancomycin, daptomycin (not for pneumonia) or linezolid; for uncomplicated skin infections TMP-SMX, doxycycline or clindamycin. Drain abscesses.",
+  "prevention": "Hand hygiene, contact precautions, decolonization (mupirocin, chlorhexidine) in selected settings.",
+  "pearls": [
+   "Most common cause of osteomyelitis overall and of acute bacterial endocarditis",
+   "Food poisoning is due to preformed heat-stable toxin, so it starts quickly"
+  ],
+  "nih3d": [],
+  "pdb": [
+   [
+    "1VQQ",
+    "Penicillin-binding protein 2a (PBP2a) from MRSA"
+   ]
+  ]
+ },
+ {
+  "id": "streptococcus-pyogenes",
+  "name": "Streptococcus pyogenes (group A strep)",
+  "kind": "Bacterium",
+  "group": "Gram-positive cocci in chains",
+  "family": "Streptococcaceae",
+  "wiki": "Streptococcus pyogenes",
+  "mesh": "Streptococcus pyogenes",
+  "structure": "Gram-positive cocci in chains; catalase negative, beta-hemolytic, bacitracin sensitive, PYR positive; hyaluronic acid capsule.",
+  "genome": "Circular chromosome (about 1.9 Mb) with prophages that carry toxin genes.",
+  "transmission": "Respiratory droplets and skin contact.",
+  "diseases": [
+   "Pyogenic: pharyngitis, impetigo, cellulitis, erysipelas, necrotizing fasciitis",
+   "Toxigenic: scarlet fever, streptococcal toxic shock syndrome",
+   "Immunologic: acute rheumatic fever (after pharyngitis only), post-streptococcal glomerulonephritis (after pharyngitis or skin infection)"
+  ],
+  "virulence": [
+   "M protein is antiphagocytic and its molecular mimicry with cardiac myosin causes rheumatic fever",
+   "Streptolysin O (antigenic, ASO titer) and streptolysin S",
+   "Streptococcal pyrogenic exotoxins (erythrogenic toxin) are superantigens",
+   "Streptokinase and hyaluronidase help spread"
+  ],
+  "diagnosis": "Rapid antigen test or culture of throat swab; ASO and anti-DNase B titers for post-streptococcal disease; Centor criteria guide testing.",
+  "treatment": "Penicillin V or amoxicillin; cephalexin or azithromycin/clindamycin if allergic. Necrotizing fasciitis: surgical debridement plus penicillin and clindamycin (clindamycin suppresses toxin production).",
+  "prevention": "Treating pharyngitis prevents rheumatic fever (but not glomerulonephritis); secondary prophylaxis with benzathine penicillin after rheumatic fever.",
+  "pearls": [
+   "PHaRM: Pyrogenic toxin, Hyaluronic capsule, Rheumatic fever, M protein",
+   "Rheumatic fever: Jones criteria (J-O-N-E-S)"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "streptococcus-pneumoniae",
+  "name": "Streptococcus pneumoniae (pneumococcus)",
+  "kind": "Bacterium",
+  "group": "Gram-positive lancet-shaped diplococci",
+  "family": "Streptococcaceae",
+  "wiki": "Streptococcus pneumoniae",
+  "mesh": "Streptococcus pneumoniae",
+  "structure": "Encapsulated gram-positive lancet-shaped diplococci; alpha-hemolytic, optochin sensitive, bile soluble; positive Quellung reaction.",
+  "genome": "Circular chromosome (about 2.1 Mb); naturally competent for transformation.",
+  "transmission": "Respiratory droplets; colonizes the nasopharynx.",
+  "diseases": [
+   "Most common cause of community-acquired pneumonia (lobar, rust-colored sputum)",
+   "Meningitis in adults and older children",
+   "Otitis media and sinusitis",
+   "Bacteremia, especially after splenectomy or in sickle cell disease"
+  ],
+  "virulence": [
+   "Polysaccharide capsule is the main virulence factor (antiphagocytic)",
+   "IgA protease",
+   "Pneumolysin damages cells and activates complement"
+  ],
+  "diagnosis": "Gram stain and culture of sputum, blood or CSF; urinary antigen test.",
+  "treatment": "Community-acquired pneumonia: beta-lactam (amoxicillin, ceftriaxone) with or without a macrolide, or a respiratory fluoroquinolone. Meningitis: ceftriaxone plus vancomycin plus dexamethasone until susceptibility is known.",
+  "prevention": "Pneumococcal conjugate vaccines (PCV15, PCV20, PCV21) and polysaccharide vaccine (PPSV23).",
+  "pearls": [
+   "MOPS: Meningitis, Otitis media, Pneumonia, Sinusitis",
+   "Asplenia predisposes to encapsulated organisms"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "mycobacterium-tuberculosis",
+  "name": "Mycobacterium tuberculosis",
+  "kind": "Bacterium",
+  "group": "Acid-fast bacillus",
+  "family": "Mycobacteriaceae",
+  "wiki": "Mycobacterium tuberculosis",
+  "mesh": "Mycobacterium tuberculosis",
+  "structure": "Slender, slow-growing obligate aerobic rod with a waxy mycolic acid-rich cell wall that resists Gram staining but is acid fast (Ziehl-Neelsen).",
+  "genome": "Circular chromosome (about 4.4 Mb).",
+  "transmission": "Airborne droplet nuclei from people with active pulmonary disease.",
+  "diseases": [
+   "Primary TB: Ghon focus in the lower or middle lobes plus hilar nodes (Ghon complex)",
+   "Latent TB infection",
+   "Secondary (reactivation) TB: cavitary apical upper-lobe disease with fever, night sweats, weight loss, hemoptysis",
+   "Extrapulmonary: miliary TB, TB meningitis, Pott disease (spine), adrenal and renal TB"
+  ],
+  "virulence": [
+   "Cord factor (trehalose dimycolate) activates macrophages and promotes granuloma formation",
+   "Sulfatides inhibit phagolysosome fusion",
+   "Survives inside macrophages; caseating granulomas"
+  ],
+  "diagnosis": "Latent: tuberculin skin test or interferon-gamma release assay. Active: chest radiograph, sputum acid-fast smear, culture and nucleic acid amplification (e.g., Xpert MTB/RIF, which also detects rifampin resistance).",
+  "treatment": "Active disease: rifampin, isoniazid, pyrazinamide and ethambutol for 2 months, then rifampin and isoniazid for 4 months (RIPE). Give pyridoxine with isoniazid. Latent: rifampin-based or isoniazid-rifapentine regimens.",
+  "prevention": "BCG vaccine (protects children from severe disease); treatment of latent infection; airborne isolation.",
+  "pearls": [
+   "Isoniazid: peripheral neuropathy (give B6), hepatotoxicity; rifampin: orange body fluids, CYP inducer; ethambutol: optic neuritis; pyrazinamide: hyperuricemia",
+   "IGRA is not affected by prior BCG"
+  ],
+  "nih3d": [
+   "3DPX-000004"
+  ],
+  "pdb": []
+ },
+ {
+  "id": "escherichia-coli",
+  "name": "Escherichia coli",
+  "kind": "Bacterium",
+  "group": "Gram-negative bacillus",
+  "family": "Enterobacterales (Enterobacteriaceae)",
+  "wiki": "Escherichia coli",
+  "mesh": "Escherichia coli",
+  "structure": "Gram-negative, facultatively anaerobic rod with peritrichous flagella, fimbriae and lipopolysaccharide (O antigen); ferments lactose (pink on MacConkey), green metallic sheen on EMB agar.",
+  "genome": "Circular chromosome (about 4.6 Mb) plus plasmids; pathotypes acquire virulence genes on plasmids, phages and pathogenicity islands.",
+  "transmission": "Endogenous gut flora (urinary tract infections); fecal-oral and contaminated food for diarrheal strains (e.g., undercooked beef for O157:H7).",
+  "diseases": [
+   "Urinary tract infection and pyelonephritis (most common cause)",
+   "Neonatal meningitis (K1 capsule) and sepsis",
+   "Traveler's diarrhea (ETEC), bloody diarrhea and hemolytic uremic syndrome (EHEC O157:H7)",
+   "Intra-abdominal infection, nosocomial pneumonia"
+  ],
+  "virulence": [
+   "P fimbriae (pyelonephritis) and type 1 fimbriae (cystitis)",
+   "K1 capsule (neonatal meningitis)",
+   "LPS endotoxin (septic shock)",
+   "Shiga-like toxin inactivates the 60S ribosome (EHEC); heat-labile and heat-stable toxins (ETEC)"
+  ],
+  "diagnosis": "Culture with susceptibility testing; urinalysis (positive nitrite, leukocyte esterase); EHEC: sorbitol MacConkey (O157:H7 does not ferment sorbitol) and Shiga toxin assay.",
+  "treatment": "Guided by susceptibility (rising ESBL resistance). Cystitis: nitrofurantoin, TMP-SMX or fosfomycin. Avoid antibiotics in EHEC diarrhea (may increase HUS risk).",
+  "prevention": "Food safety, hand hygiene, catheter care.",
+  "pearls": [
+   "EHEC O157:H7 does not ferment sorbitol and does not produce glucuronidase",
+   "HUS: anemia, thrombocytopenia, acute kidney injury"
+  ],
+  "nih3d": [
+   "3DPX-016305"
+  ],
+  "pdb": []
+ },
+ {
+  "id": "vibrio-cholerae",
+  "name": "Vibrio cholerae",
+  "kind": "Bacterium",
+  "group": "Gram-negative comma-shaped rod",
+  "family": "Vibrionaceae",
+  "wiki": "Vibrio cholerae",
+  "mesh": "Vibrio cholerae",
+  "structure": "Curved (comma-shaped) gram-negative rod with a single polar flagellum; oxidase positive; grows on alkaline media (TCBS agar, yellow colonies).",
+  "genome": "Two circular chromosomes; the cholera toxin genes are carried by the CTX-phi bacteriophage.",
+  "transmission": "Fecal-contaminated water and seafood; high infectious dose because the organism is acid sensitive.",
+  "diseases": [
+   "Cholera: profuse 'rice-water' diarrhea leading to hypovolemic shock"
+  ],
+  "virulence": [
+   "Cholera toxin (A-B toxin) ADP-ribosylates Gs alpha, permanently activating adenylate cyclase; high cAMP drives chloride secretion through CFTR",
+   "Toxin-coregulated pilus for colonization"
+  ],
+  "diagnosis": "Stool culture on TCBS agar; rapid antigen tests in outbreaks.",
+  "treatment": "Prompt oral rehydration solution (or IV fluids in severe cases) is life saving; antibiotics (doxycycline or azithromycin) shorten illness.",
+  "prevention": "Safe water and sanitation; oral cholera vaccines.",
+  "pearls": [
+   "Cholera toxin turns Gs 'on'; pertussis toxin turns Gi 'off' (both raise cAMP)",
+   "Rehydration is the key treatment"
+  ],
+  "nih3d": [],
+  "pdb": [
+   [
+    "1XTC",
+    "Cholera toxin"
+   ]
+  ]
+ },
+ {
+  "id": "clostridioides-difficile",
+  "name": "Clostridioides difficile",
+  "kind": "Bacterium",
+  "group": "Gram-positive spore-forming anaerobic bacillus",
+  "family": "Peptostreptococcaceae",
+  "wiki": "Clostridioides difficile",
+  "mesh": "Clostridioides difficile",
+  "structure": "Obligately anaerobic, spore-forming gram-positive rod; spores resist alcohol and many disinfectants.",
+  "genome": "Circular chromosome (about 4.3 Mb) with the pathogenicity locus encoding toxins A and B.",
+  "transmission": "Fecal-oral spread of spores, especially in hospitals and long-term care; disease follows disruption of the gut microbiota by antibiotics (clindamycin, fluoroquinolones, cephalosporins, amoxicillin).",
+  "diseases": [
+   "Antibiotic-associated diarrhea",
+   "Pseudomembranous colitis",
+   "Fulminant colitis with toxic megacolon"
+  ],
+  "virulence": [
+   "Toxin A (enterotoxin) and toxin B (cytotoxin) glucosylate Rho GTPases, disrupting the actin cytoskeleton",
+   "Hypervirulent strains (e.g., NAP1/027) produce more toxin and binary toxin"
+  ],
+  "diagnosis": "Stool PCR for toxin genes and/or enzyme immunoassay for toxins, in patients with 3 or more unformed stools in 24 hours.",
+  "treatment": "Oral fidaxomicin or oral vancomycin; for fulminant disease oral vancomycin plus IV metronidazole and surgical evaluation; fecal microbiota transplantation for recurrent disease; bezlotoxumab (anti-toxin B) to reduce recurrence.",
+  "prevention": "Antibiotic stewardship; contact precautions; soap-and-water hand washing (alcohol does not kill spores); bleach cleaning.",
+  "pearls": [
+   "Oral vancomycin, not IV, for C. difficile",
+   "Alcohol hand rub does not kill spores"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "clostridium-tetani",
+  "name": "Clostridium tetani",
+  "kind": "Bacterium",
+  "group": "Gram-positive spore-forming anaerobic bacillus",
+  "family": "Clostridiaceae",
+  "wiki": "Clostridium tetani",
+  "mesh": "Clostridium tetani",
+  "structure": "Anaerobic gram-positive rod with a terminal spore that gives a 'tennis racket' or drumstick appearance.",
+  "genome": "Chromosome plus a plasmid that encodes tetanospasmin.",
+  "transmission": "Spores in soil enter through contaminated wounds (puncture wounds, burns, umbilical stump in neonates).",
+  "diseases": [
+   "Tetanus: trismus (lockjaw), risus sardonicus, opisthotonus, generalized spastic paralysis and autonomic instability",
+   "Neonatal tetanus"
+  ],
+  "virulence": [
+   "Tetanospasmin travels retrogradely to the spinal cord and cleaves synaptobrevin, blocking release of GABA and glycine from Renshaw cells"
+  ],
+  "diagnosis": "Clinical.",
+  "treatment": "Human tetanus immune globulin, wound debridement, metronidazole, benzodiazepines for spasms, airway support; give tetanus vaccine (disease does not confer immunity).",
+  "prevention": "Tetanus toxoid vaccine (DTaP, Tdap, Td boosters); wound management with toxoid with or without immune globulin.",
+  "pearls": [
+   "Tetanus toxin blocks inhibitory neurotransmitters (spastic paralysis); botulinum toxin blocks acetylcholine (flaccid paralysis)"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "clostridium-botulinum",
+  "name": "Clostridium botulinum",
+  "kind": "Bacterium",
+  "group": "Gram-positive spore-forming anaerobic bacillus",
+  "family": "Clostridiaceae",
+  "wiki": "Clostridium botulinum",
+  "mesh": "Clostridium botulinum",
+  "structure": "Anaerobic, spore-forming gram-positive rod.",
+  "genome": "Botulinum neurotoxin genes may be chromosomal, plasmid or phage encoded depending on toxin type.",
+  "transmission": "Foodborne (preformed toxin in improperly canned or preserved foods), infant botulism (ingested spores, e.g., honey), wound botulism (injection drug use).",
+  "diseases": [
+   "Botulism: symmetric descending flaccid paralysis beginning with cranial nerves (diplopia, ptosis, dysphagia, dysarthria), without fever or sensory loss",
+   "Infant botulism: constipation, poor feeding, floppy baby"
+  ],
+  "virulence": [
+   "Botulinum toxin is a zinc protease that cleaves SNARE proteins (SNAP-25, synaptobrevin or syntaxin depending on the toxin type), blocking acetylcholine release at the neuromuscular junction"
+  ],
+  "diagnosis": "Clinical; toxin detection in serum, stool or food (public health laboratory).",
+  "treatment": "Botulinum antitoxin as early as possible (heptavalent for adults; BabyBIG for infants) plus respiratory support.",
+  "prevention": "Proper canning; no honey for infants under 12 months.",
+  "pearls": [
+   "Descending paralysis (Guillain-Barre is ascending)",
+   "Therapeutic use: dystonia, spasticity, migraine, hyperhidrosis, cosmetic"
+  ],
+  "nih3d": [],
+  "pdb": [
+   [
+    "3BTA",
+    "Botulinum neurotoxin type A"
+   ]
+  ]
+ },
+ {
+  "id": "corynebacterium-diphtheriae",
+  "name": "Corynebacterium diphtheriae",
+  "kind": "Bacterium",
+  "group": "Gram-positive club-shaped bacillus",
+  "family": "Corynebacteriaceae",
+  "wiki": "Corynebacterium diphtheriae",
+  "mesh": "Corynebacterium diphtheriae",
+  "structure": "Club-shaped gram-positive rods arranged like Chinese characters, with metachromatic (Babes-Ernst) granules.",
+  "genome": "Diphtheria toxin gene (tox) is carried by beta-prophage (lysogenic conversion).",
+  "transmission": "Respiratory droplets; cutaneous contact.",
+  "diseases": [
+   "Diphtheria: pharyngitis with an adherent grey pseudomembrane, 'bull neck' lymphadenopathy",
+   "Myocarditis with arrhythmia and cranial or peripheral neuropathy from toxin"
+  ],
+  "virulence": [
+   "Diphtheria toxin (A-B toxin) ADP-ribosylates elongation factor 2, stopping protein synthesis"
+  ],
+  "diagnosis": "Culture on cysteine-tellurite (black colonies) or Loeffler medium; Elek test for toxin production.",
+  "treatment": "Diphtheria antitoxin plus penicillin or erythromycin; vaccinate close contacts.",
+  "prevention": "Diphtheria toxoid vaccine (DTaP, Tdap).",
+  "pearls": [
+   "ABCDEFG: ADP-ribosylation, Beta-prophage, Corynebacterium, Diphtheriae, Elongation Factor 2, Granules"
+  ],
+  "nih3d": [],
+  "pdb": [
+   [
+    "1MDT",
+    "Diphtheria toxin"
+   ]
+  ]
+ },
+ {
+  "id": "bacillus-anthracis",
+  "name": "Bacillus anthracis",
+  "kind": "Bacterium",
+  "group": "Gram-positive spore-forming aerobic bacillus",
+  "family": "Bacillaceae",
+  "wiki": "Bacillus anthracis",
+  "mesh": "Bacillus anthracis",
+  "structure": "Large gram-positive rods in chains ('boxcar' appearance) with a unique polypeptide (poly-D-glutamate) capsule; spore former.",
+  "genome": "Chromosome plus plasmids pXO1 (toxin genes) and pXO2 (capsule genes).",
+  "transmission": "Contact with spores from animals or animal products (wool, hides), inhalation, ingestion; bioterrorism agent.",
+  "diseases": [
+   "Cutaneous anthrax: painless papule that becomes an ulcer with a black eschar and surrounding edema",
+   "Inhalational anthrax (woolsorters' disease): flu-like illness then hemorrhagic mediastinitis (widened mediastinum) and shock",
+   "Gastrointestinal anthrax"
+  ],
+  "virulence": [
+   "Protective antigen forms a pore that delivers edema factor (adenylate cyclase) and lethal factor (protease that cleaves MAP kinase kinases)",
+   "Poly-D-glutamate capsule is antiphagocytic"
+  ],
+  "diagnosis": "Gram stain and culture; PCR; chest CT showing mediastinal widening in inhalational disease.",
+  "treatment": "Ciprofloxacin or doxycycline; combination therapy and anthrax antitoxins (raxibacumab, obiltoxaximab) for systemic disease.",
+  "prevention": "Anthrax vaccine adsorbed for high-risk workers; post-exposure antibiotics plus vaccine.",
+  "pearls": [
+   "Only bacterium with a polypeptide (protein) capsule",
+   "Edema factor mimics adenylate cyclase"
+  ],
+  "nih3d": [],
+  "pdb": [
+   [
+    "1ACC",
+    "Anthrax protective antigen"
+   ]
+  ]
+ },
+ {
+  "id": "neisseria-meningitidis",
+  "name": "Neisseria meningitidis (meningococcus)",
+  "kind": "Bacterium",
+  "group": "Gram-negative diplococci",
+  "family": "Neisseriaceae",
+  "wiki": "Neisseria meningitidis",
+  "mesh": "Neisseria meningitidis",
+  "structure": "Encapsulated gram-negative kidney-bean-shaped diplococci; oxidase positive; ferments maltose and glucose.",
+  "genome": "Circular chromosome (about 2.2 Mb); naturally transformable.",
+  "transmission": "Respiratory droplets; outbreaks in dormitories, military barracks and the African meningitis belt.",
+  "diseases": [
+   "Meningitis (fever, neck stiffness, petechial or purpuric rash)",
+   "Meningococcemia with disseminated intravascular coagulation",
+   "Waterhouse-Friderichsen syndrome (adrenal hemorrhage)"
+  ],
+  "virulence": [
+   "Polysaccharide capsule",
+   "Lipooligosaccharide (LOS) endotoxin drives shock and DIC",
+   "IgA protease; pili"
+  ],
+  "diagnosis": "Gram stain, culture and PCR of CSF or blood; grows on chocolate or Thayer-Martin agar.",
+  "treatment": "Ceftriaxone or penicillin G. Close contacts receive prophylaxis (rifampin, ciprofloxacin or ceftriaxone).",
+  "prevention": "Conjugate vaccines (MenACWY) and MenB vaccines; recommended for adolescents, asplenia, complement deficiency and eculizumab therapy.",
+  "pearls": [
+   "Terminal complement (C5-C9) deficiency causes recurrent Neisseria infections",
+   "Eculizumab blocks C5: vaccinate first"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "neisseria-gonorrhoeae",
+  "name": "Neisseria gonorrhoeae (gonococcus)",
+  "kind": "Bacterium",
+  "group": "Gram-negative diplococci",
+  "family": "Neisseriaceae",
+  "wiki": "Neisseria gonorrhoeae",
+  "mesh": "Neisseria gonorrhoeae",
+  "structure": "Gram-negative diplococci, often inside neutrophils; no polysaccharide capsule; ferments glucose only.",
+  "genome": "Circular chromosome; antigenic variation of pili and Opa proteins.",
+  "transmission": "Sexual and perinatal.",
+  "diseases": [
+   "Urethritis, cervicitis, pelvic inflammatory disease (infertility, ectopic pregnancy), epididymitis",
+   "Disseminated gonococcal infection: tenosynovitis, dermatitis and migratory polyarthritis or purulent septic arthritis",
+   "Neonatal conjunctivitis (ophthalmia neonatorum, days 2-5)",
+   "Fitz-Hugh-Curtis syndrome (perihepatitis)"
+  ],
+  "virulence": [
+   "Pili with antigenic variation prevent lasting immunity",
+   "IgA protease; lipooligosaccharide"
+  ],
+  "diagnosis": "Nucleic acid amplification testing of urine or genital, rectal or pharyngeal swabs; culture on Thayer-Martin agar for susceptibility.",
+  "treatment": "Ceftriaxone single intramuscular dose; add doxycycline if chlamydia has not been excluded. Treat partners.",
+  "prevention": "Condoms; erythromycin eye ointment at birth.",
+  "pearls": [
+   "No vaccine because of antigenic variation",
+   "Septic arthritis in a sexually active young adult: think gonococcus"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "pseudomonas-aeruginosa",
+  "name": "Pseudomonas aeruginosa",
+  "kind": "Bacterium",
+  "group": "Gram-negative bacillus (non-fermenter)",
+  "family": "Pseudomonadaceae",
+  "wiki": "Pseudomonas aeruginosa",
+  "mesh": "Pseudomonas aeruginosa",
+  "structure": "Aerobic gram-negative rod; oxidase positive, non-lactose fermenting; produces blue-green pigments (pyocyanin, pyoverdine) and a grape-like odor.",
+  "genome": "Large chromosome (about 6.3 Mb) with many efflux pumps and resistance genes.",
+  "transmission": "Water and moist environments (hot tubs, sinks, ventilators, contact lens solution); nosocomial spread.",
+  "diseases": [
+   "Hospital-acquired and ventilator-associated pneumonia; chronic infection in cystic fibrosis (mucoid strains)",
+   "Burn wound infection, otitis externa (swimmer's ear) and malignant otitis externa in diabetes",
+   "Hot tub folliculitis, ecthyma gangrenosum, keratitis in contact lens wearers",
+   "UTI with catheters; osteomyelitis after puncture through a shoe"
+  ],
+  "virulence": [
+   "Exotoxin A inactivates EF-2 (like diphtheria toxin)",
+   "Alginate biofilm (mucoid strains in CF)",
+   "Phospholipase C, elastase, type III secretion system"
+  ],
+  "diagnosis": "Culture (non-lactose fermenting, oxidase-positive colonies with green pigment).",
+  "treatment": "Antipseudomonal agents guided by susceptibility: piperacillin-tazobactam, cefepime or ceftazidime, carbapenems (not ertapenem), fluoroquinolones (ciprofloxacin, levofloxacin), aminoglycosides; ceftolozane-tazobactam for resistant strains.",
+  "prevention": "Infection control and water management in hospitals.",
+  "pearls": [
+   "Ertapenem lacks Pseudomonas activity",
+   "Malignant otitis externa in elderly diabetic patients"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "helicobacter-pylori",
+  "name": "Helicobacter pylori",
+  "kind": "Bacterium",
+  "group": "Gram-negative curved bacillus",
+  "family": "Helicobacteraceae",
+  "wiki": "Helicobacter pylori",
+  "mesh": "Helicobacter pylori",
+  "structure": "Curved or spiral gram-negative rod with multiple flagella; microaerophilic; catalase, oxidase and urease positive.",
+  "genome": "Circular chromosome (about 1.7 Mb); cag pathogenicity island in more virulent strains.",
+  "transmission": "Probably fecal-oral or oral-oral; acquired mainly in childhood.",
+  "diseases": [
+   "Chronic gastritis (antral)",
+   "Duodenal and gastric peptic ulcers",
+   "Gastric adenocarcinoma and MALT lymphoma"
+  ],
+  "virulence": [
+   "Urease produces ammonia that neutralizes acid around the organism",
+   "CagA (injected by a type IV secretion system) and VacA (vacuolating cytotoxin)"
+  ],
+  "diagnosis": "Urea breath test or stool antigen (non-invasive, confirm eradication); biopsy with rapid urease test or histology during endoscopy. Stop PPIs 2 weeks before testing when possible.",
+  "treatment": "Bismuth quadruple therapy (PPI, bismuth, tetracycline, metronidazole) or other combinations such as PPI with amoxicillin and rifabutin, chosen by local clarithromycin resistance; confirm eradication.",
+  "prevention": "No vaccine.",
+  "pearls": [
+   "Most duodenal ulcers are associated with H. pylori",
+   "Eradication can regress early MALT lymphoma"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "treponema-pallidum",
+  "name": "Treponema pallidum",
+  "kind": "Bacterium",
+  "group": "Spirochete",
+  "family": "Treponemataceae",
+  "wiki": "Treponema pallidum",
+  "mesh": "Treponema pallidum",
+  "structure": "Thin, tightly coiled spirochete with endoflagella (axial filaments); too thin to see on Gram stain; seen by dark-field microscopy or fluorescent antibody.",
+  "genome": "Small circular chromosome (about 1.1 Mb); cannot be cultured on artificial media.",
+  "transmission": "Sexual contact, transplacental.",
+  "diseases": [
+   "Primary syphilis: painless indurated chancre",
+   "Secondary: diffuse maculopapular rash including palms and soles, condylomata lata, lymphadenopathy",
+   "Tertiary: gummas, aortitis (ascending aorta aneurysm), neurosyphilis (tabes dorsalis, general paresis, Argyll Robertson pupil)",
+   "Congenital syphilis: saddle nose, Hutchinson teeth, saber shins, sensorineural deafness"
+  ],
+  "virulence": [
+   "Few surface proteins, allowing immune evasion",
+   "Endarteritis obliterans"
+  ],
+  "diagnosis": "Non-treponemal tests (RPR, VDRL; titers follow treatment) and treponemal tests (FTA-ABS, TP-PA, EIA; stay positive); dark-field microscopy of chancre; CSF VDRL for neurosyphilis.",
+  "treatment": "Benzathine penicillin G intramuscularly (one dose for early syphilis, three weekly doses for late latent); IV aqueous penicillin G for neurosyphilis; desensitize pregnant patients who are allergic.",
+  "prevention": "Screening in pregnancy; condoms; partner treatment.",
+  "pearls": [
+   "Jarisch-Herxheimer reaction: fever and myalgia hours after treatment from released lipoproteins",
+   "False-positive VDRL: pregnancy, viral infection, lupus and antiphospholipid antibodies"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "chlamydia-trachomatis",
+  "name": "Chlamydia trachomatis",
+  "kind": "Bacterium",
+  "group": "Obligate intracellular bacterium",
+  "family": "Chlamydiaceae",
+  "wiki": "Chlamydia trachomatis",
+  "mesh": "Chlamydia trachomatis",
+  "structure": "Obligate intracellular gram-negative-like bacterium without muramic acid in its cell wall; infectious elementary body and replicating reticulate body (intracytoplasmic inclusions).",
+  "genome": "Small circular chromosome (about 1 Mb) and a plasmid.",
+  "transmission": "Sexual, perinatal, and eye-to-eye contact by flies and hands for trachoma.",
+  "diseases": [
+   "Serovars A-C: trachoma (leading infectious cause of blindness)",
+   "Serovars D-K: urethritis, cervicitis, PID, epididymitis, reactive arthritis, neonatal conjunctivitis and pneumonia (staccato cough)",
+   "Serovars L1-L3: lymphogranuloma venereum"
+  ],
+  "virulence": [
+   "Intracellular life cycle avoids host defenses",
+   "Inflammatory scarring causes infertility and ectopic pregnancy"
+  ],
+  "diagnosis": "Nucleic acid amplification test of urine or genital swab; cytoplasmic inclusions on Giemsa stain.",
+  "treatment": "Doxycycline for 7 days (azithromycin single dose in pregnancy); treat partners.",
+  "prevention": "Annual screening of sexually active women under 25 and others at risk; condoms.",
+  "pearls": [
+   "Most common bacterial sexually transmitted infection",
+   "Reactive arthritis: urethritis, conjunctivitis, arthritis"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "listeria-monocytogenes",
+  "name": "Listeria monocytogenes",
+  "kind": "Bacterium",
+  "group": "Gram-positive bacillus",
+  "family": "Listeriaceae",
+  "wiki": "Listeria monocytogenes",
+  "mesh": "Listeria monocytogenes",
+  "structure": "Facultative intracellular gram-positive rod; tumbling motility at room temperature; beta-hemolytic; grows at refrigerator temperature (cold enrichment).",
+  "genome": "Circular chromosome (about 2.9 Mb).",
+  "transmission": "Contaminated foods (unpasteurized dairy, soft cheeses, deli meats, refrigerated ready-to-eat foods), transplacental and at delivery.",
+  "diseases": [
+   "Meningitis in neonates, older adults and immunocompromised patients",
+   "Amnionitis, sepsis and spontaneous abortion in pregnancy; granulomatosis infantiseptica",
+   "Febrile gastroenteritis in healthy people"
+  ],
+  "virulence": [
+   "Listeriolysin O lets the organism escape the phagosome",
+   "ActA polymerizes host actin ('rocket tails') for cell-to-cell spread"
+  ],
+  "diagnosis": "Culture of blood or CSF.",
+  "treatment": "Ampicillin (plus gentamicin in severe disease); TMP-SMX if penicillin allergic. Cephalosporins are not active.",
+  "prevention": "Pregnant and immunocompromised people avoid unpasteurized dairy and deli meats.",
+  "pearls": [
+   "Add ampicillin to empiric meningitis therapy in neonates and adults over 50",
+   "Actin rocket tails"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "salmonella-typhi",
+  "name": "Salmonella enterica serovar Typhi",
+  "kind": "Bacterium",
+  "group": "Gram-negative bacillus",
+  "family": "Enterobacteriaceae",
+  "wiki": "Salmonella enterica subsp. enterica",
+  "mesh": "Salmonella typhi",
+  "structure": "Motile gram-negative rod with a Vi capsule; non-lactose fermenting, produces hydrogen sulfide on triple sugar iron agar.",
+  "genome": "Circular chromosome with Salmonella pathogenicity islands (type III secretion systems).",
+  "transmission": "Fecal-oral through contaminated water and food; humans are the only reservoir (chronic carriers in the gallbladder).",
+  "diseases": [
+   "Typhoid (enteric) fever: stepwise fever, relative bradycardia, abdominal pain, rose spots, constipation then diarrhea, hepatosplenomegaly",
+   "Complications: intestinal hemorrhage and perforation (Peyer patches)",
+   "Chronic carrier state"
+  ],
+  "virulence": [
+   "Vi capsule",
+   "Survives inside macrophages; spreads through the reticuloendothelial system"
+  ],
+  "diagnosis": "Blood culture (first week), bone marrow culture is most sensitive; stool culture later.",
+  "treatment": "Ceftriaxone or azithromycin; fluoroquinolones only if susceptible (widespread resistance, extensively drug-resistant strains in Pakistan respond to carbapenems or azithromycin).",
+  "prevention": "Typhoid conjugate vaccine, Vi polysaccharide vaccine or oral live Ty21a; safe water and sanitation.",
+  "pearls": [
+   "Rose spots on the abdomen",
+   "Extensively drug-resistant typhoid emerged in Sindh, Pakistan, in 2016"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "candida-albicans",
+  "name": "Candida albicans",
+  "kind": "Fungus",
+  "group": "Dimorphic yeast (opportunistic)",
+  "family": "Debaryomycetaceae",
+  "wiki": "Candida albicans",
+  "mesh": "Candida albicans",
+  "structure": "Oval budding yeast that forms pseudohyphae and true hyphae at body temperature; germ tube positive at 37 C.",
+  "genome": "Diploid nuclear genome (about 14 Mb per haploid set).",
+  "transmission": "Endogenous normal flora of mouth, gut and vagina; disease follows antibiotics, immunosuppression, diabetes, catheters.",
+  "diseases": [
+   "Oral thrush, esophagitis (HIV), vulvovaginitis, intertrigo, diaper dermatitis",
+   "Candidemia and disseminated candidiasis (central lines, neutropenia, TPN)",
+   "Endocarditis in injection drug use; chronic mucocutaneous candidiasis with T-cell defects"
+  ],
+  "virulence": [
+   "Hyphal invasion and adhesins",
+   "Biofilm on catheters"
+  ],
+  "diagnosis": "KOH preparation showing budding yeast and pseudohyphae; culture; beta-D-glucan for invasive disease.",
+  "treatment": "Topical azoles or nystatin for superficial infection; oral fluconazole for esophagitis and vaginitis; an echinocandin (caspofungin, micafungin) for candidemia, remove central lines; amphotericin B for some severe infections.",
+  "prevention": "Line care; fluconazole prophylaxis in selected high-risk patients.",
+  "pearls": [
+   "Thrush in an adult without risk factors: test for HIV",
+   "Germ tube test identifies C. albicans"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "aspergillus-fumigatus",
+  "name": "Aspergillus fumigatus",
+  "kind": "Fungus",
+  "group": "Monomorphic mold",
+  "family": "Aspergillaceae",
+  "wiki": "Aspergillus fumigatus",
+  "mesh": "Aspergillus fumigatus",
+  "structure": "Mold with septate hyphae that branch at acute (45 degree) angles; conidia are inhaled.",
+  "genome": "Haploid genome of about 29 Mb.",
+  "transmission": "Inhalation of airborne conidia from soil, compost and construction dust; not person to person.",
+  "diseases": [
+   "Allergic bronchopulmonary aspergillosis (asthma, cystic fibrosis)",
+   "Aspergilloma (fungus ball) in pre-existing cavities (e.g., after TB)",
+   "Chronic pulmonary aspergillosis",
+   "Invasive aspergillosis in neutropenia or transplant (halo sign on CT)"
+  ],
+  "virulence": [
+   "Angioinvasion causes infarction and hemorrhage",
+   "Aflatoxins (A. flavus) cause hepatocellular carcinoma"
+  ],
+  "diagnosis": "Imaging, galactomannan antigen, culture and histology; ABPA: high IgE, eosinophilia, positive Aspergillus skin test or specific IgE.",
+  "treatment": "Invasive: voriconazole (or isavuconazole); ABPA: corticosteroids with itraconazole; aspergilloma: surgery when symptomatic.",
+  "prevention": "HEPA filtration and posaconazole prophylaxis for high-risk patients.",
+  "pearls": [
+   "Acute-angle septate hyphae (Mucor: wide, non-septate, right-angle hyphae)",
+   "Voriconazole: visual disturbances, photosensitivity, hepatotoxicity"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "cryptococcus-neoformans",
+  "name": "Cryptococcus neoformans",
+  "kind": "Fungus",
+  "group": "Encapsulated yeast",
+  "family": "Cryptococcaceae",
+  "wiki": "Cryptococcus neoformans",
+  "mesh": "Cryptococcus neoformans",
+  "structure": "Round yeast with a thick polysaccharide capsule (clear halo on India ink); narrow-based budding; urease positive.",
+  "genome": "Haploid genome of about 19 Mb.",
+  "transmission": "Inhalation of yeast from soil contaminated with pigeon droppings.",
+  "diseases": [
+   "Cryptococcal meningitis in advanced HIV (CD4 < 100) and other immunocompromised hosts, with raised intracranial pressure",
+   "Pneumonia"
+  ],
+  "virulence": [
+   "Polysaccharide capsule is antiphagocytic",
+   "Melanin production"
+  ],
+  "diagnosis": "Cryptococcal antigen in serum or CSF (latex agglutination or lateral flow); India ink stain; culture; very high CSF opening pressure.",
+  "treatment": "Induction with amphotericin B plus flucytosine, then fluconazole consolidation and maintenance; therapeutic lumbar punctures for raised pressure; delay ART start by several weeks to reduce IRIS risk.",
+  "prevention": "Cryptococcal antigen screening and pre-emptive fluconazole in advanced HIV.",
+  "pearls": [
+   "Soap bubble lesions in the basal ganglia on MRI",
+   "India ink halo"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "pneumocystis-jirovecii",
+  "name": "Pneumocystis jirovecii",
+  "kind": "Fungus",
+  "group": "Atypical yeast-like fungus",
+  "family": "Pneumocystidaceae",
+  "wiki": "Pneumocystis jirovecii",
+  "mesh": "Pneumocystis carinii",
+  "structure": "Yeast-like fungus that cannot be cultured; cysts appear as 'crushed ping-pong balls' on methenamine silver stain; cell membrane lacks ergosterol.",
+  "genome": "Small haploid genome (about 8 Mb).",
+  "transmission": "Inhalation; person-to-person airborne spread.",
+  "diseases": [
+   "Pneumocystis pneumonia in HIV (CD4 < 200), transplant recipients and patients on long-term corticosteroids: dry cough, dyspnea, hypoxia, bilateral diffuse interstitial infiltrates"
+  ],
+  "virulence": [
+   "Attaches to type I pneumocytes, filling alveoli with foamy exudate"
+  ],
+  "diagnosis": "Bronchoalveolar lavage or induced sputum with silver or immunofluorescent stain, or PCR; elevated LDH and beta-D-glucan; CT shows ground-glass opacities.",
+  "treatment": "TMP-SMX; add corticosteroids if PaO2 < 70 mmHg or A-a gradient >= 35; alternatives include pentamidine, atovaquone, or primaquine with clindamycin.",
+  "prevention": "TMP-SMX prophylaxis when CD4 < 200, and in many transplant and chemotherapy patients.",
+  "pearls": [
+   "Ergosterol absent, so azoles and amphotericin B do not work",
+   "Steroids for hypoxic patients"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "histoplasma-capsulatum",
+  "name": "Histoplasma capsulatum",
+  "kind": "Fungus",
+  "group": "Dimorphic fungus",
+  "family": "Ajellomycetaceae",
+  "wiki": "Histoplasma capsulatum",
+  "mesh": "Histoplasma",
+  "structure": "Dimorphic: mold in the environment, small yeast inside macrophages at body temperature.",
+  "genome": "Haploid genome of about 30-40 Mb.",
+  "transmission": "Inhalation of spores from soil with bird or bat droppings (caves, chicken coops); endemic to the Mississippi and Ohio River valleys and parts of Latin America, Africa and Asia.",
+  "diseases": [
+   "Usually asymptomatic or self-limited pneumonia",
+   "Chronic cavitary histoplasmosis",
+   "Disseminated histoplasmosis in immunocompromised hosts: hepatosplenomegaly, pancytopenia, oral ulcers, adrenal insufficiency"
+  ],
+  "virulence": [
+   "Survives and replicates inside macrophages"
+  ],
+  "diagnosis": "Urine and serum antigen; culture; histology showing intracellular yeast in macrophages.",
+  "treatment": "Itraconazole for mild to moderate disease; liposomal amphotericin B for severe or disseminated disease.",
+  "prevention": "Avoid exposure in high-risk activities; masks.",
+  "pearls": [
+   "Bird and bat droppings; caves",
+   "Yeasts inside macrophages"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "plasmodium-falciparum",
+  "name": "Plasmodium falciparum",
+  "kind": "Parasite",
+  "group": "Apicomplexan protozoan (blood)",
+  "family": "Plasmodiidae",
+  "wiki": "Plasmodium falciparum",
+  "mesh": "Plasmodium falciparum",
+  "structure": "Intracellular protozoan; in blood films shows multiple ring forms per red cell, appliqué forms and banana (crescent) shaped gametocytes.",
+  "genome": "14 chromosomes (about 23 Mb), very AT rich.",
+  "transmission": "Bite of a female Anopheles mosquito (sporozoites); also transfusion and congenital.",
+  "diseases": [
+   "Malaria: cyclic fevers, chills, anemia, splenomegaly",
+   "Severe malaria: cerebral malaria, severe anemia, hypoglycemia, acute kidney injury (blackwater fever), ARDS"
+  ],
+  "virulence": [
+   "PfEMP1 on infected red cells causes cytoadherence and sequestration in small vessels (brain, placenta)",
+   "No dormant liver stage (unlike P. vivax and P. ovale)"
+  ],
+  "diagnosis": "Thick and thin blood smears (Giemsa) repeated every 12-24 hours; rapid diagnostic antigen tests (HRP2); PCR.",
+  "treatment": "Uncomplicated: artemisinin-based combination therapy (e.g., artemether-lumefantrine) or atovaquone-proguanil; chloroquine only in the few sensitive regions. Severe: IV artesunate.",
+  "prevention": "Insecticide-treated nets, indoor spraying; chemoprophylaxis for travelers (atovaquone-proguanil, doxycycline, mefloquine); RTS,S and R21 vaccines for children in endemic areas.",
+  "pearls": [
+   "Sickle cell trait, G6PD deficiency and thalassemia offer some protection",
+   "Test G6PD before primaquine or tafenoquine (used for P. vivax/ovale hypnozoites)"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "toxoplasma-gondii",
+  "name": "Toxoplasma gondii",
+  "kind": "Parasite",
+  "group": "Apicomplexan protozoan (tissue)",
+  "family": "Sarcocystidae",
+  "wiki": "Toxoplasma gondii",
+  "mesh": "Toxoplasma",
+  "structure": "Obligate intracellular crescent-shaped tachyzoites; tissue cysts containing bradyzoites persist in brain and muscle.",
+  "genome": "Haploid genome of about 65 Mb.",
+  "transmission": "Ingestion of oocysts in cat feces or tissue cysts in undercooked meat; transplacental.",
+  "diseases": [
+   "Usually asymptomatic or a mononucleosis-like illness",
+   "Congenital toxoplasmosis: chorioretinitis, hydrocephalus, diffuse intracranial calcifications",
+   "Toxoplasmic encephalitis in AIDS (CD4 < 100): multiple ring-enhancing brain lesions",
+   "Chorioretinitis"
+  ],
+  "virulence": [
+   "Intracellular replication within a parasitophorous vacuole; lifelong cysts"
+  ],
+  "diagnosis": "Serology (IgG, IgM, avidity); PCR of amniotic fluid; brain imaging with response to therapy in HIV.",
+  "treatment": "Pyrimethamine plus sulfadiazine plus leucovorin; spiramycin in early pregnancy to reduce transmission.",
+  "prevention": "TMP-SMX prophylaxis when CD4 < 100 and Toxoplasma IgG positive; pregnant people avoid cat litter and undercooked meat.",
+  "pearls": [
+   "Ring-enhancing lesions in HIV: toxoplasmosis vs primary CNS lymphoma (single lesion, EBV positive)",
+   "Leucovorin prevents pyrimethamine-induced folate deficiency"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "giardia-lamblia",
+  "name": "Giardia duodenalis (lamblia)",
+  "kind": "Parasite",
+  "group": "Flagellated protozoan (intestinal)",
+  "family": "Hexamitidae",
+  "wiki": "Giardia duodenalis",
+  "mesh": "Giardia lamblia",
+  "structure": "Pear-shaped binucleate trophozoite with a ventral sucking disk and four pairs of flagella ('falling leaf' motility); infective cysts.",
+  "genome": "Two nuclei, each tetraploid; genome of about 12 Mb.",
+  "transmission": "Ingestion of cysts in contaminated water (campers, travelers), person to person (day care), and sexual (oral-anal).",
+  "diseases": [
+   "Giardiasis: foul-smelling, fatty, non-bloody diarrhea, bloating, flatulence, weight loss; may cause lactose intolerance"
+  ],
+  "virulence": [
+   "Adheres to duodenal epithelium with the ventral disk, causing malabsorption",
+   "Severe or chronic in IgA deficiency and X-linked agammaglobulinemia"
+  ],
+  "diagnosis": "Stool antigen test or multiplex PCR; trophozoites or cysts in stool.",
+  "treatment": "Tinidazole, nitazoxanide or metronidazole.",
+  "prevention": "Boiling or filtering water; hand hygiene.",
+  "pearls": [
+   "Fatty diarrhea after drinking stream water",
+   "Recurrent giardiasis: consider IgA deficiency"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "entamoeba-histolytica",
+  "name": "Entamoeba histolytica",
+  "kind": "Parasite",
+  "group": "Amoeba (intestinal and tissue)",
+  "family": "Entamoebidae",
+  "wiki": "Entamoeba histolytica",
+  "mesh": "Entamoeba histolytica",
+  "structure": "Amoeboid trophozoites that ingest red blood cells; cysts with up to four nuclei.",
+  "genome": "Genome of about 20 Mb.",
+  "transmission": "Fecal-oral ingestion of cysts in contaminated food or water.",
+  "diseases": [
+   "Amebic dysentery: bloody diarrhea with flask-shaped colonic ulcers",
+   "Amebic liver abscess ('anchovy paste' pus), usually in the right lobe"
+  ],
+  "virulence": [
+   "Gal/GalNAc lectin for adherence, amebapores and cysteine proteases for tissue invasion"
+  ],
+  "diagnosis": "Stool antigen or PCR; serology for liver abscess; trophozoites with ingested RBCs on microscopy.",
+  "treatment": "Metronidazole or tinidazole for invasive disease, followed by a luminal agent (paromomycin or iodoquinol) to clear cysts.",
+  "prevention": "Safe water and sanitation.",
+  "pearls": [
+   "Flask-shaped ulcers",
+   "Always follow tissue therapy with a luminal agent"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "trypanosoma-cruzi",
+  "name": "Trypanosoma cruzi",
+  "kind": "Parasite",
+  "group": "Hemoflagellate protozoan",
+  "family": "Trypanosomatidae",
+  "wiki": "Trypanosoma cruzi",
+  "mesh": "Trypanosoma cruzi",
+  "structure": "Flagellated trypomastigotes in blood; intracellular amastigotes in cardiac and smooth muscle.",
+  "genome": "Diploid genome of about 55 Mb; kinetoplast DNA.",
+  "transmission": "Feces of the reduviid (triatomine, 'kissing') bug rubbed into the bite wound or mucosa; also transfusion, congenital and oral (contaminated food). Endemic in Latin America.",
+  "diseases": [
+   "Acute Chagas disease: fever, Romana sign (unilateral periorbital swelling), chagoma",
+   "Chronic Chagas: dilated cardiomyopathy with apical aneurysm, right bundle branch block, arrhythmias; megaesophagus and megacolon"
+  ],
+  "virulence": [
+   "Destroys myenteric plexus neurons and cardiac myocytes"
+  ],
+  "diagnosis": "Acute: blood smear or PCR. Chronic: two different serologic tests.",
+  "treatment": "Benznidazole or nifurtimox (most effective in acute and early chronic disease).",
+  "prevention": "Vector control, blood donor screening, screening in pregnancy.",
+  "pearls": [
+   "Achalasia-like megaesophagus with heart failure in a Latin American patient"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "leishmania-donovani",
+  "name": "Leishmania donovani",
+  "kind": "Parasite",
+  "group": "Hemoflagellate protozoan",
+  "family": "Trypanosomatidae",
+  "wiki": "Leishmania donovani",
+  "mesh": "Leishmania donovani",
+  "structure": "Promastigotes in the sandfly; non-flagellated amastigotes (Leishman-Donovan bodies) inside macrophages.",
+  "genome": "Genome of about 32 Mb in 36 chromosomes.",
+  "transmission": "Bite of a female sandfly (Phlebotomus or Lutzomyia).",
+  "diseases": [
+   "Visceral leishmaniasis (kala-azar): fever, massive splenomegaly, hepatomegaly, pancytopenia, weight loss, skin darkening",
+   "Post-kala-azar dermal leishmaniasis",
+   "Other species cause cutaneous ulcers (L. major, L. tropica, common in Pakistan) and mucocutaneous disease (L. braziliensis)"
+  ],
+  "virulence": [
+   "Survives within macrophage phagolysosomes"
+  ],
+  "diagnosis": "Amastigotes in splenic, bone marrow or lymph node aspirates; rK39 rapid antigen test; PCR.",
+  "treatment": "Liposomal amphotericin B; alternatives include miltefosine, pentavalent antimonials (sodium stibogluconate) and paromomycin depending on region.",
+  "prevention": "Sandfly control, bed nets.",
+  "pearls": [
+   "Massive splenomegaly with pancytopenia and fever",
+   "Cutaneous leishmaniasis is common in Pakistan and Afghanistan"
+  ],
+  "nih3d": [],
+  "pdb": []
+ },
+ {
+  "id": "schistosoma",
+  "name": "Schistosoma species",
+  "kind": "Parasite",
+  "group": "Trematode (blood fluke)",
+  "family": "Schistosomatidae",
+  "wiki": "Schistosoma",
+  "mesh": "Schistosoma",
+  "structure": "Separate-sex flukes living in venous plexuses; eggs with distinctive spines (S. mansoni lateral spine, S. haematobium terminal spine).",
+  "genome": "Diploid genome of about 360-400 Mb.",
+  "transmission": "Cercariae released from freshwater snails penetrate the skin during contact with fresh water.",
+  "diseases": [
+   "Swimmer's itch and acute schistosomiasis (Katayama fever)",
+   "S. mansoni and S. japonicum: periportal 'pipestem' fibrosis, portal hypertension, splenomegaly",
+   "S. haematobium: hematuria, bladder fibrosis, squamous cell carcinoma of the bladder"
+  ],
+  "virulence": [
+   "Granulomatous reaction to trapped eggs causes fibrosis"
+  ],
+  "diagnosis": "Eggs in stool or urine; serology.",
+  "treatment": "Praziquantel.",
+  "prevention": "Avoid fresh water contact in endemic areas; mass drug administration; snail control.",
+  "pearls": [
+   "S. haematobium and squamous cell bladder cancer",
+   "Praziquantel for flukes and tapeworms"
+  ],
+  "nih3d": [],
+  "pdb": []
+ }
+]

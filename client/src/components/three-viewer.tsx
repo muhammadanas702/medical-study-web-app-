@@ -6,6 +6,8 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 export type ViewerHandle = {
   load: (key: string, url: string, style: ((name: string) => { color: string; opacity?: number }) | null) => Promise<THREE.Object3D>;
   unload: (key: string) => void;
+  /** add a procedurally built object; meshes with names become pickable/selectable like GLB parts */
+  add: (key: string, obj: THREE.Object3D) => void;
   setVisible: (key: string, v: boolean) => void;
   select: (names: string[], frame?: boolean) => void;
   isolate: (names: string[] | null) => void;
@@ -19,6 +21,8 @@ export type ViewerHandle = {
 type Props = { onPick?: (name: string | null) => void; background?: string; className?: string; testId?: string };
 
 const HL = new THREE.Color("#f5b301");
+const partOf = (m: THREE.Object3D) => (m.userData.part as string | undefined) ?? m.name;
+const PALETTE = ["#e4572e", "#29a3a3", "#f3a712", "#5b8def", "#a05195", "#76b041", "#ef8a62", "#4cb5ae", "#d45087", "#8c9fd6"];
 
 export const ThreeViewer = forwardRef<ViewerHandle, Props>(function ThreeViewer({ onPick, className, testId }, ref) {
   const host = useRef<HTMLDivElement>(null);
@@ -71,7 +75,7 @@ export const ThreeViewer = forwardRef<ViewerHandle, Props>(function ThreeViewer(
       ray.setFromCamera(new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1), camera);
       const vis = Array.from(s.meshes.values()).filter((m) => m.visible && isShown(m));
       const hit = ray.intersectObjects(vis, false).find((h) => ((h.object as THREE.Mesh).material as THREE.MeshStandardMaterial).opacity > 0.5) || ray.intersectObjects(vis, false)[0];
-      pickRef.current?.(hit ? hit.object.name : null);
+      pickRef.current?.(hit ? partOf(hit.object) : null);
     };
     const isShown = (m: THREE.Object3D) => { let o: THREE.Object3D | null = m; while (o) { if (!o.visible) return false; o = o.parent; } return true; };
     renderer.domElement.addEventListener("pointerdown", onDown);
@@ -87,9 +91,10 @@ export const ThreeViewer = forwardRef<ViewerHandle, Props>(function ThreeViewer(
 
   const paint = () => {
     const s = st.current!;
-    s.meshes.forEach((m, name) => {
+    s.meshes.forEach((m) => {
+      const name = partOf(m);
       const mat = m.material as THREE.MeshStandardMaterial;
-      const b = s.base.get(m)!;
+      const b = s.base.get(m); if (!b) return;
       const sel = s.selected.has(name);
       mat.color.copy(sel ? HL : b.color);
       mat.emissive.set(sel ? "#5a3d00" : "#000000");
@@ -121,15 +126,20 @@ export const ThreeViewer = forwardRef<ViewerHandle, Props>(function ThreeViewer(
       if (s.groups.has(key)) { s.groups.get(key)!.visible = true; s.dirty = true; return s.groups.get(key)!; }
       const gltf = await new GLTFLoader().loadAsync(url);
       const root = gltf.scene;
+      let paletteIx = 0;
       root.traverse((o) => {
         const m = o as THREE.Mesh;
         if (!m.isMesh) return;
         const nm = m.name || m.parent?.name || "";
         m.name = nm;
         if (!style) {
-          // keep the author's original materials (pathogen models)
+          // keep the author's original materials; plain grey/white untextured meshes get an illustrative palette
           const mats = Array.isArray(m.material) ? m.material : [m.material];
-          mats.forEach((mt) => { (mt as THREE.MeshStandardMaterial).side = THREE.DoubleSide; });
+          mats.forEach((mt) => {
+            const sm = mt as THREE.MeshStandardMaterial; sm.side = THREE.DoubleSide;
+            const c = sm.color; const grey = c && Math.abs(c.r - c.g) < 0.04 && Math.abs(c.g - c.b) < 0.04;
+            if (grey && !sm.map && !m.geometry.attributes.color) { sm.color = new THREE.Color(PALETTE[paletteIx++ % PALETTE.length]); sm.roughness = 0.5; sm.metalness = 0.05; }
+          });
           return;
         }
         const sty = style(nm);
@@ -151,15 +161,28 @@ export const ThreeViewer = forwardRef<ViewerHandle, Props>(function ThreeViewer(
       g.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh) { s.meshes.delete(m.name); s.base.delete(m); m.geometry.dispose(); (m.material as THREE.Material).dispose(); } });
       s.scene.remove(g); s.groups.delete(key); s.dirty = true;
     },
+    add(key, obj) {
+      const s = st.current!;
+      if (s.groups.has(key)) { s.groups.get(key)!.visible = true; s.dirty = true; return; }
+      obj.traverse((o) => {
+        const m = o as THREE.Mesh;
+        if (!m.isMesh || !m.name || m.userData.noPick) return;
+        const mat = m.material as THREE.MeshStandardMaterial;
+        m.userData.part = m.name; m.name = `${key}::${m.uuid}`;
+        s.meshes.set(m.name, m);
+        s.base.set(m, { color: mat.color.clone(), opacity: mat.opacity ?? 1 });
+      });
+      s.scene.add(obj); s.groups.set(key, obj); paint(); frame([obj]);
+    },
     setVisible(key, v) { const s = st.current!; const g = s.groups.get(key); if (g) { g.visible = v; s.dirty = true; } },
     select(names, doFrame) {
       const s = st.current!; s.selected = new Set(names); paint();
-      if (doFrame) { const objs = names.map((n) => s.meshes.get(n)).filter(Boolean) as THREE.Object3D[]; if (objs.length) frame(objs); }
+      if (doFrame) { const set = new Set(names); const objs = Array.from(s.meshes.values()).filter((m) => set.has(partOf(m))); if (objs.length) frame(objs); }
     },
-    isolate(names) { const s = st.current!; s.isolated = names ? new Set(names) : null; paint(); if (names) frame(names.map((n) => s.meshes.get(n)).filter(Boolean) as THREE.Object3D[]); },
+    isolate(names) { const s = st.current!; s.isolated = names ? new Set(names) : null; paint(); if (names) frame(Array.from(s.meshes.values()).filter((m) => s.isolated!.has(partOf(m)))); },
     setGroupOpacity(key, opacity) {
       const s = st.current!; const g = s.groups.get(key); if (!g) return;
-      g.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh) s.base.get(m)!.opacity = opacity; });
+      g.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh && s.base.get(m)) s.base.get(m)!.opacity = opacity; });
       paint();
     },
     hideMeshes(names) { const s = st.current!; s.hidden = new Set(names); paint(); },

@@ -5,6 +5,7 @@ import {
   LayoutDashboard, ListChecks, Layers, BarChart3, Search, Network, Pill, Stethoscope, FileCode2, FlaskConical, BookOpenText,
   Box, Bug, Image as ImageIcon, Newspaper, Microscope, NotebookPen, Bookmark, Info, Moon, Sun, LogIn, LogOut, UserRound,
   GraduationCap, Library, Images, Atom, Rss, FileText, ShieldCheck, Megaphone, X,
+  HeartPulse,
 } from "lucide-react";
 import {
   Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu,
@@ -35,7 +36,9 @@ const NAV: { label: string; items: NavItem[] }[] = [
   ] },
   { label: "Visual learning", items: [
     { href: "/atlas", label: "3D anatomy atlas", icon: Box, feature: "atlas" },
-    { href: "/pathogens", label: "3D pathogens", icon: Bug, feature: "pathogens" },
+    { href: "/organs", label: "3D organ library", icon: HeartPulse, feature: "organs" },
+    { href: "/pathogens", label: "Pathogen library", icon: Bug, feature: "pathogens" },
+    { href: "/equipment", label: "3D devices & lab", icon: Stethoscope, feature: "equipment" },
     { href: "/molecules", label: "3D molecules", icon: Atom, feature: "molecules" },
     { href: "/diagrams", label: "Clinical diagrams", icon: ImageIcon, feature: "diagrams" },
   ] },

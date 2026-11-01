@@ -37,7 +37,7 @@ db.prepare("UPDATE jobs SET status='failed', log=log || '\nServer restarted whil
 export const DEFAULT_SETTINGS = {
   announcement: "",
   announcementLevel: "info" as "info" | "warning",
-  features: { atlas: true, pathogens: true, diagrams: true, books: true, figures: true, molecules: true, qbank: true, flashcards: true, research: true, updates: true, articles: true },
+  features: { atlas: true, organs: true, pathogens: true, equipment: true, diagrams: true, books: true, figures: true, molecules: true, qbank: true, flashcards: true, research: true, updates: true, articles: true },
   pubmedTerms: "cardiology,infectious diseases,oncology,neurology,endocrinology,nephrology,gastroenterology,pulmonology,hematology,pediatrics,obstetrics,psychiatry,pharmacology",
   registrationOpen: true,
 };

@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight, Box, Bug, Image as ImageIcon, Layers, ListChecks, Pill, FileCode2, Network, FlaskConical, Stethoscope, BookOpenText, Flame, Library, Images, Atom, GraduationCap } from "lucide-react";
+import { ArrowRight, Box, Bug, Image as ImageIcon, Layers, ListChecks, Pill, FileCode2, Network, FlaskConical, Stethoscope, BookOpenText, Flame, Library, Images, Atom, GraduationCap, HeartPulse } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -96,9 +96,11 @@ export default function Dashboard() {
           <CardContent className="space-y-1">
             {[
               { href: "/atlas", icon: Box, label: "3D anatomy atlas", hint: `${c?.anatomyParts?.toLocaleString() ?? "…"} structures, ${c?.anatomyDescribed?.toLocaleString() ?? "…"} with descriptions` },
-              { href: "/pathogens", icon: Bug, label: "3D pathogen models", hint: `${c?.models ?? "…"} NIH 3D structures` },
+              { href: "/organs", icon: HeartPulse, label: "3D organ library", hint: `${c?.organModels ?? "…"} organs, ${c?.organStructures?.toLocaleString() ?? "…"} labelled parts` },
+              { href: "/pathogens", icon: Bug, label: "Pathogen library", hint: `${c?.pathogens ?? "…"} organisms with 3D models and fact sheets` },
+              { href: "/equipment", icon: Stethoscope, label: "3D devices & lab equipment", hint: "Clinical devices, lab apparatus, NIH open hardware" },
               { href: "/molecules", icon: Atom, label: "3D drug molecules", hint: `${c?.compounds?.toLocaleString() ?? "…"} PubChem compounds` },
-              { href: "/diagrams", icon: ImageIcon, label: "High-yield diagrams", hint: "Hotspots with test-me mode" },
+              { href: "/diagrams", icon: ImageIcon, label: "High-yield diagrams", hint: "13 diagrams with hotspots and test-me mode" },
             ].map((x) => (
               <Link key={x.href} href={x.href} className="flex items-center gap-3 rounded-md p-2 hover-elevate" data-testid={`link-visual-${x.href.slice(1)}`}>
                 <x.icon className="h-5 w-5 text-primary" />

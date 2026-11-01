@@ -480,7 +480,7 @@ function AnatomyTab() {
   );
 }
 
-const FEATURES: [string, string][] = [["qbank", "Question bank"], ["flashcards", "Flashcards"], ["atlas", "3D anatomy atlas"], ["pathogens", "3D pathogens"], ["molecules", "3D molecules"], ["diagrams", "Clinical diagrams"], ["books", "Textbooks"], ["figures", "Figure library"], ["research", "PubMed & trials"], ["updates", "What's new"], ["articles", "Reviewed articles"]];
+const FEATURES: [string, string][] = [["qbank", "Question bank"], ["flashcards", "Flashcards"], ["atlas", "3D anatomy atlas"], ["organs", "3D organ library"], ["pathogens", "Pathogen library"], ["equipment", "3D devices & lab"], ["molecules", "3D molecules"], ["diagrams", "Clinical diagrams"], ["books", "Textbooks"], ["figures", "Figure library"], ["research", "PubMed & trials"], ["updates", "What's new"], ["articles", "Reviewed articles"]];
 function SettingsTab() {
   const d = useQuery<any>({ queryKey: ["/api/admin/settings"] });
   const [s, setS] = useState<any>(null);

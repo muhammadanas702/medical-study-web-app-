@@ -23,7 +23,9 @@ import { QuizRunner, QuizReview } from "@/pages/quiz";
 import AnalyticsPage from "@/pages/analytics";
 import FlashcardsPage from "@/pages/flashcards";
 import AtlasPage from "@/pages/atlas";
-import PathogensPage from "@/pages/pathogens";
+import { OrgansPage, OrganPage } from "@/pages/organs";
+import { PathogensPage, PathogenPage } from "@/pages/pathogens";
+import EquipmentPage from "@/pages/equipment";
 import DiagramsPage from "@/pages/diagrams";
 import { ResearchPage, ArticlePage, TrialsPage } from "@/pages/research";
 import { NotesPage, SavedPage } from "@/pages/my";
@@ -63,7 +65,11 @@ function AppRouter() {
       <Route path="/analytics" component={AnalyticsPage} />
       <Route path="/flashcards" component={FlashcardsPage} />
       <Route path="/atlas" component={AtlasPage} />
+      <Route path="/organs" component={OrgansPage} />
+      <Route path="/organs/:id" component={OrganPage} />
       <Route path="/pathogens" component={PathogensPage} />
+      <Route path="/pathogens/:id" component={PathogenPage} />
+      <Route path="/equipment" component={EquipmentPage} />
       <Route path="/diagrams" component={DiagramsPage} />
       <Route path="/research" component={ResearchPage} />
       <Route path="/research/:pmid" component={ArticlePage} />

@@ -1,3 +1,4 @@
+import { ART2 } from "./DiagramArt2";
 // Schematic SVG artwork for each clinical diagram. viewBox 0 0 800 540.
 const INK = "hsl(var(--foreground))";
 const MUTED = "hsl(var(--muted-foreground))";
@@ -296,4 +297,5 @@ export const ART_BY_ID: Record<string, (p: { showLabels: boolean }) => JSX.Eleme
   brachial: BrachialArt,
   coag: CoagArt,
   auscultation: AuscultationArt,
+  ...ART2,
 };

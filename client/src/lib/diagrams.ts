@@ -1,4 +1,5 @@
 // High-yield clinical diagrams with hotspot annotations (schematic, for review).
+import { DIAGRAMS2 } from "./diagrams2";
 export type DiagramSystem = "Cardiovascular" | "Respiratory" | "Renal" | "Gastrointestinal" | "Neuro / MSK" | "Hematology" | "Endocrine";
 type System = DiagramSystem;
 export const DIAGRAM_SYSTEM_MAP: Record<DiagramSystem, string> = { Cardiovascular: "Cardiovascular", Respiratory: "Respiratory", Renal: "Renal & Urogenital", Gastrointestinal: "Gastrointestinal", "Neuro / MSK": "Musculoskeletal & Skin", Hematology: "Hematology & Immunology", Endocrine: "Endocrine & Metabolic" };
@@ -22,7 +23,7 @@ export interface DiagramDef {
   hotspots: Hotspot[];
 }
 
-export const DIAGRAMS: DiagramDef[] = [
+const BASE_DIAGRAMS: DiagramDef[] = [
   {
     id: "nephron",
     title: "Nephron & diuretic targets",
@@ -407,3 +408,5 @@ export const DIAGRAMS: DiagramDef[] = [
     ],
   },
 ];
+
+export const DIAGRAMS: DiagramDef[] = [...BASE_DIAGRAMS, ...DIAGRAMS2];

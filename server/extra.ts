@@ -52,6 +52,53 @@ export const SUBJECTS: Subject[] = [
 ];
 
 export function registerContentRoutes(app: Express) {
+  // ── 3D organ library (Human Reference Atlas) ──
+  // ── pathogens ──
+  app.get("/api/pathogens", w((_req, res) => {
+    if (!has("pathogens")) return res.json({ pathogens: [], source: null });
+    res.json({
+      pathogens: all<any>(`SELECT id, name, kind, grp, family, mesh_id, nih3d, question_count, json_extract(facts,'$.structure') structure FROM pathogens ORDER BY kind, name`)
+        .map((p) => ({ ...p, nih3d: parseJSON<string[]>(p.nih3d, []) })),
+      source: META.pathogens,
+    });
+  }));
+  app.get("/api/pathogens/:id", w((req, res) => {
+    if (!has("pathogens")) return bad(res, "Pathogen library not installed", 404);
+    const p = get<any>("SELECT * FROM pathogens WHERE id=?", req.params.id);
+    if (!p) return bad(res, "Pathogen not found", 404);
+    const ids = parseJSON<string[]>(p.nih3d, []);
+    const models = ids.map((id) => get<any>("SELECT id, title, description, license, file, bytes, source_url FROM models WHERE id=?", id)).filter(Boolean);
+    const mesh = p.mesh_id ? get<any>("SELECT id, name, substr(scope_note,1,600) note FROM concepts WHERE id=?", p.mesh_id) : null;
+    const questions = p.mesh_id ? get<{ n: number }>("SELECT COUNT(*) n FROM questions WHERE concept_id=?", p.mesh_id)?.n ?? 0 : 0;
+    res.json({ pathogen: { id: p.id, name: p.name, kind: p.kind, group: p.grp, family: p.family, facts: parseJSON(p.facts, {}), pdb: parseJSON(p.pdb, []),
+      wiki_title: p.wiki_title, wiki: p.wiki_text, wiki_url: p.wiki_title ? WIKI_URL(p.wiki_title) : null }, models, mesh, questions, source: META.pathogens });
+  }));
+  // NIH 3D open-hardware device / lab models
+  app.get("/api/equipment-models", w((_req, res) => {
+    res.json({ models: all("SELECT id, title, description, license, file, bytes, source_url, category FROM models WHERE category IN ('device','lab') ORDER BY category, title") });
+  }));
+  app.get("/api/organs", w((_req, res) => {
+    if (!has("organ_models")) return res.json({ organs: [], source: null });
+    res.json({
+      organs: all(`SELECT o.id, o.label, o.base, o.sex, o.system, o.uberon, o.file, o.bytes, o.nstruct, o.dims_mm, substr(coalesce(o.definition, o.wiki),1,220) blurb
+        FROM organ_models o ORDER BY o.system, o.label`).map((o: any) => ({ ...o, dims_mm: parseJSON(o.dims_mm, []) })),
+      source: META.organ_models,
+    });
+  }));
+  app.get("/api/organs/:id", w((req, res) => {
+    if (!has("organ_models")) return bad(res, "Organ library not installed", 404);
+    const o = get<any>("SELECT * FROM organ_models WHERE id=?", req.params.id);
+    if (!o) return bad(res, "Organ not found", 404);
+    const structures = all<any>(`SELECT s.node, s.label, s.uberon, s.color, s.definition, s.synonyms, s.wiki_title, s.wiki, s.mesh_id, c.name mesh_name, s.fma, s.qid,
+        (SELECT a.name FROM anatomy_concepts a WHERE a.fma=s.fma) atlas_name FROM organ_structures s LEFT JOIN concepts c ON c.id=s.mesh_id WHERE s.organ=? ORDER BY s.label`, o.id)
+      .map((s) => ({ ...s, synonyms: parseJSON(s.synonyms, []), wiki_url: s.wiki_title ? WIKI_URL(s.wiki_title) : null }));
+    const mesh = o.mesh_id ? get<any>("SELECT id, name, substr(scope_note,1,600) note FROM concepts WHERE id=?", o.mesh_id) : null;
+    const questions = mesh ? get<{ n: number }>("SELECT COUNT(*) n FROM questions WHERE concept_id=?", mesh.id)?.n ?? 0 : 0;
+    const variants = all("SELECT id, label, sex FROM organ_models WHERE base=? ORDER BY sex", o.base);
+    res.json({ organ: { ...o, dims_mm: parseJSON(o.dims_mm, []), creators: parseJSON(o.creators, []), wiki_url: o.wiki_title ? WIKI_URL(o.wiki_title) : null },
+      structures, mesh, questions, variants, source: META.organ_models });
+  }));
+
   // ── anatomy ──
   app.get("/api/anatomy/parts", w((_req, res) => {
     res.json({

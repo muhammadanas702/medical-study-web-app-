@@ -15,6 +15,7 @@ import { DrugMolecules } from "@/pages/molecules";
 import { fmtDate, stripClass } from "@/lib/meta";
 
 type D = {
+  images: { name: string; url: string; kind: "product" | "package" | "structure" | "image"; published: string | null }[];
   slug: string; generic: string; brands: string[]; routes: string[]; epc: string[]; moa: string[]; pe: string[]; cs: string[];
   manufacturer: string; effective: string; setId: string;
   sections: { key: string; label: string; text: string }[];
@@ -27,6 +28,33 @@ type D = {
 };
 
 const OPEN_BY_DEFAULT = ["boxed_warning", "indications_and_usage", "mechanism_of_action", "contraindications"];
+
+type Img = { name: string; url: string; kind: "product" | "package" | "structure" | "image"; published: string | null };
+const IMG_KIND: Record<string, string> = { product: "Tablet/capsule", package: "Package & label", structure: "Chemical structure", image: "Label figure" };
+function DrugImages({ images, setId }: { images: Img[]; setId: string | null }) {
+  const kinds = Array.from(new Set(images.map((i) => i.kind)));
+  const [k, setK] = useState<string>("");
+  const shown = images.filter((i) => !k || i.kind === k);
+  return (
+    <Card>
+      <CardContent className="space-y-3 p-4">
+        <div className="flex flex-wrap gap-1.5">
+          <Button size="sm" variant={!k ? "default" : "outline"} onClick={() => setK("")} data-testid="button-imgkind-all">All ({images.length})</Button>
+          {kinds.map((x) => <Button key={x} size="sm" variant={k === x ? "default" : "outline"} onClick={() => setK(x)} data-testid={`button-imgkind-${x}`}>{IMG_KIND[x]} ({images.filter((i) => i.kind === x).length})</Button>)}
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {shown.map((im) => (
+            <a key={im.url} href={im.url} target="_blank" rel="noreferrer" className="group overflow-hidden rounded-lg border bg-white hover-elevate" data-testid={`link-drug-image-${im.name}`}>
+              <div className="flex h-40 items-center justify-center p-2"><img src={im.url} alt={`${IMG_KIND[im.kind]}: ${im.name}`} loading="lazy" className="max-h-full max-w-full object-contain" onError={(e) => { (e.target as HTMLImageElement).closest("a")!.style.display = "none"; }} /></div>
+              <div className="border-t bg-muted/40 px-2 py-1 text-xs text-muted-foreground"><span className="font-medium text-foreground">{IMG_KIND[im.kind]}</span> · {im.name}</div>
+            </a>
+          ))}
+        </div>
+        <p className="text-xs text-muted-foreground">Images from the manufacturer's FDA label as published on <ExtLink href={setId ? `https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=${setId}` : "https://dailymed.nlm.nih.gov"}>DailyMed (U.S. National Library of Medicine)</ExtLink>. Appearance varies by manufacturer and country; always verify the dispensed product.</p>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function DrugPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -94,6 +122,7 @@ export default function DrugPage() {
       <Tabs defaultValue="label">
         <TabsList className="flex h-auto flex-wrap justify-start">
           <TabsTrigger value="label" data-testid="tab-label">Label sections ({d.sections.length})</TabsTrigger>
+          {d.images?.length > 0 && <TabsTrigger value="images" data-testid="tab-images">Images ({d.images.length})</TabsTrigger>}
           <TabsTrigger value="products" data-testid="tab-products">Products ({d.productTotal})</TabsTrigger>
           <TabsTrigger value="shortages" data-testid="tab-shortages">Shortages ({d.shortages.length})</TabsTrigger>
           {d.mesh && <TabsTrigger value="mesh" data-testid="tab-mesh">MeSH</TabsTrigger>}
@@ -107,6 +136,9 @@ export default function DrugPage() {
               </AccordionItem>
             ))}
           </Accordion>
+        </TabsContent>
+        <TabsContent value="images">
+          <DrugImages images={d.images ?? []} setId={d.setId} />
         </TabsContent>
         <TabsContent value="products">
           <div className="mb-2 flex items-center justify-between gap-3">

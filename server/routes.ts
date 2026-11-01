@@ -152,8 +152,11 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
     questions: get<{ n: number }>("SELECT COUNT(*) n FROM questions")!.n,
     anatomyParts: get<{ n: number }>("SELECT COUNT(*) n FROM anatomy_parts")!.n,
     models: get<{ n: number }>("SELECT COUNT(*) n FROM models")!.n,
+    pathogens: tableCount("pathogens"),
+    drugImages: tableCount("drug_images"),
     shortages: get<{ n: number }>("SELECT COUNT(*) n FROM shortages WHERE status='Current'")!.n,
     books: tableCount("books"), bookSections: tableCount("book_sections"), figures: tableCount("book_figures"), compounds: tableCount("compounds"),
+    organModels: tableCount("organ_models"), organStructures: tableCount("organ_structures"),
     anatomyDescribed: get<{ n: number }>("SELECT COUNT(*) n FROM anatomy_parts WHERE coalesce(wiki, ctx_wiki) IS NOT NULL")!.n,
   };
   const qFacets = {
@@ -297,7 +300,10 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
       if (c) mesh = { id: c.id, name: c.name, scopeNote: c.scope_note, pharmActions: parseJSON<string[]>(c.pharm_actions, []).map((id) => get("SELECT id, name FROM concepts WHERE id=?", id)).filter(Boolean) };
     }
     const questionCount = get<{ n: number }>("SELECT COUNT(*) n FROM questions WHERE concept_id=? OR concept_id=?", d.slug, d.mesh_id || "-")!.n;
+    const hasImg = !!get("SELECT name FROM sqlite_master WHERE name='drug_images'");
+    const images = hasImg ? all("SELECT name, url, kind, published FROM drug_images WHERE slug=? ORDER BY CASE kind WHEN 'product' THEN 0 WHEN 'package' THEN 1 WHEN 'structure' THEN 2 ELSE 3 END, seq LIMIT 80", d.slug) : [];
     res.json({
+      images,
       slug: d.slug, generic: d.generic, brands: parseJSON(d.brands, []), routes: parseJSON(d.routes, []), epc: parseJSON(d.epc, []), moa: parseJSON(d.moa, []),
       pe: parseJSON(d.pe, []), cs: parseJSON(d.cs, []), manufacturer: d.manufacturer, effective: d.effective, setId: d.set_id, sections, products, productTotal, shortages, mesh, questionCount,
       source: { name: "FDA Structured Product Labeling via openFDA", url: d.set_id ? DAILYMED + d.set_id : "https://open.fda.gov/apis/drug/label/", effective: d.effective },

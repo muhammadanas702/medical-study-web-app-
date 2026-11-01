@@ -7,9 +7,11 @@ A full-stack study platform for medical students (USMLE-style review), built onl
 - **Flashcards** with SM-2 spaced repetition; create cards from any concept, drug or question.
 - **3D anatomy atlas**: all 2,234 BodyParts3D structures across 11 systems (skeletal, muscular, cardiovascular, nervous, eye & ear, respiratory, digestive, urinary, endocrine, reproductive, integumentary). Every structure shows FMA / TA98 / MeSH / UBERON / Wikidata IDs, part-of and sub-part navigation, a structure/function/clinical-significance description (Wikipedia, CC BY-SA, matched by FMA ID), linked textbook sections and figures, and practice questions. The **Organ explorer** opens any of 3,432 organs, regions and groups (heart, kidney, eyeball, brachial plexus…) and highlights all of their parts in 3D.
 - **3D drug molecules**: PubChem 3D conformers for FDA-label active ingredients, with formula, weight, IUPAC name, SMILES, Lipinski properties and descriptions; shown on each drug page.
-- **3D pathogen models** from NIH 3D (SARS-CoV-2, HIV, Ebola, HPV, HSV, polio, Zika, M. tuberculosis).
+- **Pathogen library**: 52 bacteria, viruses, fungi and parasites with fact sheets (structure, transmission, virulence, disease, diagnosis, treatment, pearls), NIH 3D models where they exist, labelled colored schematic 3D models for the rest, verified RCSB PDB protein structures in an interactive molecular viewer, MeSH and Wikipedia links.
+- **3D medical devices and lab equipment**: 17 labelled schematic models (stethoscope, syringe, IV cannula, Foley, BP cuff, pulse oximeter, otoscope, tuning fork, scalpel, chest tube, ETT, laryngoscope, blood tubes, microscope, centrifuge, micropipette, Petri dish) plus open-hardware models from NIH 3D.
+- **Drug images**: about 21,000 product, package-label and structure images from DailyMed on drug pages.
 - **Open textbooks**: 12 complete OpenStax books (Anatomy & Physiology 2e, Biology 2e, Microbiology, Chemistry 2e, Organic Chemistry, Pharmacology for Nurses, Psychology 2e, Behavioral Neuroscience, Lifespan Development, Nutrition, Population Health, Statistics): ~2,000 sections, readable in the app with practice buttons.
-- **Figure library**: ~7,000 textbook figures with captions, searchable; admins can add hotspot annotations and students get a quiz-me mode. Plus hand-built high-yield clinical diagrams.
+- **Figure library**: ~7,000 textbook figures with captions, searchable; admins can add hotspot annotations and students get a quiz-me mode. Plus 13 hand-built high-yield clinical diagrams (nephron, brachial plexus, coagulation, auscultation, cardiac action potential, PV loop, O2-Hb curve, lung volumes, RAAS, adrenal zones, spinal cord tracts, circle of Willis, bilirubin metabolism) with hotspots and test-me mode.
 - **Subjects & specialties**: 30 basic-science and clinical subjects linking MeSH vocabulary, textbook sections, figures and questions.
 - **Reference library**: 31,110 MeSH concepts (diseases, anatomy, viruses, bacteria, animals, drugs, procedures, equipment, psychiatry, physiology), 2,795 FDA drug labels with 112,610 NDC products and shortage records, 7,097 FDA device types, 98,403 ICD-10-CM FY2027 codes, 1,017 MedlinePlus health topics, NBME lab reference values.
 - **Live research and updates**: PubMed and ClinicalTrials.gov search; a "What's new" feed filled by the admin update jobs; reviewed articles published by admins.
@@ -96,7 +98,10 @@ script/              Build and DB-restore scripts
 | Diagnosis codes | [ICD-10-CM FY2027, CMS](https://www.cms.gov/medicare/coding-billing/icd-10-codes) | Public domain |
 | Lab reference ranges | [NBME laboratory values](https://www.nbme.org/laboratory-values/) | © NBME, reproduced for study reference |
 | 3D anatomy | [BodyParts3D, DBCLS](https://lifesciencedb.jp/bp3d/) | CC BY-SA 2.1 JP |
-| 3D pathogens | [NIH 3D](https://3d.nih.gov) | Public Domain / CC BY 4.0 per model |
+| 3D pathogens, devices, lab equipment | [NIH 3D](https://3d.nih.gov) | Public Domain / CC0 / CC BY 4.0 per model (NC/ND excluded) |
+| Pathogen protein structures | [RCSB PDB](https://www.rcsb.org) | Public (CC0) |
+| Drug images | [DailyMed](https://dailymed.nlm.nih.gov) | Public domain (U.S. government) |
+| 3D organs | [Human Reference Atlas](https://humanatlas.io/3d-reference-library) | CC BY 4.0 |
 | Anatomy IDs | [Wikidata](https://www.wikidata.org) (FMA P1402, TA98 P1323, MeSH P486, UBERON P1554) | CC0 |
 | Anatomy descriptions | [English Wikipedia](https://en.wikipedia.org) | CC BY-SA 4.0 |
 | Textbooks, figures, review questions | [OpenStax](https://openstax.org) | CC BY-NC-SA 4.0 / CC BY 4.0 per book |
@@ -106,7 +111,7 @@ script/              Build and DB-restore scripts
 ## Scope and honesty notes
 
 - Copyrighted textbooks and commercial question banks (First Aid, Robbins, Guyton, UWorld, etc.) are not included and cannot be legally redistributed; openly licensed OpenStax books are used instead.
-- BodyParts3D is a single adult male reference body, so female reproductive organs are not in the 3D atlas. Open, licence-clean 3D models do not exist for most medical equipment or for every pathogen.
+- BodyParts3D is a single adult male reference body, so female reproductive organs are not in the 3D atlas. Open, licence-clean scanned 3D models do not exist for most medical equipment or for every pathogen, so those are labelled schematic models (marked as such in the viewer).
 - Figure hotspots are added by admins; imported figures come with their captions.
 - Some websites block automated requests (for example CDC returns 403); the update jobs use official APIs instead.
 - Generated questions are derived mechanically from the source record shown in each explanation; distractors are filtered so none is also correct. Hand-written vignettes cite a reference but have not been reviewed by a physician panel.

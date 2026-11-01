@@ -64,10 +64,11 @@ export function NotesPage() {
 
 type BM = { id: number; type: string; refId: string; title: string; createdAt: number };
 const HREF: Record<string, (id: string) => string> = {
+  organ: (id) => `/organs/${id}`, pathogen: (id) => `/pathogens/${id}`, model: (id) => `/pathogens?id=${id}`, equipment: (id) => `/equipment?item=${id}`,
   concept: (id) => `/concept/${id}`, drug: (id) => `/drugs/${id}`, device: (id) => `/devices/${id}`, icd10: (id) => `/icd10/${id}`,
   topic: (id) => `/topics/${id}`, article: (id) => `/research/${id}`, diagram: (id) => `/diagrams?d=${id}`, anatomy: (id) => `/atlas?part=${id}`, book: (id) => `/books/${id}`, figure: (id) => `/figures/${id}`, molecule: (id) => `/molecules/${id}`,
 };
-const TYPE_LABEL: Record<string, string> = { concept: "Concept", drug: "Drug", device: "Device", icd10: "ICD-10", topic: "Topic", article: "Article", diagram: "Diagram", anatomy: "3D structure", book: "Textbook", figure: "Figure", molecule: "Molecule" };
+const TYPE_LABEL: Record<string, string> = { concept: "Concept", drug: "Drug", device: "Device", icd10: "ICD-10", topic: "Topic", article: "Article", diagram: "Diagram", anatomy: "3D structure", book: "Textbook", figure: "Figure", molecule: "Molecule", organ: "3D organ", pathogen: "Pathogen", model: "3D model", equipment: "Equipment" };
 
 export function SavedPage() {
   const r = useQuery<{ bookmarks: BM[] }>({ queryKey: ["/api/bookmarks"] });

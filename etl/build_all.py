@@ -8,6 +8,7 @@ steps = [
     "questions.py",
     "openstax.py", "pubchem.py", "compound_svg.py", "book_questions_merge.py",       # textbooks/figures, PubChem compounds, textbook questions (after questions.py)
     "mesh_case.py",
+    "hra_organs.py", "dailymed_images.py", "pathogen_facts.py",   # HRA 3D organs + UBERON, DailyMed drug images, pathogen fact sheets (after pathogens3d.py + questions.py)
 ]
 for s in steps:
     print("==>", s, flush=True)

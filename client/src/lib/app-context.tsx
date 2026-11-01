@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { queryClient, setAuthToken, apiJson } from "./queryClient";
 
-export type AuthUser = { id: number; name: string; email: string };
+export type AuthUser = { id: number; name: string; email: string; role?: string };
 type Theme = "light" | "dark";
 type Ctx = {
   user: AuthUser | null;

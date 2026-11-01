@@ -7,6 +7,8 @@ import {
   quizBuildSchema, answerSchema, type User,
 } from "@shared/schema";
 import { z } from "zod";
+import { registerAdminRoutes, loadQ, disabledIds, customIds, userRole, promoteIfFirst, touchUser, getSettings } from "./admin";
+import { registerContentRoutes } from "./extra";
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -60,7 +62,7 @@ const cache = new Map<string, { at: number; data: unknown }>();
 async function cachedJson(url: string, ttlMs = 10 * 60 * 1000, asText = false): Promise<any> {
   const hit = cache.get(url);
   if (hit && Date.now() - hit.at < ttlMs) return hit.data;
-  const r = await fetch(url, { headers: { "User-Agent": "Vesalius-MedStudy/1.0 (educational)" } });
+  const r = await fetch(url, { headers: { "User-Agent": "VesaliusMedStudy/1.0 (https://github.com/muhammadanas702/medical-study-web-app-; educational use)" } });
   if (!r.ok) throw Object.assign(new Error(`Upstream ${r.status}`), { status: 502 });
   const data = asText ? await r.text() : await r.json();
   cache.set(url, { at: Date.now(), data });
@@ -71,6 +73,13 @@ async function cachedJson(url: string, ttlMs = 10 * 60 * 1000, asText = false): 
 type QRow = { id: string; kind: string; discipline: string; system: string; stem: string; ask: string; options: string; answer: number; explanation: string; rationales: string; objective: string; concept_id: string | null; source: string; source_url: string | null };
 function publicQ(q: QRow) {
   return { id: q.id, kind: q.kind, discipline: q.discipline, system: q.system, stem: q.stem, ask: q.ask, options: parseJSON<string[]>(q.options, []), source: q.source, sourceUrl: q.source_url, conceptId: q.concept_id };
+}
+function poolIds(conds: string[], params: unknown[], cfg: { systems: string[]; disciplines: string[]; kinds: string[]; conceptId?: string; ids?: string[] }) {
+  const off = disabledIds();
+  if (cfg.ids?.length) return Array.from(new Set(cfg.ids)).filter((id) => !off.has(id) && !!loadQ(id));
+  const base = all<{ id: string }>(`SELECT id FROM questions ${conds.length ? "WHERE " + conds.join(" AND ") : ""}`, ...params).map((r) => r.id).filter((id) => !off.has(id));
+  const cids = cfg.conceptId ? cfg.conceptId.split(",").map((x) => x.trim()).filter(Boolean) : undefined;
+  return base.concat(customIds({ systems: cfg.systems, disciplines: cfg.disciplines, kinds: cfg.kinds, conceptIds: cids }));
 }
 function fullQ(q: QRow) {
   return { ...publicQ(q), answer: q.answer, explanation: q.explanation, rationales: parseJSON<string[]>(q.rationales, []), objective: q.objective };
@@ -88,8 +97,9 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
     if (auth?.startsWith("Bearer ")) {
       const token = auth.slice(7).trim();
       const u = storage.userByToken(token);
-      if (u) {
+      if (u && !userRole(u.id).suspended) {
         req.user = u;
+        if (Math.random() < 0.05) touchUser(u.id);
         req.token = token;
         req.owner = `u:${u.id}`;
         return next();
@@ -104,28 +114,32 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
   app.post("/api/auth/register", wrap((req, res) => {
     const p = registerSchema.safeParse(req.body);
     if (!p.success) return bad(res, p.error);
+    if (!getSettings().registrationOpen) return bad(res, "New registrations are currently closed by the administrator", 403);
     const u = storage.register(p.data.name, p.data.email, p.data.password);
     if ("error" in u) return bad(res, u.error, 409);
+    promoteIfFirst(u.id);
     if (req.owner.startsWith("g:") && req.owner !== "g:anonymous") storage.mergeGuest(req.owner, `u:${u.id}`);
-    res.json({ token: storage.createToken(u.id), user: { id: u.id, name: u.name, email: u.email } });
+    res.json({ token: storage.createToken(u.id), user: { id: u.id, name: u.name, email: u.email, role: userRole(u.id).role } });
   }));
   app.post("/api/auth/login", wrap((req, res) => {
     const p = loginSchema.safeParse(req.body);
     if (!p.success) return bad(res, p.error);
     const u = storage.login(p.data.email, p.data.password);
     if (!u) return bad(res, "Email or password is incorrect", 401);
+    if (userRole(u.id).suspended) return bad(res, "This account has been suspended. Contact the site administrator.", 403);
     if (req.owner.startsWith("g:") && req.owner !== "g:anonymous") storage.mergeGuest(req.owner, `u:${u.id}`);
-    res.json({ token: storage.createToken(u.id), user: { id: u.id, name: u.name, email: u.email } });
+    res.json({ token: storage.createToken(u.id), user: { id: u.id, name: u.name, email: u.email, role: userRole(u.id).role } });
   }));
   app.post("/api/auth/logout", wrap((req, res) => {
     if (req.token) storage.deleteToken(req.token);
     res.json({ ok: true });
   }));
   app.get("/api/auth/me", wrap((req, res) => {
-    res.json({ user: req.user ? { id: req.user.id, name: req.user.name, email: req.user.email } : null });
+    res.json({ user: req.user ? { id: req.user.id, name: req.user.name, email: req.user.email, role: userRole(req.user.id).role } : null });
   }));
 
   // ── overview ──
+  const tableCount = (t: string) => (get<{ n: number }>("SELECT COUNT(*) n FROM sqlite_master WHERE type='table' AND name=?", t)!.n ? get<{ n: number }>(`SELECT COUNT(*) n FROM ${t}`)!.n : 0);
   const counts = {
     concepts: get<{ n: number }>("SELECT COUNT(*) n FROM concepts")!.n,
     byCategory: Object.fromEntries(all<{ k: string; n: number }>("SELECT substr(cats,1,1) k, COUNT(*) n FROM concepts GROUP BY 1").map((r) => [r.k, r.n])),
@@ -139,6 +153,8 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
     anatomyParts: get<{ n: number }>("SELECT COUNT(*) n FROM anatomy_parts")!.n,
     models: get<{ n: number }>("SELECT COUNT(*) n FROM models")!.n,
     shortages: get<{ n: number }>("SELECT COUNT(*) n FROM shortages WHERE status='Current'")!.n,
+    books: tableCount("books"), bookSections: tableCount("book_sections"), figures: tableCount("book_figures"), compounds: tableCount("compounds"),
+    anatomyDescribed: get<{ n: number }>("SELECT COUNT(*) n FROM anatomy_parts WHERE coalesce(wiki, ctx_wiki) IS NOT NULL")!.n,
   };
   const qFacets = {
     systems: all<{ v: string; n: number }>("SELECT system v, COUNT(*) n FROM questions GROUP BY 1 ORDER BY 1"),
@@ -357,13 +373,12 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
 
   // ── labs, 3D ──
   app.get("/api/labs", (_req, res) => res.json({ rows: all("SELECT * FROM labs ORDER BY id"), source: META.labs }));
-  app.get("/api/anatomy/parts", (_req, res) => res.json({ parts: all("SELECT a.fj, a.fma, a.name, a.system, a.mesh_id, c.name mesh_name FROM anatomy_parts a LEFT JOIN concepts c ON c.id=a.mesh_id ORDER BY a.name"), source: META.anatomy3d }));
   app.get("/api/models", (_req, res) => res.json({ models: all("SELECT m.*, c.name mesh_name, substr(c.scope_note,1,400) mesh_note FROM models m LEFT JOIN concepts c ON c.id=m.mesh_id ORDER BY m.title"), source: META.models }));
 
   // ── question bank ──
   app.get("/api/questions/facets", (_req, res) => res.json(qFacets));
   app.get("/api/questions/:id", wrap((req, res) => {
-    const q = get<QRow>("SELECT * FROM questions WHERE id=?", req.params.id);
+    const q = loadQ(String(req.params.id));
     if (!q) return bad(res, "Question not found", 404);
     const answered = rawAppDb.prepare("SELECT 1 FROM attempts WHERE owner=? AND question_id=? LIMIT 1").get(req.owner, q.id);
     res.json(answered ? fullQ(q) : publicQ(q));
@@ -382,7 +397,7 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
       const cs = cfg.conceptId.split(",").map((x) => x.trim()).filter(Boolean).slice(0, 10);
       conds.push(`concept_id IN (${cs.map(() => "?").join(",")})`); params.push(...cs);
     }
-    let ids = all<{ id: string }>(`SELECT id FROM questions ${conds.length ? "WHERE " + conds.join(" AND ") : ""}`, ...params).map((r) => r.id);
+    let ids = poolIds(conds, params, cfg);
     if (cfg.pool !== "all") {
       const last = new Map<string, { correct: boolean; flagged: boolean }>();
       for (const a of storage.attemptsFor(req.owner)) last.set(a.questionId, { correct: a.correct, flagged: a.flagged || (last.get(a.questionId)?.flagged ?? false) });
@@ -406,7 +421,7 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
     inList("discipline", cfg.disciplines);
     inList("kind", cfg.kinds);
     if (cfg.conceptId) inList("concept_id", cfg.conceptId.split(",").map((x) => x.trim()).filter(Boolean).slice(0, 10));
-    let ids = all<{ id: string }>(`SELECT id FROM questions ${conds.length ? "WHERE " + conds.join(" AND ") : ""}`, ...params).map((r) => r.id);
+    let ids = poolIds(conds, params, cfg);
     const mine = storage.attemptsFor(req.owner);
     if (cfg.pool !== "all") {
       const last = new Map<string, { correct: boolean; flagged: boolean }>();
@@ -423,14 +438,14 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
     // Vignettes first get a fair share: interleave so short sets still include clinical cases when selected.
     const chosen = ids.slice(0, cfg.count);
     const session = storage.createSession(req.owner, cfg.mode, cfg, chosen, cfg.mode === "timed" ? chosen.length * 90 : null);
-    const questions = chosen.map((id) => publicQ(get<QRow>("SELECT * FROM questions WHERE id=?", id)!));
+    const questions = chosen.map((id) => publicQ(loadQ(id)!));
     res.json({ session: { id: session.id, mode: session.mode, startedAt: session.startedAt, timeLimitSec: session.timeLimitSec }, questions, available: ids.length });
   }));
 
   app.post("/api/quiz/answer", wrap((req, res) => {
     const p = answerSchema.safeParse(req.body);
     if (!p.success) return bad(res, p.error);
-    const q = get<QRow>("SELECT * FROM questions WHERE id=?", p.data.questionId);
+    const q = loadQ(p.data.questionId);
     if (!q) return bad(res, "Question not found", 404);
     const opts = parseJSON<string[]>(q.options, []);
     if (p.data.choice >= opts.length) return bad(res, "Invalid choice");
@@ -466,7 +481,7 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
     if (!s) return bad(res, "Session not found", 404);
     const at = new Map(storage.sessionAttempts(req.owner, s.id).map((a) => [a.questionId, a]));
     const items = parseJSON<string[]>(s.questionIds, []).map((id) => {
-      const q = get<QRow>("SELECT * FROM questions WHERE id=?", id)!;
+      const q = loadQ(id)!;
       const a = at.get(id);
       const st = peerStmt.get(id) as { n: number; c: number | null };
       return { question: a || s.finishedAt ? fullQ(q) : publicQ(q), attempt: a ? { choice: a.choice, correct: a.correct, timeMs: a.timeMs, flagged: a.flagged } : null, peer: { answered: st.n, pctCorrect: st.n ? Math.round(((st.c || 0) / st.n) * 100) : null } };
@@ -638,5 +653,7 @@ export async function registerRoutes(httpServer: Server, app: Express): Promise<
     res.json({ total: d.totalCount, items, nextToken: d.nextPageToken || null });
   }));
 
+  registerAdminRoutes(app, counts);
+  registerContentRoutes(app);
   return httpServer;
 }

@@ -242,3 +242,44 @@ export function Stat({ label, value, hint, testId }: { label: string; value: Rea
     </div>
   );
 }
+
+/** Lets any learner flag a factual error; reports go to the admin moderation queue. */
+export function ReportButton({ type, refId, title, size = "sm", variant = "ghost" }: { type: string; refId: string; title?: string; size?: "sm" | "default"; variant?: "ghost" | "outline" }) {
+  const [open, setOpen] = useState(false);
+  const [msg, setMsg] = useState("");
+  const { toast } = useToast();
+  const m = useMutation({
+    mutationFn: () => apiJson("POST", "/api/reports", { type, refId, title, message: msg }),
+    onSuccess: () => {
+      toast({ title: "Report sent", description: "Thank you. An editor will review it." });
+      setMsg("");
+      setOpen(false);
+    },
+    onError: (e: Error) => toast({ title: "Could not send report", description: e.message, variant: "destructive" }),
+  });
+  return (
+    <>
+      <Button variant={variant} size={size} onClick={() => setOpen(true)} data-testid={`button-report-${type}`}>
+        <AlertCircle className="h-4 w-4" /> Report an error
+      </Button>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle>Report an error</DialogTitle>
+            <DialogDescription>{title ? `“${title.slice(0, 140)}”. ` : ""}Describe what is wrong and, if you can, cite a reference (textbook page, guideline or PMID).</DialogDescription>
+          </DialogHeader>
+          <Textarea rows={5} value={msg} onChange={(e) => setMsg(e.target.value)} placeholder="Example: Option C is also correct according to First Aid 2025 p. 312…" data-testid="input-report-message" />
+          <DialogFooter>
+            <Button variant="ghost" onClick={() => setOpen(false)}>Cancel</Button>
+            <Button onClick={() => m.mutate()} disabled={msg.trim().length < 5 || m.isPending} data-testid="button-send-report">{m.isPending ? "Sending…" : "Send report"}</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+}
+
+/** Trusted HTML produced by our ETL from OpenStax CNXML (figures, tables, MathML). */
+export function BookHtml({ html, className = "" }: { html: string; className?: string }) {
+  return <div className={`book-html ${className}`} dangerouslySetInnerHTML={{ __html: html }} />;
+}

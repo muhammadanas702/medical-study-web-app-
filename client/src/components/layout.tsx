@@ -1,9 +1,10 @@
 import { useState, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import {
   LayoutDashboard, ListChecks, Layers, BarChart3, Search, Network, Pill, Stethoscope, FileCode2, FlaskConical, BookOpenText,
   Box, Bug, Image as ImageIcon, Newspaper, Microscope, NotebookPen, Bookmark, Info, Moon, Sun, LogIn, LogOut, UserRound,
+  GraduationCap, Library, Images, Atom, Rss, FileText, ShieldCheck, Megaphone, X,
 } from "lucide-react";
 import {
   Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu,
@@ -19,17 +20,24 @@ import { useApp, type AuthUser } from "@/lib/app-context";
 import { apiJson } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
-const NAV: { label: string; items: { href: string; label: string; icon: typeof Search }[] }[] = [
+type NavItem = { href: string; label: string; icon: typeof Search; feature?: string };
+const NAV: { label: string; items: NavItem[] }[] = [
   { label: "Study", items: [
     { href: "/", label: "Dashboard", icon: LayoutDashboard },
-    { href: "/qbank", label: "Question bank", icon: ListChecks },
-    { href: "/flashcards", label: "Flashcards", icon: Layers },
+    { href: "/qbank", label: "Question bank", icon: ListChecks, feature: "qbank" },
+    { href: "/flashcards", label: "Flashcards", icon: Layers, feature: "flashcards" },
     { href: "/analytics", label: "Performance", icon: BarChart3 },
   ] },
+  { label: "Learn", items: [
+    { href: "/subjects", label: "Subjects & specialties", icon: GraduationCap },
+    { href: "/books", label: "Textbooks", icon: Library, feature: "books" },
+    { href: "/figures", label: "Figure library", icon: Images, feature: "figures" },
+  ] },
   { label: "Visual learning", items: [
-    { href: "/atlas", label: "3D anatomy atlas", icon: Box },
-    { href: "/pathogens", label: "3D pathogens", icon: Bug },
-    { href: "/diagrams", label: "Clinical diagrams", icon: ImageIcon },
+    { href: "/atlas", label: "3D anatomy atlas", icon: Box, feature: "atlas" },
+    { href: "/pathogens", label: "3D pathogens", icon: Bug, feature: "pathogens" },
+    { href: "/molecules", label: "3D molecules", icon: Atom, feature: "molecules" },
+    { href: "/diagrams", label: "Clinical diagrams", icon: ImageIcon, feature: "diagrams" },
   ] },
   { label: "Reference library", items: [
     { href: "/search", label: "Search everything", icon: Search },
@@ -40,9 +48,11 @@ const NAV: { label: string; items: { href: string; label: string; icon: typeof S
     { href: "/labs", label: "Lab values", icon: FlaskConical },
     { href: "/topics", label: "Health topics", icon: BookOpenText },
   ] },
-  { label: "Research", items: [
-    { href: "/research", label: "PubMed literature", icon: Newspaper },
-    { href: "/trials", label: "Clinical trials", icon: Microscope },
+  { label: "Research & news", items: [
+    { href: "/updates", label: "What's new", icon: Rss, feature: "updates" },
+    { href: "/research", label: "PubMed literature", icon: Newspaper, feature: "research" },
+    { href: "/trials", label: "Clinical trials", icon: Microscope, feature: "research" },
+    { href: "/articles", label: "Reviewed articles", icon: FileText, feature: "articles" },
   ] },
   { label: "My study", items: [
     { href: "/notes", label: "Notes", icon: NotebookPen },
@@ -50,6 +60,11 @@ const NAV: { label: string; items: { href: string; label: string; icon: typeof S
     { href: "/sources", label: "Sources & methods", icon: Info },
   ] },
 ];
+
+export type SiteSettings = { announcement: string; announcementLevel: "info" | "warning"; features: Record<string, boolean>; registrationOpen: boolean };
+export function useSettings() {
+  return useQuery<SiteSettings>({ queryKey: ["/api/settings"], staleTime: 60_000 });
+}
 
 function Logo() {
   return (
@@ -68,6 +83,11 @@ function isActive(loc: string, href: string) {
 function AppSidebar() {
   const [loc] = useLocation();
   const { setOpenMobile, isMobile } = useSidebar();
+  const { user } = useApp();
+  const settings = useSettings();
+  const features = settings.data?.features ?? {};
+  const groups = NAV.map((g) => ({ ...g, items: g.items.filter((it) => !it.feature || features[it.feature] !== false) })).filter((g) => g.items.length);
+  if (user?.role === "admin") groups.push({ label: "Administration", items: [{ href: "/admin", label: "Admin panel", icon: ShieldCheck }] });
   return (
     <Sidebar>
       <SidebarHeader className="px-3 py-3">
@@ -80,7 +100,7 @@ function AppSidebar() {
         </Link>
       </SidebarHeader>
       <SidebarContent className="gap-0 overflow-y-auto">
-        {NAV.map((g) => (
+        {groups.map((g) => (
           <SidebarGroup key={g.label} className="py-0.5">
             <SidebarGroupLabel className="h-7">{g.label}</SidebarGroupLabel>
             <SidebarGroupContent>
@@ -211,6 +231,11 @@ function TopBar() {
                 <div className="text-xs text-muted-foreground">{user.email}</div>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
+              {user.role === "admin" && (
+                <DropdownMenuItem onClick={() => navigate("/admin")} data-testid="button-admin">
+                  <ShieldCheck className="mr-2 h-4 w-4" /> Admin panel
+                </DropdownMenuItem>
+              )}
               <DropdownMenuItem onClick={() => signOut()} data-testid="button-logout">
                 <LogOut className="mr-2 h-4 w-4" /> Sign out
               </DropdownMenuItem>
@@ -227,12 +252,28 @@ function TopBar() {
   );
 }
 
+function Announcement() {
+  const s = useSettings();
+  const [hidden, setHidden] = useState("");
+  const text = s.data?.announcement?.trim();
+  if (!text || hidden === text) return null;
+  const warn = s.data?.announcementLevel === "warning";
+  return (
+    <div className={`flex items-start gap-2 border-b px-4 py-2 text-sm ${warn ? "bg-amber-100 text-amber-950 dark:bg-amber-950/60 dark:text-amber-100" : "bg-primary/10 text-foreground"}`} role="status" data-testid="banner-announcement">
+      <Megaphone className="mt-0.5 h-4 w-4 shrink-0" />
+      <p className="flex-1">{text}</p>
+      <button onClick={() => setHidden(text)} aria-label="Dismiss announcement" className="rounded p-0.5 hover-elevate" data-testid="button-dismiss-announcement"><X className="h-4 w-4" /></button>
+    </div>
+  );
+}
+
 export function AppLayout({ children }: { children: ReactNode }) {
   return (
     <SidebarProvider style={{ "--sidebar-width": "16rem" } as React.CSSProperties}>
       <AppSidebar />
       <div className="flex min-w-0 flex-1 flex-col">
         <TopBar />
+        <Announcement />
         <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:px-6 lg:px-8">{children}</main>
       </div>
       <AuthDialog />

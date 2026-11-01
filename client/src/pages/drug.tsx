@@ -10,7 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { PageHeader, ErrorState, SourceLine, BookmarkButton, AddCardButton, LabelText, ExtLink } from "@/components/common";
+import { PageHeader, ErrorState, SourceLine, BookmarkButton, AddCardButton, LabelText, ExtLink, ReportButton } from "@/components/common";
+import { DrugMolecules } from "@/pages/molecules";
 import { fmtDate, stripClass } from "@/lib/meta";
 
 type D = {
@@ -51,6 +52,7 @@ export default function DrugPage() {
         actions={
           <>
             <BookmarkButton type="drug" refId={d.slug} title={d.generic} />
+            <ReportButton type="drug" refId={d.slug} title={d.generic} variant="outline" />
             <AddCardButton
               front={`${d.generic}: class, mechanism and key indication?`}
               back={[d.epc.length ? `Class: ${d.epc.map(stripClass).join(", ")}` : "", d.moa.length ? `Mechanism: ${d.moa.map(stripClass).join(", ")}` : "", ind ? `Indication: ${ind.text.replace(/^\s*\d*\s*INDICATIONS (AND|&) USAGE\s*/i, "").slice(0, 300)}` : ""].filter(Boolean).join("\n")}
@@ -86,6 +88,8 @@ export default function DrugPage() {
         <Card><CardHeader className="pb-1"><CardTitle className="text-xs font-medium text-muted-foreground">Label version</CardTitle></CardHeader>
           <CardContent className="text-sm">{d.manufacturer || "—"}<div className="text-xs text-muted-foreground">Effective {fmtDate(d.effective)}</div></CardContent></Card>
       </div>
+
+      <div className="mb-4"><DrugMolecules slug={d.slug} /></div>
 
       <Tabs defaultValue="label">
         <TabsList className="flex h-auto flex-wrap justify-start">

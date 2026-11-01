@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight, Box, Bug, Image as ImageIcon, Layers, ListChecks, Pill, FileCode2, Network, FlaskConical, Stethoscope, BookOpenText, Flame } from "lucide-react";
+import { ArrowRight, Box, Bug, Image as ImageIcon, Layers, ListChecks, Pill, FileCode2, Network, FlaskConical, Stethoscope, BookOpenText, Flame, Library, Images, Atom, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -20,6 +20,9 @@ export default function Dashboard() {
   const weakest = (an.data?.bySystem || []).filter((s) => s.answered >= 3).sort((a, b) => a.pct - b.pct).slice(0, 3);
 
   const library = [
+    { href: "/subjects", icon: GraduationCap, label: "Subjects & specialties", n: 30, hint: "Basic sciences and clinical specialties" },
+    { href: "/books", icon: Library, label: "Open textbooks", n: c?.books, hint: `${c?.bookSections?.toLocaleString() ?? "…"} sections · OpenStax` },
+    { href: "/figures", icon: Images, label: "Textbook figures", n: c?.figures, hint: "Searchable, with hotspot annotations" },
     { href: "/browse", icon: Network, label: "MeSH concepts", n: c?.concepts, hint: "Anatomy, organisms, diseases, drugs, procedures" },
     { href: "/drugs", icon: Pill, label: "FDA drug labels", n: c?.drugs, hint: `${c ? c.ndc.toLocaleString() : "…"} NDC products` },
     { href: "/icd10", icon: FileCode2, label: "ICD-10-CM codes", n: c?.icd10, hint: "FY2027 code set" },
@@ -92,8 +95,9 @@ export default function Dashboard() {
           <CardHeader className="pb-2"><CardTitle className="text-base">Visual learning</CardTitle></CardHeader>
           <CardContent className="space-y-1">
             {[
-              { href: "/atlas", icon: Box, label: "3D anatomy atlas", hint: `${c?.anatomyParts?.toLocaleString() ?? "…"} segmented structures` },
+              { href: "/atlas", icon: Box, label: "3D anatomy atlas", hint: `${c?.anatomyParts?.toLocaleString() ?? "…"} structures, ${c?.anatomyDescribed?.toLocaleString() ?? "…"} with descriptions` },
               { href: "/pathogens", icon: Bug, label: "3D pathogen models", hint: `${c?.models ?? "…"} NIH 3D structures` },
+              { href: "/molecules", icon: Atom, label: "3D drug molecules", hint: `${c?.compounds?.toLocaleString() ?? "…"} PubChem compounds` },
               { href: "/diagrams", icon: ImageIcon, label: "High-yield diagrams", hint: "Hotspots with test-me mode" },
             ].map((x) => (
               <Link key={x.href} href={x.href} className="flex items-center gap-3 rounded-md p-2 hover-elevate" data-testid={`link-visual-${x.href.slice(1)}`}>
@@ -118,7 +122,7 @@ export default function Dashboard() {
         ))}
       </div>
       <p className="mt-6 text-xs text-muted-foreground">
-        Content is drawn from public-domain and openly licensed sources (MeSH 2026, MedlinePlus, openFDA, CMS ICD-10-CM FY2027, NBME lab values, BodyParts3D, NIH 3D). See <Link href="/sources" className="underline">Sources & methods</Link> for versions and licenses.
+        Content is drawn from public-domain and openly licensed sources (MeSH 2026, MedlinePlus, openFDA, CMS ICD-10-CM FY2027, NBME lab values, BodyParts3D, NIH 3D, OpenStax, PubChem, Wikipedia). See <Link href="/sources" className="underline">Sources & methods</Link> for versions and licenses.
       </p>
     </div>
   );

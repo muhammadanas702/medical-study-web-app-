@@ -18,6 +18,8 @@ export const KIND_LABEL: Record<string, string> = {
   anatomy_hierarchy: "Anatomy hierarchy",
   taxonomy: "Microbial taxonomy",
   lab_value: "Lab reference value",
+  textbook: "Textbook concept check (OpenStax)",
+  custom: "Editor-written",
 };
 
 export const DEVICE_CLASS: Record<string, string> = {

@@ -8,15 +8,24 @@ const DATA_DIR = process.env.DATA_DIR || path.resolve(process.cwd(), "data");
 const DB_PATH = process.env.CONTENT_DB || path.join(DATA_DIR, "content.db");
 
 function ensureDb() {
-  if (fs.existsSync(DB_PATH)) return;
   // The repository ships the database as gzip parts (GitHub's 100 MB file limit): content.db.gz.part00, part01, ...
   const parts = fs.existsSync(DATA_DIR) ? fs.readdirSync(DATA_DIR).filter((f) => /^content\.db\.gz(\.part\d+)?$/.test(f)).sort() : [];
+  // A stamp of the part names and sizes tells us when "git pull" brought a newer database, so it is restored again.
+  const stampPath = DB_PATH + ".stamp";
+  const stamp = parts.map((p) => `${p}:${fs.statSync(path.join(DATA_DIR, p)).size}`).join("|");
+  if (fs.existsSync(DB_PATH)) {
+    if (!parts.length) return;
+    const old = fs.existsSync(stampPath) ? fs.readFileSync(stampPath, "utf8") : "";
+    if (old === stamp) return;
+    console.log("[content] the database parts have changed (new version pulled); restoring content.db ...");
+  }
   if (!parts.length) {
     throw new Error(`content.db not found at ${DB_PATH}. Run "npm run db:restore" or rebuild with "python3 etl/build_all.py".`);
   }
   console.log(`[content] restoring ${DB_PATH} from ${parts.join(", ")} ...`);
   const gz = Buffer.concat(parts.map((p) => fs.readFileSync(path.join(DATA_DIR, p))));
   fs.writeFileSync(DB_PATH, zlib.gunzipSync(gz));
+  fs.writeFileSync(stampPath, stamp);
 }
 
 ensureDb();

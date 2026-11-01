@@ -16,3 +16,4 @@ data/content.db-*
 !.env.example
 *.log
 .DS_Store
+data/content.db.stamp

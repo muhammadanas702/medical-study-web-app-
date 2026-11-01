@@ -108,6 +108,7 @@ export const quizBuildSchema = z.object({
   mode: z.enum(["tutor", "timed"]).default("tutor"),
   pool: z.enum(["all", "unseen", "incorrect", "flagged"]).default("all"),
   conceptId: z.string().optional(),
+  ids: z.array(z.string().max(60)).max(300).optional(),
 });
 export const answerSchema = z.object({
   sessionId: z.number().int().optional(),

@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { PageHeader, ErrorState, SourceLine, BookmarkButton, AddCardButton, ExtLink } from "@/components/common";
+import { PageHeader, ErrorState, SourceLine, BookmarkButton, AddCardButton, ExtLink, ReportButton } from "@/components/common";
 import { MESH_CATS } from "@/lib/meta";
 
 type Ref = { id: string; name: string };
@@ -48,6 +48,7 @@ export default function ConceptPage() {
         actions={
           <>
             <BookmarkButton type="concept" refId={c.id} title={c.name} />
+            <ReportButton type="concept" refId={c.id} title={c.name} variant="outline" />
             <AddCardButton front={`Define: ${c.name}`} back={c.scopeNote || c.name} deck={c.cats[0] && MESH_CATS[c.cats[0]] ? MESH_CATS[c.cats[0]].label : "Concepts"} sourceType="concept" sourceId={c.id} />
             {c.questionCount > 0 && (
               <Button size="sm" onClick={() => navigate(`/qbank?concept=${c.id}`)} data-testid="button-practice-concept"><ListChecks className="h-4 w-4" /> Practice ({c.questionCount})</Button>

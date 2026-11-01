@@ -28,6 +28,11 @@ import DiagramsPage from "@/pages/diagrams";
 import { ResearchPage, ArticlePage, TrialsPage } from "@/pages/research";
 import { NotesPage, SavedPage } from "@/pages/my";
 import SourcesPage from "@/pages/sources";
+import { BooksPage, BookPage, BookSectionPage } from "@/pages/books";
+import { FiguresPage, FigurePage } from "@/pages/figures";
+import { MoleculesPage, MoleculePage } from "@/pages/molecules";
+import { SubjectsPage, SubjectPage, UpdatesPage, ArticlesPage, ArticleViewPage } from "@/pages/hub";
+import AdminPage from "@/pages/admin";
 import { useLocation } from "wouter";
 
 function ScrollTop() {
@@ -66,6 +71,19 @@ function AppRouter() {
       <Route path="/notes" component={NotesPage} />
       <Route path="/saved" component={SavedPage} />
       <Route path="/sources" component={SourcesPage} />
+      <Route path="/books" component={BooksPage} />
+      <Route path="/books/:slug" component={BookPage} />
+      <Route path="/books/:slug/:id" component={BookSectionPage} />
+      <Route path="/figures" component={FiguresPage} />
+      <Route path="/figures/:id" component={FigurePage} />
+      <Route path="/molecules" component={MoleculesPage} />
+      <Route path="/molecules/:cid" component={MoleculePage} />
+      <Route path="/subjects" component={SubjectsPage} />
+      <Route path="/subjects/:id" component={SubjectPage} />
+      <Route path="/updates" component={UpdatesPage} />
+      <Route path="/articles" component={ArticlesPage} />
+      <Route path="/articles/:id" component={ArticleViewPage} />
+      <Route path="/admin" component={AdminPage} />
       <Route component={NotFound} />
     </Switch>
   );

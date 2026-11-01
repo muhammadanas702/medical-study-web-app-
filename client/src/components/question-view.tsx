@@ -1,7 +1,7 @@
 import { CheckCircle2, XCircle, ExternalLink, Users, Target } from "lucide-react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
-import { AddCardButton } from "@/components/common";
+import { AddCardButton, ReportButton } from "@/components/common";
 import { KIND_LABEL } from "@/lib/meta";
 import { LETTERS, type FullQ, type PublicQ, type Peer, isFull } from "@/lib/quiz-types";
 
@@ -19,7 +19,7 @@ export function Stem({ q }: { q: PublicQ }) {
   return (
     <div className="space-y-3">
       <p className="whitespace-pre-line text-[15px] leading-relaxed" data-testid="text-stem">{q.stem}</p>
-      <p className="text-[15px] font-medium" data-testid="text-ask">{q.ask}</p>
+      {q.ask && <p className="text-[15px] font-medium" data-testid="text-ask">{q.ask}</p>}
     </div>
   );
 }
@@ -105,10 +105,14 @@ export function Explanation({ q, choice, peer }: { q: FullQ; choice: number | nu
       )}
       <div className="flex flex-wrap items-center gap-2 border-t pt-3 text-xs text-muted-foreground">
         <span>Source:</span>
-        <a href={q.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline" data-testid="link-question-source">{q.source} <ExternalLink className="h-3 w-3" /></a>
+        {q.sourceUrl?.startsWith("#/") ? (
+          <a href={q.sourceUrl} className="inline-flex items-center gap-1 text-primary hover:underline" data-testid="link-question-source">{q.source} · open section</a>
+        ) : q.sourceUrl ? (
+          <a href={q.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline" data-testid="link-question-source">{q.source} <ExternalLink className="h-3 w-3" /></a>
+        ) : <span>{q.source}</span>}
         {q.conceptId && /^D\d+$/.test(q.conceptId) && <Link href={`/concept/${q.conceptId}`} className="text-primary hover:underline">Open concept</Link>}
         {q.conceptId && !/^D\d+$/.test(q.conceptId) && q.kind === "fda_class" && <Link href={`/drugs/${q.conceptId}`} className="text-primary hover:underline">Open drug label</Link>}
-        <span className="ml-auto"><AddCardButton front={`${q.stem}\n\n${q.ask}`} back={`${q.options[q.answer]}\n\n${q.objective || q.explanation.slice(0, 400)}`} deck={q.system} sourceType="question" sourceId={q.id} label="Make flashcard" variant="ghost" /></span>
+        <span className="ml-auto flex items-center gap-1"><ReportButton type="question" refId={q.id} title={q.stem.slice(0, 160)} /><AddCardButton front={q.ask ? `${q.stem}\n\n${q.ask}` : q.stem} back={`${q.options[q.answer]}\n\n${q.objective || q.explanation.slice(0, 400)}`} deck={q.system} sourceType="question" sourceId={q.id} label="Make flashcard" variant="ghost" /></span>
       </div>
     </div>
   );

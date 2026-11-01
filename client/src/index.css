@@ -333,3 +333,24 @@
   .hs-ring { animation: hs-pulse 1.8s ease-out infinite; }
   @media (prefers-reduced-motion: reduce) { .hs-ring { animation: none; } }
 }
+
+/* OpenStax section HTML */
+.book-html { line-height: 1.7; }
+.book-html p { margin: 0.75em 0; }
+.book-html h2, .book-html h3, .book-html h4 { font-weight: 600; margin: 1.4em 0 0.5em; line-height: 1.3; }
+.book-html h2 { font-size: 1.25rem; } .book-html h3 { font-size: 1.1rem; } .book-html h4 { font-size: 1rem; }
+.book-html ul { list-style: disc; padding-left: 1.4em; margin: 0.6em 0; }
+.book-html ol { list-style: decimal; padding-left: 1.4em; margin: 0.6em 0; }
+.book-html li { margin: 0.25em 0; }
+.book-html figure { margin: 1.25em 0; padding: 0.75rem; border: 1px solid hsl(var(--border)); border-radius: 0.6rem; background: hsl(var(--card)); }
+.book-html figure img, .book-html img { max-width: 100%; height: auto; margin: 0 auto; display: block; background: #fff; border-radius: 0.35rem; }
+.book-html figcaption { font-size: 0.85rem; color: hsl(var(--muted-foreground)); margin-top: 0.5rem; }
+.book-html table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.875rem; display: block; overflow-x: auto; }
+.book-html th, .book-html td { border: 1px solid hsl(var(--border)); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+.book-html th { background: hsl(var(--muted)); font-weight: 600; }
+.book-html mark { background: rgba(250, 204, 21, 0.45); border-radius: 2px; padding: 0 2px; }
+.book-html .note, .book-html aside { border-left: 3px solid hsl(var(--primary)); background: hsl(var(--muted) / 0.5); padding: 0.6rem 0.9rem; margin: 1em 0; border-radius: 0 0.4rem 0.4rem 0; }
+.book-html dt { font-weight: 600; margin-top: 0.6em; }
+.book-html dd { margin-left: 1.2em; }
+.book-html a { color: hsl(var(--primary)); text-decoration: underline; }
+.book-html math { font-size: 1.05em; }

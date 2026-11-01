@@ -15,7 +15,11 @@ const ORDER: { key: string; title: string; what: string; license: string }[] = [
   { key: "devices", title: "FDA medical device classification", what: "Medical equipment and devices by product code, device class (I/II/III), medical specialty and regulation number.", license: "Public domain (U.S. FDA)" },
   { key: "icd10", title: "ICD-10-CM", what: "Complete diagnosis code set with chapter/block hierarchy and billable status.", license: "Public domain (CMS / CDC NCHS)" },
   { key: "labs", title: "NBME laboratory values", what: "Reference ranges in the format shown on USMLE exams.", license: "Reproduced for study reference; © NBME" },
-  { key: "anatomy3d", title: "BodyParts3D", what: "Segmented 3D human anatomy meshes with FMA identifiers.", license: "CC BY-SA 2.1 Japan, © DBCLS" },
+  { key: "anatomy3d", title: "BodyParts3D", what: "Segmented 3D human anatomy meshes (adult male reference) with FMA identifiers, classified into 11 body systems.", license: "CC BY-SA 2.1 Japan, © DBCLS" },
+  { key: "wikidata", title: "Wikidata + FMA / TA98 / UBERON", what: "Each 3D structure's FMA ID is linked through Wikidata (property P1402) to its Terminologia Anatomica 98 code, MeSH heading, UBERON ID and English Wikipedia article.", license: "CC0 (Wikidata)" },
+  { key: "wikipedia", title: "Wikipedia anatomy articles", what: "Structure, function, development and clinical significance text for 3D structures. Where a structure has no article of its own, the article of the structure it is part of is shown and labelled as such.", license: "CC BY-SA 4.0" },
+  { key: "openstax", title: "OpenStax textbooks", what: "12 complete peer-reviewed textbooks (Anatomy & Physiology 2e, Biology 2e, Microbiology, Chemistry 2e, Organic Chemistry, Pharmacology for Nurses, Psychology 2e, Behavioral Neuroscience, Lifespan Development, Nutrition, Population Health, Statistics): every section, figure and review question.", license: "CC BY-NC-SA 4.0, © OpenStax / Rice University" },
+  { key: "pubchem", title: "PubChem", what: "Active ingredients of FDA-labelled drugs matched to PubChem compounds: formula, weight, IUPAC name, SMILES, InChIKey, physicochemical properties, descriptions and 3D conformers.", license: "Public domain (NCBI); descriptions keep their source attribution" },
   { key: "models", title: "NIH 3D", what: "3D pathogen models (virions, capsids, bacteria).", license: "Per model: Public Domain or CC BY 4.0" },
 ];
 

@@ -24,7 +24,7 @@ A full-stack study platform for medical students (USMLE-style review), built onl
 
 ## Run locally
 
-Requirements: Node.js 20+ (and Python 3.10+ only if you want to rebuild the data).
+Requirements: Node.js 20, 22 or 24 (and Python 3.10+ only if you want to rebuild the data). Works on Windows, macOS and Linux; the SQLite driver downloads a prebuilt binary, so no C++ compiler or Visual Studio is needed.
 
 ```bash
 npm ci
@@ -38,6 +38,11 @@ Production build:
 npm run build
 npm start               # serves dist/ on PORT (default 5000)
 ```
+
+### Windows troubleshooting
+
+- If `npm ci` reports `EBUSY` or `EPERM` while removing `node_modules`, close any editor, terminal or dev server using the folder, delete `node_modules` (`Remove-Item -Recurse -Force node_modules` in PowerShell) and run `npm ci` again.
+- If it still tries to run `node-gyp` for `better-sqlite3`, you are on a Node.js version without a prebuilt binary (for example Node 25+). Install Node 22 or 24 LTS.
 
 The app has no external service dependencies except PubMed and ClinicalTrials.gov for the live research pages.
 

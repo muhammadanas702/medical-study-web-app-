@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.vite/
+__pycache__/
+*.pyc
+
+# Databases: user data is created at runtime; content.db is restored from the committed gzip parts
+data/app.db
+data/app.db-*
+data/content.db
+data/content.db-*
+*.db-journal
+
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store

@@ -1,0 +1,786 @@
+[
+ {
+  "id": "v-cv-1",
+  "discipline": "Anatomy",
+  "system": "Cardiovascular",
+  "stem": "A 64-year-old man with hypertension and a 40-pack-year smoking history presents with 1 hour of crushing substernal chest pain and diaphoresis. ECG shows ST elevations in leads II, III and aVF. Heart rate is 48/min.",
+  "ask": "Occlusion of which vessel is most likely responsible?",
+  "options": [
+   "Left anterior descending artery",
+   "Left circumflex artery",
+   "Right coronary artery",
+   "Left main coronary artery",
+   "First diagonal branch"
+  ],
+  "answer": 2,
+  "explanation": "ST elevation in II, III and aVF localizes an inferior MI. In ~85% of people (right-dominant), the RCA supplies the inferior wall via the posterior descending artery. The RCA also supplies the SA and AV nodes, so bradycardia and AV block are common with inferior infarcts.",
+  "rationales": [
+   "LAD occlusion produces anterior/septal ST elevation (V1–V4).",
+   "LCx occlusion produces lateral changes (I, aVL, V5–V6); it supplies the inferior wall only in left-dominant hearts.",
+   "Correct — inferior leads plus bradycardia (AV nodal artery) point to the RCA.",
+   "Left main occlusion causes diffuse ST depression with aVR elevation and is often rapidly fatal.",
+   "Diagonal branches supply the anterolateral wall (I, aVL)."
+  ],
+  "objective": "Map ECG leads to coronary territories: II, III, aVF = inferior = RCA in right-dominant circulation.",
+  "mesh_id": "D056989",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D056989",
+  "concept": "Coronary territories"
+ },
+ {
+  "id": "v-cv-2",
+  "discipline": "Pathology",
+  "system": "Cardiovascular",
+  "stem": "A 78-year-old woman reports exertional chest pressure and two episodes of syncope while climbing stairs. Examination reveals a harsh crescendo-decrescendo systolic murmur at the right upper sternal border radiating to both carotids. Carotid upstroke is weak and delayed.",
+  "ask": "What is the most likely underlying cause of this patient's murmur?",
+  "options": [
+   "Rheumatic heart disease",
+   "Age-related calcification of a trileaflet valve",
+   "Myxomatous degeneration",
+   "Infective endocarditis",
+   "Aortic root dilation"
+  ],
+  "answer": 1,
+  "explanation": "This is aortic stenosis: systolic ejection murmur at the aortic area radiating to the carotids with pulsus parvus et tardus. Syncope, angina and dyspnea (SAD) indicate severe disease. In patients over ~70, the most common cause is age-related (dystrophic) calcification of a normal trileaflet valve; in younger patients, a bicuspid valve.",
+  "rationales": [
+   "Rheumatic disease typically involves the mitral valve first and is less common in high-income settings.",
+   "Correct — senile calcific degeneration is the leading cause of AS in older adults.",
+   "Myxomatous degeneration causes mitral valve prolapse (mid-systolic click).",
+   "Endocarditis usually causes regurgitant lesions due to leaflet destruction.",
+   "Aortic root dilation causes aortic regurgitation (diastolic murmur)."
+  ],
+  "objective": "Aortic stenosis in the elderly is usually calcific degeneration; the triad is syncope, angina and dyspnea.",
+  "mesh_id": "D001024",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D001024",
+  "concept": "Valvular murmurs"
+ },
+ {
+  "id": "v-cv-3",
+  "discipline": "Pharmacology",
+  "system": "Cardiovascular",
+  "stem": "A 55-year-old man with type 2 diabetes is started on lisinopril for hypertension and microalbuminuria. Six weeks later he reports a persistent, nonproductive cough. Lungs are clear and a chest x-ray is normal.",
+  "ask": "The cough is most likely due to accumulation of which substance?",
+  "options": [
+   "Angiotensin II",
+   "Aldosterone",
+   "Bradykinin",
+   "Renin",
+   "Histamine"
+  ],
+  "answer": 2,
+  "explanation": "ACE (kininase II) degrades bradykinin. ACE inhibitors block this, raising bradykinin, which causes dry cough and angioedema. Switching to an angiotensin II receptor blocker (e.g., losartan) avoids this because ARBs do not affect bradykinin breakdown.",
+  "rationales": [
+   "Angiotensin II levels fall with ACE inhibition.",
+   "Aldosterone falls with ACE inhibition (hence hyperkalemia).",
+   "Correct — bradykinin accumulation causes cough and angioedema.",
+   "Renin rises (loss of negative feedback) but does not cause cough.",
+   "Histamine is not degraded by ACE."
+  ],
+  "objective": "ACE inhibitors cause cough and angioedema via ↑ bradykinin; switch to an ARB.",
+  "mesh_id": "D000806",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D000806",
+  "concept": "ACE inhibitor adverse effects"
+ },
+ {
+  "id": "v-cv-4",
+  "discipline": "Pathology",
+  "system": "Cardiovascular",
+  "stem": "A 19-year-old college basketball player collapses during practice. He is 203 cm tall with long fingers, a pectus excavatum and bilateral upward lens dislocation. Autopsy reveals a tear in the ascending aorta with cystic medial degeneration.",
+  "ask": "A defect in which protein is most likely responsible?",
+  "options": [
+   "Type I collagen",
+   "Type III collagen",
+   "Fibrillin-1",
+   "Elastase",
+   "Dystrophin"
+  ],
+  "answer": 2,
+  "explanation": "Marfan syndrome is an autosomal dominant FBN1 mutation; fibrillin-1 is a scaffold for elastin. Features include tall stature, arachnodactyly, upward lens subluxation, mitral valve prolapse and cystic medial necrosis of the aorta leading to aneurysm and dissection — the major cause of death.",
+  "rationales": [
+   "Type I collagen defects cause osteogenesis imperfecta.",
+   "Type III collagen defects cause vascular Ehlers-Danlos syndrome.",
+   "Correct — FBN1 mutation, autosomal dominant.",
+   "Elastase excess (↓ α1-antitrypsin) causes panacinar emphysema.",
+   "Dystrophin defects cause Duchenne/Becker muscular dystrophy."
+  ],
+  "objective": "Marfan = fibrillin-1; upward lens subluxation (homocystinuria = downward).",
+  "mesh_id": "D008382",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D008382",
+  "concept": "Marfan syndrome"
+ },
+ {
+  "id": "v-renal-1",
+  "discipline": "Pharmacology",
+  "system": "Renal & Urogenital",
+  "stem": "A 70-year-old woman with heart failure presents with acute pulmonary edema and receives IV furosemide. Two days later her labs show K+ 3.1 mEq/L, HCO3− 32 mEq/L and increased urinary calcium.",
+  "ask": "The drug most likely inhibits which transporter?",
+  "options": [
+   "Na+/Cl− cotransporter in the DCT",
+   "Na+/K+/2Cl− cotransporter in the thick ascending limb",
+   "Carbonic anhydrase in the PCT",
+   "Epithelial Na+ channel in the collecting duct",
+   "Aquaporin-2 in the collecting duct"
+  ],
+  "answer": 1,
+  "explanation": "Furosemide blocks NKCC2 in the thick ascending limb. This abolishes the lumen-positive potential that drives paracellular Ca2+ and Mg2+ reabsorption (→ hypercalciuria) and increases distal Na+ delivery, raising K+ and H+ secretion (→ hypokalemic metabolic alkalosis).",
+  "rationales": [
+   "NCC blockade (thiazides) decreases urinary calcium.",
+   "Correct — NKCC2 in the TAL.",
+   "Carbonic anhydrase inhibition causes metabolic acidosis, not alkalosis.",
+   "ENaC blockade (amiloride) causes hyperkalemia.",
+   "Aquaporin-2 is the target of ADH, antagonized by vaptans."
+  ],
+  "objective": "Loop diuretics: NKCC2 in TAL → hypokalemia, metabolic alkalosis, hypercalciuria, ototoxicity.",
+  "mesh_id": "D005665",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D005665",
+  "concept": "Loop diuretics"
+ },
+ {
+  "id": "v-renal-2",
+  "discipline": "Pharmacology",
+  "system": "Renal & Urogenital",
+  "stem": "A 48-year-old man with recurrent calcium oxalate kidney stones and hypertension is prescribed a medication that reduces urinary calcium excretion. At follow-up his serum calcium is mildly elevated and his glucose has increased.",
+  "ask": "This drug acts primarily on which nephron segment?",
+  "options": [
+   "Proximal convoluted tubule",
+   "Thin descending limb",
+   "Thick ascending limb",
+   "Distal convoluted tubule",
+   "Cortical collecting duct"
+  ],
+  "answer": 3,
+  "explanation": "Thiazides inhibit the NCC transporter in the DCT. Lower intracellular Na+ enhances basolateral Na+/Ca2+ exchange, increasing Ca2+ reabsorption — useful for calcium stones and osteoporosis. Adverse effects: hyperglycemia, hyperlipidemia, hyperuricemia, hypercalcemia, hypokalemia, hyponatremia.",
+  "rationales": [
+   "PCT is the site of acetazolamide.",
+   "The thin descending limb has no major diuretic target.",
+   "TAL is the site of loop diuretics, which increase calcium excretion.",
+   "Correct — DCT (NCC).",
+   "Collecting duct is the site of K+-sparing diuretics."
+  ],
+  "objective": "Thiazides ↓ urinary calcium (stones) but cause hyperGLUC.",
+  "mesh_id": "D049971",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D049971",
+  "concept": "Thiazide diuretics"
+ },
+ {
+  "id": "v-renal-3",
+  "discipline": "Pathology",
+  "system": "Renal & Urogenital",
+  "stem": "A 4-year-old boy is brought in with puffy eyes and leg swelling 2 weeks after an upper respiratory infection. Urinalysis shows 4+ protein without blood. Serum albumin is 1.9 g/dL. Light microscopy of a renal biopsy is normal.",
+  "ask": "Which finding is expected on electron microscopy?",
+  "options": [
+   "Subepithelial humps",
+   "Effacement of podocyte foot processes",
+   "Basement membrane splitting",
+   "Subendothelial immune deposits",
+   "Spike and dome appearance"
+  ],
+  "answer": 1,
+  "explanation": "Minimal change disease is the most common nephrotic syndrome in children. Light microscopy is normal; EM shows diffuse effacement of podocyte foot processes. Loss of the GBM's negative charge causes selective albuminuria. It responds well to corticosteroids.",
+  "rationales": [
+   "Subepithelial humps are seen in post-streptococcal GN (nephritic).",
+   "Correct — minimal change disease.",
+   "GBM splitting (basket-weave) is Alport syndrome.",
+   "Subendothelial deposits occur in lupus nephritis and MPGN.",
+   "Spike and dome is membranous nephropathy."
+  ],
+  "objective": "Child + nephrotic + normal LM → minimal change disease; foot process effacement; steroids.",
+  "mesh_id": "D009402",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D009402",
+  "concept": "Nephrotic syndrome"
+ },
+ {
+  "id": "v-renal-4",
+  "discipline": "Physiology",
+  "system": "Renal & Urogenital",
+  "stem": "A 30-year-old mountaineer takes a medication the day before ascending to 4,500 m to prevent altitude sickness. His arterial blood gas the next day shows pH 7.31, HCO3− 16 mEq/L, Cl− 114 mEq/L and an anion gap of 10.",
+  "ask": "Which best describes the acid–base disturbance caused by the drug?",
+  "options": [
+   "Anion gap metabolic acidosis",
+   "Hyperchloremic normal anion gap metabolic acidosis",
+   "Metabolic alkalosis",
+   "Respiratory acidosis",
+   "Respiratory alkalosis"
+  ],
+  "answer": 1,
+  "explanation": "Acetazolamide inhibits carbonic anhydrase in the PCT, causing bicarbonate wasting. Cl− is retained to maintain electroneutrality, producing a hyperchloremic (normal anion gap) metabolic acidosis — which helps counter altitude-induced respiratory alkalosis.",
+  "rationales": [
+   "The anion gap is normal (10), so no unmeasured anions accumulate.",
+   "Correct — HCO3− loss with Cl− retention.",
+   "pH and HCO3− are both low, so this is acidosis.",
+   "The primary process is metabolic (low HCO3−).",
+   "Altitude itself causes respiratory alkalosis; the drug offsets it."
+  ],
+  "objective": "Acetazolamide → normal anion gap metabolic acidosis; used for altitude sickness and glaucoma.",
+  "mesh_id": "D000086",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D000086",
+  "concept": "Acid–base"
+ },
+ {
+  "id": "v-msk-1",
+  "discipline": "Anatomy",
+  "system": "Musculoskeletal & Skin",
+  "stem": "A 27-year-old man falls from a motorcycle and sustains a midshaft fracture of the left humerus. He cannot extend his wrist or fingers and has decreased sensation over the dorsum of the hand between the thumb and index finger.",
+  "ask": "Which nerve is most likely injured?",
+  "options": [
+   "Axillary nerve",
+   "Musculocutaneous nerve",
+   "Median nerve",
+   "Radial nerve",
+   "Ulnar nerve"
+  ],
+  "answer": 3,
+  "explanation": "The radial nerve runs in the radial (spiral) groove of the humerus with the deep brachial artery and is vulnerable in midshaft fractures. It innervates wrist and finger extensors; injury causes wrist drop and loss of sensation over the dorsal first web space.",
+  "rationales": [
+   "Axillary nerve injury follows surgical neck fractures → deltoid weakness.",
+   "Musculocutaneous injury → weak elbow flexion and supination.",
+   "Median nerve injury (supracondylar) → ape hand, Pope's blessing.",
+   "Correct — radial groove.",
+   "Ulnar injury (medial epicondyle) → claw hand."
+  ],
+  "objective": "Midshaft humerus fracture → radial nerve → wrist drop.",
+  "mesh_id": "D020425",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D020425",
+  "concept": "Upper limb nerve injury"
+ },
+ {
+  "id": "v-msk-2",
+  "discipline": "Anatomy",
+  "system": "Musculoskeletal & Skin",
+  "stem": "A 52-year-old woman undergoes left modified radical mastectomy with axillary lymph node dissection. At follow-up, the medial border of her left scapula protrudes when she pushes against a wall, and she cannot raise her arm above her head.",
+  "ask": "Which nerve was most likely injured?",
+  "options": [
+   "Thoracodorsal nerve",
+   "Long thoracic nerve",
+   "Dorsal scapular nerve",
+   "Suprascapular nerve",
+   "Axillary nerve"
+  ],
+  "answer": 1,
+  "explanation": "The long thoracic nerve (C5–C7) runs superficially on the serratus anterior and is at risk during axillary dissection. Serratus anterior protracts and upwardly rotates the scapula; paralysis causes medial winging and inability to abduct above 90°.",
+  "rationales": [
+   "Thoracodorsal injury weakens latissimus dorsi (extension, adduction) — no winging.",
+   "Correct — serratus anterior.",
+   "Dorsal scapular nerve injury affects rhomboids — subtle lateral winging.",
+   "Suprascapular injury affects the first 15° of abduction and external rotation.",
+   "Axillary injury affects deltoid abduction 15–90°, not winging."
+  ],
+  "objective": "SALT: Serratus Anterior = Long Thoracic; injured in mastectomy → winged scapula.",
+  "mesh_id": null,
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": null,
+  "concept": "Upper limb nerve injury"
+ },
+ {
+  "id": "v-msk-3",
+  "discipline": "Anatomy",
+  "system": "Musculoskeletal & Skin",
+  "stem": "A 4.6-kg newborn is delivered after a difficult vaginal delivery complicated by shoulder dystocia. The right arm hangs adducted and internally rotated with the elbow extended and forearm pronated. Grasp reflex is intact.",
+  "ask": "Which part of the brachial plexus is injured?",
+  "options": [
+   "Upper trunk (C5–C6)",
+   "Lower trunk (C8–T1)",
+   "Posterior cord",
+   "Medial cord",
+   "Long thoracic nerve"
+  ],
+  "answer": 0,
+  "explanation": "Erb palsy results from traction on the upper trunk (C5–C6), causing loss of deltoid, supraspinatus, infraspinatus and biceps. The arm is adducted, internally rotated and pronated — the \"waiter's tip\" posture. Hand function (C8–T1) is preserved, so grasp is intact.",
+  "rationales": [
+   "Correct — Erb palsy.",
+   "Lower trunk (Klumpke) injury affects intrinsic hand muscles → claw hand; grasp would be impaired.",
+   "Posterior cord injury affects deltoid, extensors (radial and axillary).",
+   "Medial cord injury affects ulnar distribution and intrinsics.",
+   "Long thoracic injury → winged scapula only."
+  ],
+  "objective": "Shoulder dystocia + waiter's tip = upper trunk C5–C6 (Erb).",
+  "mesh_id": "D001917",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D001917",
+  "concept": "Brachial plexus"
+ },
+ {
+  "id": "v-msk-4",
+  "discipline": "Pathology",
+  "system": "Musculoskeletal & Skin",
+  "stem": "A 22-year-old woman falls on her outstretched hand while snowboarding. X-ray is initially normal, but she has tenderness in the anatomical snuffbox.",
+  "ask": "If this injury is missed, which complication is most likely?",
+  "options": [
+   "Acute carpal tunnel syndrome",
+   "Avascular necrosis",
+   "Ulnar nerve palsy",
+   "Volkmann contracture",
+   "Dupuytren contracture"
+  ],
+  "answer": 1,
+  "explanation": "Snuffbox tenderness after FOOSH suggests scaphoid fracture, which may be radiographically occult. The scaphoid's blood supply (dorsal branch of the radial artery) enters distally and flows retrograde, so proximal pole fractures risk avascular necrosis and nonunion. Immobilize in a thumb spica splint and re-image.",
+  "rationales": [
+   "Acute carpal tunnel is classic for lunate dislocation.",
+   "Correct — retrograde blood supply.",
+   "Ulnar nerve palsy is linked to hook of hamate fractures.",
+   "Volkmann contracture follows supracondylar fracture with brachial artery compromise.",
+   "Dupuytren contracture is palmar fascia fibrosis, unrelated to trauma."
+  ],
+  "objective": "Scaphoid fracture → retrograde blood supply → avascular necrosis.",
+  "mesh_id": "D021361",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D021361",
+  "concept": "Wrist fractures"
+ },
+ {
+  "id": "v-neuro-1",
+  "discipline": "Anatomy",
+  "system": "Nervous & Special Senses",
+  "stem": "A 17-year-old is struck in the side of the head by a baseball. He loses consciousness briefly, then is alert and talking for 2 hours before rapidly deteriorating. CT shows a biconvex hyperdensity that does not cross suture lines.",
+  "ask": "Which vessel is most likely injured?",
+  "options": [
+   "Bridging veins",
+   "Middle meningeal artery",
+   "Middle cerebral artery",
+   "Anterior communicating artery",
+   "Lenticulostriate arteries"
+  ],
+  "answer": 1,
+  "explanation": "Epidural hematoma follows fracture of the pterion (temporal bone) and tearing of the middle meningeal artery, a branch of the maxillary artery. Blood collects between the dura and skull, limited by sutures (lens-shaped). The classic course is a lucid interval followed by rapid decline from transtentorial herniation.",
+  "rationales": [
+   "Bridging veins → subdural hematoma (crescent, crosses sutures).",
+   "Correct — epidural hematoma.",
+   "MCA bleeds are intraparenchymal or from aneurysms.",
+   "ACom aneurysm rupture → subarachnoid hemorrhage.",
+   "Lenticulostriate (Charcot-Bouchard) → hypertensive intraparenchymal hemorrhage."
+  ],
+  "objective": "Lucid interval + biconvex = epidural hematoma = middle meningeal artery.",
+  "mesh_id": "D006407",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D006407",
+  "concept": "Intracranial hemorrhage"
+ },
+ {
+  "id": "v-neuro-2",
+  "discipline": "Pathology",
+  "system": "Nervous & Special Senses",
+  "stem": "A 68-year-old right-handed man has sudden-onset difficulty speaking. His speech is slow, effortful and telegraphic. He understands commands and is visibly frustrated. Repetition is impaired.",
+  "ask": "Which region is most likely damaged?",
+  "options": [
+   "Superior temporal gyrus",
+   "Inferior frontal gyrus",
+   "Arcuate fasciculus",
+   "Angular gyrus",
+   "Precentral gyrus"
+  ],
+  "answer": 1,
+  "explanation": "Broca (expressive) aphasia: nonfluent, effortful speech with intact comprehension and impaired repetition. Broca area is in the inferior frontal gyrus of the dominant frontal lobe, supplied by the superior division of the MCA.",
+  "rationales": [
+   "Superior temporal gyrus = Wernicke (fluent, poor comprehension).",
+   "Correct — Broca area.",
+   "Arcuate fasciculus lesion = conduction aphasia (fluent, intact comprehension, poor repetition).",
+   "Angular gyrus lesion → Gerstmann syndrome.",
+   "Precentral gyrus lesion → contralateral motor weakness, not aphasia."
+  ],
+  "objective": "Broca = Broken Boca: nonfluent, comprehension intact.",
+  "mesh_id": "D001039",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D001039",
+  "concept": "Aphasias"
+ },
+ {
+  "id": "v-heme-1",
+  "discipline": "Pharmacology",
+  "system": "Hematology & Immunology",
+  "stem": "A 66-year-old man with atrial fibrillation and a mechanical mitral valve is started on an oral anticoagulant that requires regular laboratory monitoring and interacts with many medications and leafy green vegetables.",
+  "ask": "What is the mechanism of action of this drug?",
+  "options": [
+   "Activates antithrombin III",
+   "Directly inhibits factor Xa",
+   "Inhibits vitamin K epoxide reductase",
+   "Directly inhibits thrombin",
+   "Blocks the P2Y12 ADP receptor"
+  ],
+  "answer": 2,
+  "explanation": "Warfarin inhibits vitamin K epoxide reductase (VKORC1), preventing γ-carboxylation of factors II, VII, IX, X and proteins C and S. It is monitored with PT/INR and is the anticoagulant of choice for mechanical valves (DOACs are contraindicated). Vitamin K–rich foods antagonize it; it is a CYP2C9 substrate.",
+  "rationales": [
+   "Heparin activates antithrombin; monitored by PTT.",
+   "Rivaroxaban/apixaban inhibit Xa; contraindicated with mechanical valves.",
+   "Correct — warfarin.",
+   "Dabigatran directly inhibits thrombin; contraindicated with mechanical valves.",
+   "Clopidogrel is an antiplatelet agent."
+  ],
+  "objective": "Warfarin: VKOR inhibitor, PT/INR, drug of choice for mechanical valves.",
+  "mesh_id": "D014859",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D014859",
+  "concept": "Anticoagulant monitoring"
+ },
+ {
+  "id": "v-heme-2",
+  "discipline": "Pathology",
+  "system": "Hematology & Immunology",
+  "stem": "A 59-year-old woman on unfractionated heparin after hip replacement has a platelet count fall from 260,000 to 95,000/mm3 on postoperative day 7. She develops a painful swollen left calf; ultrasound confirms a DVT.",
+  "ask": "What is the underlying mechanism?",
+  "options": [
+   "Direct heparin toxicity to megakaryocytes",
+   "IgG antibodies against heparin–platelet factor 4 complexes",
+   "Consumption of platelets by DIC",
+   "Deficiency of ADAMTS13",
+   "Splenic sequestration"
+  ],
+  "answer": 1,
+  "explanation": "Type 2 HIT is caused by IgG antibodies to heparin–PF4 complexes that activate platelets, causing thrombocytopenia and paradoxical thrombosis 5–10 days after exposure. Stop all heparin and start a non-heparin anticoagulant such as argatroban.",
+  "rationales": [
+   "Heparin is not directly toxic to megakaryocytes.",
+   "Correct — HIT type 2.",
+   "DIC would show prolonged PT/PTT and schistocytes in a sick patient.",
+   "ADAMTS13 deficiency causes TTP (fever, MAHA, neuro symptoms, renal failure).",
+   "Splenic sequestration does not cause thrombosis."
+  ],
+  "objective": "HIT: anti-PF4/heparin IgG; platelet fall >50% + thrombosis; switch to argatroban.",
+  "mesh_id": "D013921",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D013921",
+  "concept": "Heparin-induced thrombocytopenia"
+ },
+ {
+  "id": "v-heme-3",
+  "discipline": "Pathology",
+  "system": "Hematology & Immunology",
+  "stem": "A 3-year-old boy has a swollen, painful right knee after a minor fall. His maternal uncle had similar episodes. Labs: platelets 280,000/mm3, PT normal, PTT prolonged, bleeding time normal.",
+  "ask": "Deficiency of which factor is most likely?",
+  "options": [
+   "Factor VII",
+   "Factor VIII",
+   "von Willebrand factor",
+   "Factor XIII",
+   "Fibrinogen"
+  ],
+  "answer": 1,
+  "explanation": "Hemarthrosis in a boy with an affected maternal uncle suggests X-linked recessive hemophilia. Isolated ↑ PTT with normal PT and bleeding time indicates an intrinsic pathway defect; hemophilia A (factor VIII) is the most common.",
+  "rationales": [
+   "Factor VII deficiency prolongs the PT.",
+   "Correct — hemophilia A.",
+   "vWD causes mucosal bleeding with ↑ bleeding time; autosomal dominant.",
+   "Factor XIII deficiency gives normal PT/PTT with delayed bleeding.",
+   "Fibrinogen deficiency prolongs PT, PTT and thrombin time."
+  ],
+  "objective": "Hemophilia: X-linked, deep tissue/joint bleeding, ↑ PTT only.",
+  "mesh_id": "D006467",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D006467",
+  "concept": "Bleeding disorders"
+ },
+ {
+  "id": "v-heme-4",
+  "discipline": "Pathology",
+  "system": "Hematology & Immunology",
+  "stem": "A 28-year-old woman develops a DVT 2 months after starting oral contraceptives. Her mother had a pulmonary embolism at age 40. Clotting assays show normal PT and PTT.",
+  "ask": "What is the most likely inherited cause?",
+  "options": [
+   "Protein C deficiency",
+   "Antithrombin deficiency",
+   "Factor V resistant to activated protein C",
+   "Prothrombin G20210A mutation",
+   "Antiphospholipid syndrome"
+  ],
+  "answer": 2,
+  "explanation": "Factor V Leiden (Arg506Gln) is the most common inherited thrombophilia in people of European descent. Mutant factor Va resists cleavage by activated protein C, prolonging its procoagulant activity. Estrogen use is a classic precipitating trigger.",
+  "rationales": [
+   "Protein C deficiency is less common; associated with warfarin skin necrosis.",
+   "Antithrombin deficiency is rare and causes heparin resistance.",
+   "Correct — factor V Leiden.",
+   "Prothrombin mutation is the second most common inherited thrombophilia.",
+   "APS is acquired, and often prolongs PTT (lupus anticoagulant)."
+  ],
+  "objective": "Factor V Leiden = most common inherited hypercoagulable state.",
+  "mesh_id": "D020016",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D020016",
+  "concept": "Thrombophilia"
+ },
+ {
+  "id": "v-resp-1",
+  "discipline": "Anatomy",
+  "system": "Respiratory",
+  "stem": "A 3-year-old boy starts coughing and wheezing while eating peanuts at a picnic. Breath sounds are decreased over the right lower chest. He was sitting upright at the time.",
+  "ask": "Where did the foreign body most likely lodge?",
+  "options": [
+   "Left main bronchus",
+   "Right main bronchus → lower lobe",
+   "Trachea",
+   "Left upper lobe bronchus",
+   "Lingula"
+  ],
+  "answer": 1,
+  "explanation": "The right main bronchus is wider, shorter and more vertical than the left, so aspirated material usually enters the right lung. When upright, it falls to the basal segments of the right lower lobe; when supine, to the superior segment of the RLL or posterior segment of the RUL.",
+  "rationales": [
+   "The left main bronchus is narrower and more horizontal.",
+   "Correct — right lower lobe in upright position.",
+   "Tracheal obstruction would cause stridor and bilateral findings.",
+   "LUL aspiration is uncommon.",
+   "The lingula is on the left."
+  ],
+  "objective": "Aspiration goes right: upright → RLL basal; supine → RLL superior / RUL posterior.",
+  "mesh_id": "D011015",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D011015",
+  "concept": "Aspiration"
+ },
+ {
+  "id": "v-resp-2",
+  "discipline": "Pathology",
+  "system": "Respiratory",
+  "stem": "A 63-year-old smoker has 3 months of right shoulder pain radiating down the medial arm. Examination shows right ptosis, miosis and anhidrosis of the right face.",
+  "ask": "Compression of which structure explains the facial findings?",
+  "options": [
+   "Phrenic nerve",
+   "Recurrent laryngeal nerve",
+   "Cervical sympathetic chain",
+   "Superior vena cava",
+   "Vagus nerve"
+  ],
+  "answer": 2,
+  "explanation": "A Pancoast tumor at the lung apex can invade the cervical sympathetic chain (stellate ganglion), producing Horner syndrome: ptosis, miosis, anhidrosis. Lower trunk brachial plexus involvement explains the medial arm pain.",
+  "rationales": [
+   "Phrenic involvement → hemidiaphragm paralysis.",
+   "Recurrent laryngeal involvement → hoarseness.",
+   "Correct — Horner syndrome.",
+   "SVC syndrome → facial plethora and arm swelling.",
+   "Vagus involvement is not responsible for Horner findings."
+  ],
+  "objective": "Pancoast tumor → Horner syndrome via sympathetic chain compression.",
+  "mesh_id": "D010178",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D010178",
+  "concept": "Lung cancer"
+ },
+ {
+  "id": "v-resp-3",
+  "discipline": "Anatomy",
+  "system": "Respiratory",
+  "stem": "A 44-year-old woman with acute cholecystitis reports pain at the tip of her right shoulder in addition to RUQ pain.",
+  "ask": "Through which nerve roots is this referred pain carried?",
+  "options": [
+   "T5–T6",
+   "C3–C5",
+   "T10–L1",
+   "C7–C8",
+   "L1–L2"
+  ],
+  "answer": 1,
+  "explanation": "The inflamed gallbladder irritates the diaphragm, whose sensory supply is the phrenic nerve (C3–C5). Pain is referred to the C4 dermatome at the shoulder tip. The same mechanism explains Kehr sign with splenic rupture.",
+  "rationales": [
+   "T5–T6 carry visceral pain from the stomach/gallbladder to the epigastrium.",
+   "Correct — phrenic nerve.",
+   "T10–L1 carry kidney and ureter pain.",
+   "C7–C8 do not innervate the diaphragm.",
+   "L1–L2 refer to the groin."
+  ],
+  "objective": "Diaphragmatic irritation → shoulder pain via phrenic nerve (C3–C5).",
+  "mesh_id": "D010791",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D010791",
+  "concept": "Diaphragm"
+ },
+ {
+  "id": "v-gi-1",
+  "discipline": "Anatomy",
+  "system": "Gastrointestinal",
+  "stem": "A 58-year-old man with long-standing NSAID use for osteoarthritis presents with melena and hypotension. Endoscopy shows an ulcer on the posterior wall of the duodenal bulb with an actively bleeding vessel.",
+  "ask": "Which artery is most likely bleeding?",
+  "options": [
+   "Left gastric artery",
+   "Gastroduodenal artery",
+   "Splenic artery",
+   "Superior mesenteric artery",
+   "Right gastroepiploic artery"
+  ],
+  "answer": 1,
+  "explanation": "The gastroduodenal artery, a branch of the common hepatic artery, runs directly behind the first part of the duodenum. Posterior duodenal ulcers can erode into it, causing major hemorrhage. Anterior duodenal ulcers tend to perforate instead.",
+  "rationales": [
+   "Left gastric bleeds come from lesser curvature gastric ulcers.",
+   "Correct — posterior duodenal bulb.",
+   "Splenic artery bleeds come from posterior gastric wall ulcers.",
+   "SMA lies more inferior and is not adjacent to the bulb.",
+   "Right gastroepiploic runs along the greater curvature."
+  ],
+  "objective": "Posterior duodenal ulcer → gastroduodenal artery hemorrhage.",
+  "mesh_id": "D010438",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D010438",
+  "concept": "GI bleeding"
+ },
+ {
+  "id": "v-gi-2",
+  "discipline": "Pharmacology",
+  "system": "Gastrointestinal",
+  "stem": "A 19-year-old woman is brought in 6 hours after ingesting 40 tablets of an over-the-counter analgesic. She has nausea but is otherwise asymptomatic. Serum level plotted on the nomogram is above the treatment line.",
+  "ask": "What is the mechanism of the antidote that should be given?",
+  "options": [
+   "Competitive opioid receptor antagonism",
+   "Replenishes glutathione",
+   "Chelates iron",
+   "Alkalinizes the urine",
+   "Inhibits alcohol dehydrogenase"
+  ],
+  "answer": 1,
+  "explanation": "Acetaminophen is partly metabolized by CYP2E1 to NAPQI, which is detoxified by glutathione. In overdose glutathione is depleted and NAPQI causes centrilobular (zone 3) necrosis. N-acetylcysteine replenishes glutathione and is most effective within 8 hours.",
+  "rationales": [
+   "Naloxone treats opioid overdose.",
+   "Correct — N-acetylcysteine.",
+   "Deferoxamine chelates iron.",
+   "Sodium bicarbonate treats salicylate and TCA toxicity.",
+   "Fomepizole treats methanol/ethylene glycol poisoning."
+  ],
+  "objective": "Acetaminophen → NAPQI → zone 3 necrosis; NAC replenishes glutathione.",
+  "mesh_id": "D000111",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D000111",
+  "concept": "Hepatotoxicity"
+ },
+ {
+  "id": "v-gi-3",
+  "discipline": "Physiology",
+  "system": "Gastrointestinal",
+  "stem": "A 34-year-old woman with Crohn disease underwent resection of 100 cm of terminal ileum. Months later she has fatigue, paresthesias in her feet and a macrocytic anemia.",
+  "ask": "Malabsorption of which nutrient is most likely responsible?",
+  "options": [
+   "Iron",
+   "Folate",
+   "Cobalamin (vitamin B12)",
+   "Vitamin C",
+   "Pyridoxine"
+  ],
+  "answer": 2,
+  "explanation": "Vitamin B12–intrinsic factor complexes are absorbed in the terminal ileum. Resection or Crohn ileitis causes B12 deficiency: megaloblastic anemia plus neurologic findings (subacute combined degeneration). Bile acids are also absorbed there, so fat malabsorption and gallstones can follow.",
+  "rationales": [
+   "Iron is absorbed in the duodenum; deficiency causes microcytic anemia.",
+   "Folate is absorbed in the jejunum and causes no neurologic findings.",
+   "Correct — terminal ileum.",
+   "Vitamin C deficiency causes scurvy.",
+   "Pyridoxine deficiency causes sideroblastic anemia (microcytic)."
+  ],
+  "objective": "Terminal ileum absorbs B12 and bile acids.",
+  "mesh_id": "D014805",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D014805",
+  "concept": "Absorption"
+ },
+ {
+  "id": "v-gi-4",
+  "discipline": "Pathology",
+  "system": "Gastrointestinal",
+  "stem": "A 76-year-old woman develops crampy left-sided abdominal pain and bloody diarrhea 1 day after an episode of severe hypotension during cardiac surgery. Colonoscopy shows patchy mucosal ischemia.",
+  "ask": "Which region of the colon is most vulnerable to this process?",
+  "options": [
+   "Cecum",
+   "Hepatic flexure",
+   "Splenic flexure",
+   "Mid-transverse colon",
+   "Distal rectum"
+  ],
+  "answer": 2,
+  "explanation": "Ischemic colitis typically affects watershed areas: the splenic flexure (between SMA and IMA territories) and the rectosigmoid junction (between IMA and internal iliac). Hypoperfusion during surgery or shock is a classic trigger.",
+  "rationales": [
+   "The cecum can be affected in right-sided ischemia but is not the classic watershed.",
+   "The hepatic flexure is well supplied by the SMA.",
+   "Correct — SMA/IMA watershed.",
+   "Mid-transverse colon has dual middle colic supply.",
+   "The distal rectum has rich collateral supply from middle/inferior rectal arteries."
+  ],
+  "objective": "Colonic watershed zones: splenic flexure and rectosigmoid junction.",
+  "mesh_id": "D065666",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D065666",
+  "concept": "Ischemic bowel"
+ },
+ {
+  "id": "v-endo-1",
+  "discipline": "Pathology",
+  "system": "Endocrine & Metabolic",
+  "stem": "A 32-year-old woman has weight loss, heat intolerance, palpitations and protruding eyes. She has a diffusely enlarged, nontender thyroid with a bruit and thickened, nonpitting skin over her shins.",
+  "ask": "What is the primary mechanism of her disease?",
+  "options": [
+   "Antibodies that block the TSH receptor",
+   "Antibodies that stimulate the TSH receptor",
+   "TSH-secreting pituitary adenoma",
+   "Autonomous toxic nodule",
+   "Antithyroid peroxidase-mediated destruction"
+  ],
+  "answer": 1,
+  "explanation": "Graves disease is a type II hypersensitivity in which IgG antibodies stimulate the TSH receptor on thyroid follicular cells, retro-orbital fibroblasts and dermal fibroblasts — explaining hyperthyroidism, exophthalmos and pretibial myxedema.",
+  "rationales": [
+   "Blocking antibodies can cause hypothyroidism.",
+   "Correct — Graves disease.",
+   "TSH adenoma would elevate TSH and lacks ophthalmopathy and dermopathy.",
+   "Toxic nodule causes focal uptake without eye findings.",
+   "Anti-TPO destruction is Hashimoto (hypothyroid)."
+  ],
+  "objective": "Graves = TSH-receptor stimulating IgG; ophthalmopathy and pretibial myxedema are unique.",
+  "mesh_id": "D006111",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D006111",
+  "concept": "Thyroid disease"
+ },
+ {
+  "id": "v-endo-2",
+  "discipline": "Pathology",
+  "system": "Endocrine & Metabolic",
+  "stem": "A 70-year-old man has 2 months of painless jaundice, pruritus, a 7-kg weight loss and a nontender, palpable gallbladder. CA 19-9 is elevated.",
+  "ask": "Where is the most likely location of the primary lesion?",
+  "options": [
+   "Head of pancreas",
+   "Tail of pancreas",
+   "Gallbladder fundus",
+   "Liver segment IV",
+   "Ampulla of Vater (duodenum)"
+  ],
+  "answer": 0,
+  "explanation": "Pancreatic adenocarcinoma of the head obstructs the common bile duct, causing painless jaundice and a palpable nontender gallbladder (Courvoisier sign). Tumors of the body and tail present later with pain and weight loss but not early jaundice.",
+  "rationales": [
+   "Correct — pancreatic head.",
+   "Tail tumors do not obstruct the bile duct early.",
+   "Gallbladder cancer is usually associated with stones and pain.",
+   "Liver masses rarely cause a palpable gallbladder.",
+   "Ampullary cancer is possible but much less common."
+  ],
+  "objective": "Painless jaundice + Courvoisier sign → pancreatic head adenocarcinoma.",
+  "mesh_id": "D010190",
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": "https://meshb.nlm.nih.gov/record/ui?ui=D010190",
+  "concept": "Pancreatic cancer"
+ },
+ {
+  "id": "v-heme-5",
+  "discipline": "Physiology",
+  "system": "Hematology & Immunology",
+  "stem": "A 24-year-old man undergoes splenectomy after a motor vehicle collision. Before discharge, he is counseled about vaccinations.",
+  "ask": "He is at greatest risk of sepsis from which type of organism?",
+  "options": [
+   "Intracellular parasites",
+   "Encapsulated bacteria",
+   "Dimorphic fungi",
+   "Gram-negative anaerobes",
+   "Enveloped viruses"
+  ],
+  "answer": 1,
+  "explanation": "The spleen clears opsonized encapsulated bacteria and produces IgM. After splenectomy, patients are at risk of overwhelming sepsis from S. pneumoniae, H. influenzae type b and N. meningitidis. Vaccinate against all three. Smear shows Howell-Jolly bodies.",
+  "rationales": [
+   "Intracellular parasites are not the primary concern (though babesiosis is worse).",
+   "Correct — encapsulated organisms.",
+   "Dimorphic fungi are a risk with T-cell deficiency.",
+   "Anaerobes are not specifically linked to asplenia.",
+   "Viral infection risk is not substantially increased."
+  ],
+  "objective": "Asplenia → encapsulated organisms; vaccinate (pneumococcus, Hib, meningococcus).",
+  "mesh_id": null,
+  "source": "Curated USMLE-style vignette (Vesalius editorial; not yet physician-reviewed)",
+  "source_url": null,
+  "concept": "Asplenia"
+ }
+]

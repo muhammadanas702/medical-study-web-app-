@@ -1,0 +1,4 @@
+ijson>=3.2
+trimesh>=4.0
+fast-simplification>=0.1.7
+numpy>=1.26
